@@ -4,9 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
   <title>Document</title>
 </head>
 <body>
+
+  <div class="root">
+    <header>
+      <div class="a" id="logo-container">
+        <img src="" alt="" class="logo">
+        <p>LOGO</p>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li>Ingresar</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+      <div class="search-bar">Barra de búsqueda</div>
+    </header>
+
+    <main>
+      <div class="b">
+      <aside  id="photo-carousel"><p>Holi</p></aside>
+    </div>
+      <div class="c">
+      <section id="publication"><p>holiwi</p></section>
+      </div>
+      <div class="d">
+      <aside id="categories"><p>trululu</p></aside>
+    </div>
+    </main>
+
+    <div class="e">
+    <footer>
+      <p>FOOTER</p><span><img src="" alt=""></span>
+    </footer>
+  </div>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBqZDaZgJ3Yu9oYSJCWBhMGvh2zibwJ4h0",
+      authDomain: "paw-lovers.firebaseapp.com",
+      databaseURL: "https://paw-lovers.firebaseio.com",
+      projectId: "paw-lovers",
+      storageBucket: "paw-lovers.appspot.com",
+      messagingSenderId: "1091963463722",
+      appId: "1:1091963463722:web:36ae78a879b9b20f7afb53"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    </script>
   <script type="module" src="main.js"></script>
 </body>
 </html>
