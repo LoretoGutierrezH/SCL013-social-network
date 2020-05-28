@@ -4,9 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+  <title>Paw Lovers</title>
 </head>
 <body>
+
+  <div class="root">
+    <header class="top">
+      <div id="logo-container">
+        <!-- <img src="" alt="" class="logo"> -->
+        <p>LOGO</p>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li>Ingresar</li>
+          <li></li>
+          <span><input class="search-bar" type="text" placeholder="Buscar..."></span>
+        </ul>
+      </nav>
+    </header>
+    <nav class="secondary-navbar">
+      <ul>
+        <li>Tips</li>
+        <li>Cuidados</li>
+        <li>Paseos</li>
+      </ul>
+    </nav>
+
+    
+      <aside class="middle-left" id="photo-carousel">
+        <p>holi</p>
+      </aside>
+      <main class="middle-center" id=" publication">
+        <p>holiwi</p>
+      </main>
+      <aside class="middle-right" id="categories">
+        <p>trululu</p>
+      </aside>
+
+
+   <footer class="bottom">
+      <p>FOOTER</p><span><img src="" alt=""></span>
+    </footer> 
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBqZDaZgJ3Yu9oYSJCWBhMGvh2zibwJ4h0",
+      authDomain: "paw-lovers.firebaseapp.com",
+      databaseURL: "https://paw-lovers.firebaseio.com",
+      projectId: "paw-lovers",
+      storageBucket: "paw-lovers.appspot.com",
+      messagingSenderId: "1091963463722",
+      appId: "1:1091963463722:web:36ae78a879b9b20f7afb53"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    /* const db = firebase.firestore(); */
+    </script>
   <script type="module" src="main.js"></script>
 </body>
 </html>
