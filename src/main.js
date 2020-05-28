@@ -1,9 +1,11 @@
 // Este es el punto de entrada de tu aplicacion
 import { db } from './lib/index.js';
 
+
 const root = document.querySelector('.root');
 
 //Crear estructura de la página
+
 const mainStructure = function() {
   root.innerHTML = `
     <div>Hola</div>
@@ -19,6 +21,7 @@ db.collection('posts').onSnapshot(snapshot => {
     console.log(docData); 
   });
 })
+
 
 
 //Crear publicaciones
