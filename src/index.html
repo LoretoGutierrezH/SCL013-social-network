@@ -7,60 +7,47 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
-  <title>Document</title>
+  <title>Paw Lovers</title>
 </head>
 <body>
 
   <div class="root">
-    <header>
-      <div class="a" id="logo-container">
-        <img src="" alt="" class="logo">
+
+    <header class="top">
+      <div id="logo-container">
+        <!-- <img src="" alt="" class="logo"> -->
         <p>LOGO</p>
       </div>
       <nav class="main-nav">
         <ul>
           <li>Ingresar</li>
           <li></li>
-          <li></li>
+          <span><input class="search-bar" type="text" placeholder="Buscar..."></span>
         </ul>
       </nav>
-      <div class="search-bar">Barra de búsqueda</div>
     </header>
+    <nav class="secondary-navbar">
+      <ul>
+        <li>Tips</li>
+        <li>Cuidados</li>
+        <li>Paseos</li>
+      </ul>
+    </nav>
+      <aside class="middle-left" id="photo-carousel">
+        <p>holi</p>
+      </aside>
+      <main class="middle-center" id=" publication">
+        <p>holiwi</p>
+      </main>
+      <aside class="middle-right" id="categories">
+        <p>trululu</p>
+      </aside>
 
-    <main>
-      <div class="b">
-      <aside  id="photo-carousel"><p>Holi</p></aside>
-    </div>
-      <div class="c">
-      <section id="publication"><p>holiwi</p></section>
-      </div>
-      <div class="d">
-      <aside id="categories"><p>trululu</p></aside>
-    </div>
-    </main>
 
-    <div class="e">
-    <footer>
+   <footer class="bottom">
       <p>FOOTER</p><span><img src="" alt=""></span>
-    </footer>
+    </footer> 
   </div>
-  </div>
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -74,7 +61,8 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+    /* const db = firebase.firestore(); */
+
     </script>
   <script type="module" src="main.js"></script>
 </body>

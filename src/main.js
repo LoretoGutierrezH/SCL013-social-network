@@ -1,9 +1,10 @@
 // Este es el punto de entrada de tu aplicacion
+import { db } from './lib/index.js';
 
-/* import { myFunction } from './lib/index.js';
 
-myFunction(); */
 const root = document.querySelector('.root');
+
+//Crear estructura de la página
 
 const mainStructure = function() {
   root.innerHTML = `
@@ -11,24 +12,24 @@ const mainStructure = function() {
   
   `
 }
-/* 
-db.collection('posts').get().then(snapshot => {
-  console.log(snapshot);
+
+//Leer publicaciones
+db.collection('posts').onSnapshot(snapshot => {
   snapshot.docs.forEach(doc =>{
     let document = doc;
     let docData = doc.data();
-    console.log(docData);
-    console.log(docData.title);
-    console.log(docData.content); 
-    root.innerHTML += `
-      <h3 class="title">${docData.title}</h3>
-      <p class="content">${docData.content}</p>
-    `
+    console.log(docData); 
   });
 })
 
 
-db.collection('posts').add({
+
+//Crear publicaciones
+/* db.collection('posts').add({
   title: "Quiero un perro",
   content: "Hace mucho que no tengo un perrito, ¿qué raza me recomiendan?"
-}) */
+})  */
+
+//Eliminar publicaciones
+
+//Asociar publicaciones a usuarios

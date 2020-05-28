@@ -12,44 +12,59 @@ body {
   font-size: 2rem;
 }
 
-/* header {
-  grid-row: 1;
-  width: 100vw;
-  height: 10vh;
-}
-
-section#publication {
-  width: 40vw;
-} */
-
 .root {
+    height: 100vh;
     display: grid;
-    grid-column-gap: 100px;
-    grid-row-gap: 10px;
-     grid-template-areas: 
-       "header header"
-       "aside section aside"
-       "footer footer";
-       align-items: stretch;
-       justify-content: stretch;
-
+    grid-template-areas: 
+       "header header header"
+       "aside-left aside-left aside-left"
+       "secondary-nav secondary-nav secondary-nav"
+       "main main main"
+       "footer footer footer";     
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 10% 15% 5% 60% 10%;
+    overflow: hidden;
 }
 
-.a { grid-area: header; background: blue }
-.b { grid-area: aside; background: red }
-.c { grid-area: section; background: green }
-.d { grid-area: aside; background: red }
-.e { grid-area: footer; background: orange }
+.top {
+  grid-area: header;
+  background: #81D2CB;
+}
 
+.secondary-navbar {
+  grid-area: secondary-nav;
+  background: #B3CD12;
+}
+.middle-left { 
+  grid-area: aside-left;
+  background: white;
+}
+.middle-center {
+  grid-area: main;
+  background: #C9B09C;
+}
+.middle-right {
+  grid-area: aside-right;
+  background: white;
+}
+.bottom {
+  grid-area: footer;
+  background: #81D2CB;
+}
 
    /* 
  /*  grid-template-columns: 25% 50% 25%;
   grid-template-rows: 10% 80% 10%; */
-
-
-
- 
-
-ul {
+.main-nav ul {
   display: flex;
+  /* justify-content: flex-end; */
+}
+
+.main-nav ul li, .secondary-navbar ul li {
+  list-style: none;
+}
+
+.secondary-navbar ul {
+  display: flex;
+  justify-content: space-between;
 }
