@@ -89,7 +89,7 @@ window.onload = mainStructure();
 
 /* MODAL DE INGRESO */
 // Pestañas
-const toggleModalForm = function () {
+const toggleModalForm = () => {
   const signInTab = document.querySelector('#sign-in-tab');
   const signUpTab = document.querySelector('#sign-up-tab');
   const signInForm = document.querySelector('#sign-in-form');
@@ -110,7 +110,7 @@ const toggleModalForm = function () {
   });
 };
 // Abrir y cerrar modal
-const openSignModal = function () {
+const openSignModal = () => {
   const modal = document.querySelector('.modal');
   modal.classList.remove('hidden-component');
   const closeModal = document.querySelector('#close-modal');
