@@ -1,6 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 import { db, auth } from './lib/index.js';
 
+
 const root = document.querySelector('.root');
 
 // Crear estructura de la página

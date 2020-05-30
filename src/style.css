@@ -21,9 +21,7 @@ body {
        "aside-left aside-left aside-left"
        "secondary-nav secondary-nav secondary-nav"
        "main main main"
-       "footer footer footer";
-       
-       
+       "footer footer footer";     
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 10% 15% 5% 60% 10%;
     overflow: hidden;
