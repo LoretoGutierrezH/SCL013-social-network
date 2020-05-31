@@ -8,10 +8,45 @@ const root = document.querySelector('.root');
 
 const mainStructure = function() {
   root.innerHTML = `
-    <div>Hola</div>
+    <header class="top">
+      <div id="logo-container">
+        <!-- <img src="" alt="" class="logo"> -->
+        <p>LOGO</p>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li>Ingresar</li>
+          <li></li>
+          <span><input class="search-bar" type="text" placeholder="Buscar..."></span>
+        </ul>
+      </nav>
+    </header>
+    <nav class="secondary-navbar">
+      <ul>
+        <li>Tips</li>
+        <li>Cuidados</li>
+        <li>Paseos</li>
+      </ul>
+    </nav>
+      <aside class="middle-left" id="photo-carousel">
+        <p>holi</p>
+      </aside>
+      <main class="middle-center" id=" publication">
+        <p>holiwi</p>
+      </main>
+      <aside class="middle-right" id="categories">
+        <p>trululu</p>
+      </aside>
+
+
+   <footer class="bottom">
+      <p>FOOTER</p><span><img src="" alt=""></span>
+    </footer> </div>
   
   `
 }
+window.onload = mainStructure();
+
 
 //Leer publicaciones
 db.collection('posts').onSnapshot(snapshot => {

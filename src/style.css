@@ -3,15 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-size: 62.5%; /*16px - 62.5 = 10px = 1rem*/
 }
-
 body {
   font-size: 2rem;
 }
-
 .root {
     height: 100vh;
     display: grid;
@@ -25,12 +22,10 @@ body {
     grid-template-rows: 10% 15% 5% 60% 10%;
     overflow: hidden;
 }
-
 .top {
   grid-area: header;
   background: #81D2CB;
 }
-
 .secondary-navbar {
   grid-area: secondary-nav;
   background: #B3CD12;
@@ -51,7 +46,6 @@ body {
   grid-area: footer;
   background: #81D2CB;
 }
-
    /* 
  /*  grid-template-columns: 25% 50% 25%;
   grid-template-rows: 10% 80% 10%; */
@@ -59,12 +53,26 @@ body {
   display: flex;
   /* justify-content: flex-end; */
 }
-
 .main-nav ul li, .secondary-navbar ul li {
   list-style: none;
 }
-
 .secondary-navbar ul {
   display: flex;
   justify-content: space-between;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
