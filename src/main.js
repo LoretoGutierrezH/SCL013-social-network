@@ -31,13 +31,13 @@ const mainStructure = () => {
             
             <form action="" id="sign-up-form" class="hidden-component">
               <label for="user-name">Nombre de usuario</label>
-              <input name="user-name" type="text">
+              <input id="user-name" type="text">
               <br>
               <label for="email">Correo</label>
-              <input name="email" type="email">
+              <input id="email" type="email">
               <br>
               <label for="password">Contraseña</label>
-              <input name="password" type="password">
+              <input id="password" type="password">
               <br>
               <button id="sign-up-btn">Registrarse</button>
               <p id="sign-up-error" class="error-message">*La contraseña debe tener 6 caracteres como mínimo</p>
@@ -80,14 +80,14 @@ const mainStructure = () => {
     </nav>
 
     <aside class="middle-left" id="photo-carousel">
-      <p>holi</p>
+      <p>Carrusel/Slider de concurso</p>
     </aside>
     <main class="middle-center" id="publication">
-      <p>holiwi</p>
+      <p>Publicaciones</p>
       
     </main>
     <aside class="middle-right" id="categories">
-      <p>trululu</p>
+      <p>Categorías (desktop)</p>
     </aside>
 
 
@@ -140,14 +140,15 @@ if (signBtn != null) {
 }
 
 
-// Leer publicaciones
-db.collection('posts').onSnapshot((snapshot) => {
+// PUBLICACIONES
+
+// Leer publicaciones (aquí podemos hacer una lectura por category)
+/* db.collection('posts').onSnapshot((snapshot) => {
   snapshot.docs.forEach((doc) => {
     const docData = doc.data();
     console.log(docData);
   });
-});
-
+}); */
 
 // Crear publicaciones
 /* db.collection('posts').add({
@@ -162,11 +163,25 @@ db.collection('posts').onSnapshot((snapshot) => {
 
 // Eliminar publicaciones
 
-// Asociar publicaciones a usuarios
-
-// Autenticación de usuarios
-console.log(auth);
-
+// USUARIOS
 // Registro
+const signUpForm = document.querySelector('#sign-up-form');
+signUpForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userName = signUpForm['user-name'].value;
+  const email = signUpForm.email.value;
+  const password = signUpForm.password.value;
+
+  auth.createUserWithEmailAndPassword(email, password).then(credential => {
+    return db.collection('user').doc(credential.user.uid).set({
+      userName,
+    });
+  }).then(() => {
+    console.log('Usuario creado y autenticado');
+  });
+
+});
 
 // Inicio de sesión
+
+// Cerrar sesión
