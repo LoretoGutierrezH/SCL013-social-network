@@ -36,10 +36,98 @@ body {
   background: #81D2CB;
 }
 
-.secondary-navbar {
+/*iconos del header*/
+
+.sign-btn {
+  float: right;
+}
+
+/*grid header*/
+#header-orden {
+  display: grid;
+  grid-template-columns: 30% 10% 20% 20% 20%;
+  grid-template-rows: 100%;
+}
+
+
+.logo {
+  width: 130px;
+  height: 80px;
+  margin-left: 1px;
+  text-align: left;
+  display: inline-block;
+}
+
+.categorysBtn {
+  font-family: FontAwesome;
+  display: inline-block;
+  color: #000000;
+}
+li a,
+.categorysBtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin: 10px;
+}
+
+li a:hover,
+.category:hover .categorysBtn {
+  background-color: #77B1AC;
+  border-radius: 4px;
+}
+
+li.category {
+  display: inline-block;
+}
+
+.category-content {
+   display: none;
+ position: absolute;
+  background-color: #F6F9FA;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.category-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.category-content a:hover {
+  background-color: #CBCCCC;
+}
+
+.category:hover .category-content {
+  display: block;
+}
+
+
+.celeste {
+  background: #81D2CB;
+  border-radius: 10px;
+}
+.verde {
+background: #B3CD12;
+border-radius: 10px;
+}
+.marron {
+  background: #C9B09C;
+  border-radius: 10px;
+}
+
+/*.secondary-navbar {
   grid-area: secondary-nav;
   background: #B3CD12;
-}
+}*/
 .middle-left { 
   grid-area: aside-left;
   background: white;

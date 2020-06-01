@@ -45,16 +45,28 @@ const mainStructure = () => {
           </div>
         </div>
       </div>
-    <header class="top">
-      <div id="logo-container">
-        <!-- <img src="" alt="" class="logo"> -->
-        <p>LOGO</p>
+    <header id="header-orden" class="top">
+      <div class="logo" id="logo-container">
+      <img src="/images/logoPawLovers.png" alt="" class="logo">
       </div>
       <nav class="main-nav">
         <ul>
-          <li class="sign-btn">Ingresar</li>
+          <li class="sign-btn"><i class="fas fa-user"></i></li>
           <li></li>
-          <span><input class="search-bar" type="text" placeholder="Buscar..."></span>
+          <li class="category">
+          <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
+          <div class="category-content">
+              <a href="#" class="celeste" id="tips">Tips</a>
+              <a href="#" class="verde" id="cuarentena">Dias en 40tena</a>
+              <a href="#" class="marron" id="cuidados">Cuidados</a>
+              <a href="#" class="celeste" id="memes">Memes</a>
+              <a href="#" class="verde" id="adopcion">Adopcion</a>
+              <a href="#" class="marron" id="servicios">Servicios</a>
+              <a href="#" class="celeste" id="fotosConcursos">Fotos Concursos</a>
+              <a href="#" class="verde" id="masPl">Mas sobre PL</a>
+          </div>
+      </li>
+          <!--<span><input class="search-bar" type="text" placeholder="Buscar..."></span>-->
         </ul>
       </nav>
       
