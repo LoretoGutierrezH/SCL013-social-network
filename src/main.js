@@ -78,8 +78,7 @@ const mainStructure = () => {
         <li>Paseos</li>
       </ul>
     </nav>
-      <aside class="
-      " id="photo-carousel">
+      <aside class="middle-left" id="photo-carousel">
       <section id="slider">
       <input type="radio" name="slider" id="s1">
       <input type="radio" name="slider" id="s2">
