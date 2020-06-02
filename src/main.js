@@ -92,12 +92,14 @@ const mainStructure = () => {
 
 
     <footer class="bottom">
-      <p>FOOTER</p><span><img src="" alt=""></span>
-    </footer>
-  `;
-};
 
+      <p>FOOTER</p><span><img src="" alt=""></span>
+    </footer> </div>
+  
+  `
+}
 window.onload = mainStructure();
+
 
 /* MODAL DE INGRESO */
 // Pestañas
