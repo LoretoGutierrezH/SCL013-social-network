@@ -51,7 +51,11 @@ body {
   justify-content: flex-end;
   
 } */
-
+.searchBtn {
+display: inline;
+left: 80%;
+color: #000000;
+}
 
 .logo {
   width: 130px;
@@ -114,17 +118,68 @@ li.category {
 }
 
 
-.celeste {
+.blue {
   background: #81D2CB;
   border-radius: 10px;
 }
-.verde {
+.green {
 background: #B3CD12;
 border-radius: 10px;
 }
-.marron {
+.brown {
   background: #C9B09C;
   border-radius: 10px;
+}
+.burguerBtn {
+  font-family: FontAwesome;
+  display: inline-block;
+  color: #000000;
+}
+li a,
+.burguerBtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 12px 12px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin: 10px;
+}
+
+li a:hover,
+.burguer:hover .burguerBtn {
+  background-color: #77B1AC;
+  border-radius: 4px;
+}
+
+li.burguer {
+  display: inline-block;
+}
+
+.burguer-content {
+   display: none;
+ position: absolute;
+  background-color: #F6F9FA;
+  min-width: 70px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.burguer-content a {
+  color: black;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.burguer-content a:hover {
+  background-color: #CBCCCC;
+}
+
+.burguer:hover .burguer-content {
+  display: block;
 }
 
 /*.secondary-navbar {

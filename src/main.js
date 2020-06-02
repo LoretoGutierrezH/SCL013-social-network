@@ -56,17 +56,27 @@ const mainStructure = () => {
           <li class="category">
           <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
           <div class="category-content">
-              <a href="#" class="celeste" id="tips">Tips</a>
-              <a href="#" class="verde" id="cuarentena">Dias en 40tena</a>
-              <a href="#" class="marron" id="cuidados">Cuidados</a>
-              <a href="#" class="celeste" id="memes">Memes</a>
-              <a href="#" class="verde" id="adopcion">Adopcion</a>
-              <a href="#" class="marron" id="servicios">Servicios</a>
-              <a href="#" class="celeste" id="fotosConcursos">Fotos Concursos</a>
-              <a href="#" class="verde" id="masPl">Mas sobre PL</a>
+              <a href="#" class="blue" id="tips">Tips</a>
+              <a href="#" class="green" id="cuarentena">Dias en 40tena</a>
+              <a href="#" class="brown" id="cuidados">Cuidados</a>
+              <a href="#" class="blue" id="memes">Memes</a>
+              <a href="#" class="green" id="adopcion">Adopcion</a>
+              <a href="#" class="brown" id="servicios">Servicios</a>
+              <a href="#" class="blue" id="fotosConcursos">Fotos Concursos</a>
+              <a href="#" class="green" id="masPl">Mas sobre PL</a>
           </div>
       </li>
-          <!--<span><input class="search-bar" type="text" placeholder="Buscar..."></span>-->
+      <li class="burguer">
+          <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
+          <div class="burguer-content">
+              <a href="#" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
+              <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="exit" id="exit"><i class="fas fa-sign-out-alt"></i></a>
+          </div>
+      </li>
+      <a href="#" class="searchBtn"><i class="fas fa-search"></i></a>
+        
+     <!--<span><input class="search-bar" type="text" placeholder="Buscar..."></span>-->
         </ul>
       </nav>
       
@@ -95,9 +105,8 @@ const mainStructure = () => {
 
       <p>FOOTER</p><span><img src="" alt=""></span>
     </footer> </div>
-  
-  `
-}
+    `
+};
 window.onload = mainStructure();
 
 
