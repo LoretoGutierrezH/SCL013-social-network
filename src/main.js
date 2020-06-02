@@ -31,13 +31,13 @@ const mainStructure = () => {
             
             <form action="" id="sign-up-form" class="hidden-component">
               <label for="user-name">Nombre de usuario</label>
-              <input name="user-name" type="text">
+              <input id="user-name" type="text">
               <br>
               <label for="email">Correo</label>
-              <input name="email" type="email">
+              <input id="email" type="email">
               <br>
               <label for="password">Contraseña</label>
-              <input name="password" type="password">
+              <input id="password" type="password">
               <br>
               <button id="sign-up-btn">Registrarse</button>
               <p id="sign-up-error" class="error-message">*La contraseña debe tener 6 caracteres como mínimo</p>
@@ -78,39 +78,21 @@ const mainStructure = () => {
         <li>Paseos</li>
       </ul>
     </nav>
-      <aside class="middle-left" id="photo-carousel">
-      <section id="slider">
-      <input type="radio" name="slider" id="s1">
-      <input type="radio" name="slider" id="s2">
-      <input type="radio" name="slider" id="s3" checked>
-      <input type="radio" name="slider" id="s4">
-      <input type="radio" name="slider" id="s5">
-      <label for="s1" id="slide1">
-          <img src="img1.jpg" height="100%" width="100%">
-      </label>
-      <label for="s2" id="slide2">
-                <img src="img2.jpg" height="100%" width="100%">
-      </label>
-      <label for="s3" id="slide3">
-                <img src="img3.jpg" height="100%" width="100%">
-      </label>
-      <label for="s4" id="slide4">
-                <img src="img4.jpg" height="100%" width="100%">
-      </label>
-      <label for="s5" id="slide5">
-                <img src="img5.jpg" height="100%" width="100%">
-      </label>
-      </aside>
 
-      <main class="middle-center" id=" publication">
-        <p>holiwi</p>
-      </main>
-      <aside class="middle-right" id="categories">
-        <p>trululu</p>
-      </aside>
+    <aside class="middle-left" id="photo-carousel">
+      <p>Carrusel/Slider de concurso</p>
+    </aside>
+    <main class="middle-center" id="publication">
+      <p>Publicaciones</p>
+      
+    </main>
+    <aside class="middle-right" id="categories">
+      <p>Categorías (desktop)</p>
+    </aside>
 
 
-   <footer class="bottom">
+    <footer class="bottom">
+
       <p>FOOTER</p><span><img src="" alt=""></span>
     </footer> </div>
   
@@ -160,14 +142,15 @@ if (signBtn != null) {
 }
 
 
-// Leer publicaciones
-db.collection('posts').onSnapshot((snapshot) => {
+// PUBLICACIONES
+
+// Leer publicaciones (aquí podemos hacer una lectura por category)
+/* db.collection('posts').onSnapshot((snapshot) => {
   snapshot.docs.forEach((doc) => {
     const docData = doc.data();
     console.log(docData);
   });
-});
-
+}); */
 
 // Crear publicaciones
 /* db.collection('posts').add({
@@ -182,11 +165,25 @@ db.collection('posts').onSnapshot((snapshot) => {
 
 // Eliminar publicaciones
 
-// Asociar publicaciones a usuarios
-
-// Autenticación de usuarios
-console.log(auth);
-
+// USUARIOS
 // Registro
+const signUpForm = document.querySelector('#sign-up-form');
+signUpForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userName = signUpForm['user-name'].value;
+  const email = signUpForm.email.value;
+  const password = signUpForm.password.value;
+
+  auth.createUserWithEmailAndPassword(email, password).then(credential => {
+    return db.collection('user').doc(credential.user.uid).set({
+      userName,
+    });
+  }).then(() => {
+    console.log('Usuario creado y autenticado');
+  });
+
+});
 
 // Inicio de sesión
+
+// Cerrar sesión
