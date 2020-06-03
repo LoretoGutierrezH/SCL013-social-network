@@ -13,13 +13,9 @@ const init = () => {
   });
 };
 
-<<<<<<< HEAD
-window.onload= root.innerHTML = home();
-=======
 window.onload = init();
 const signUpForm = document.querySelector('#sign-up-form');
 signUpFunction(signUpForm);
->>>>>>> upstream/master
 
 // Agregando event listeners del modal
 const toggleModalForm = () => {
