@@ -1,7 +1,9 @@
-// Este es el punto de entrada de tu aplicacion
+ // Este es el punto de entrada de tu aplicacion
 import { db, auth } from './lib/index.js';
+import { home } from './lib/views/home.js';
 
 const root = document.querySelector('#root');
+root.innerHTML = home();
 
 // Crear estructura de la página
 const mainStructure = () => {
@@ -146,14 +148,15 @@ if (signBtn != null) {
 }
 
 
-// Leer publicaciones
-db.collection('posts').onSnapshot((snapshot) => {
+// PUBLICACIONES
+
+// Leer publicaciones (aquí podemos hacer una lectura por category)
+/* db.collection('posts').onSnapshot((snapshot) => {
   snapshot.docs.forEach((doc) => {
     const docData = doc.data();
     console.log(docData);
   });
-});
-
+}); */
 
 // Crear publicaciones
 /* db.collection('posts').add({
@@ -168,11 +171,25 @@ db.collection('posts').onSnapshot((snapshot) => {
 
 // Eliminar publicaciones
 
-// Asociar publicaciones a usuarios
-
-// Autenticación de usuarios
-console.log(auth);
-
+// USUARIOS
 // Registro
+const signUpForm = document.querySelector('#sign-up-form');
+signUpForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userName = signUpForm['user-name'].value;
+  const email = signUpForm.email.value;
+  const password = signUpForm.password.value;
+
+  auth.createUserWithEmailAndPassword(email, password).then(credential => {
+    return db.collection('user').doc(credential.user.uid).set({
+      userName,
+    });
+  }).then(() => {
+    console.log('Usuario creado y autenticado');
+  });
+
+});
 
 // Inicio de sesión
+
+// Cerrar sesión
