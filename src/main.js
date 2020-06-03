@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 import { db, auth } from './lib/index.js';
 
-const root = document.querySelector('.root');
+const root = document.querySelector('#root');
 
 // Crear estructura de la página
 const mainStructure = () => {
@@ -78,29 +78,15 @@ const mainStructure = () => {
         <li>Paseos</li>
       </ul>
     </nav>
-      <aside class="middle-left" id="photo-carousel">
-      <section id="slider">
-      <input type="radio" name="slider" id="s1">
-      <input type="radio" name="slider" id="s2">
-      <input type="radio" name="slider" id="s3" checked>
-      <input type="radio" name="slider" id="s4">
-      <input type="radio" name="slider" id="s5">
-      <label for="s1" id="slide1">
-          <img src="img1.jpg" height="100%" width="100%">
-      </label>
-      <label for="s2" id="slide2">
-                <img src="img2.jpg" height="100%" width="100%">
-      </label>
-      <label for="s3" id="slide3">
-                <img src="img3.jpg" height="100%" width="100%">
-      </label>
-      <label for="s4" id="slide4">
-                <img src="img4.jpg" height="100%" width="100%">
-      </label>
-      <label for="s5" id="slide5">
-                <img src="img5.jpg" height="100%" width="100%">
-      </label>
-      </aside>
+
+    <aside class="middle-left" id="photo-carousel">
+    <div class="derecha">
+    <ul id="menu2">
+    <p>holaaaaaaaaaaaaaaaaaa</p>
+    </ul>
+  </div>  
+  <aside>
+    
 
       <main class="middle-center" id=" publication">
         <p>holiwi</p>
