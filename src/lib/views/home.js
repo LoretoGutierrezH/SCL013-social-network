@@ -1,5 +1,5 @@
 export const home = () => {
-const viewHome = `
+  const viewHome = `
     <div class="modal hidden-component">
          <span id="close-modal">&times</span>
         <div class="modal-container">
