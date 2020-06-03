@@ -1,19 +1,31 @@
- // Este es el punto de entrada de tu aplicacion
-import { db, auth } from './lib/index.js';
+// Este es el punto de entrada de tu aplicacion
 import { home } from './lib/views/home.js';
+import { manageRoutesAndViews } from './lib/router.js';
+import { signUpFunction } from './lib/authentication/authentication.js';
 
 const root = document.querySelector('#root');
 
+const init = () => {
+  root.innerHTML = home();
+  window.location.hash = '#/home';
+  window.addEventListener('hashchange', () => {
+    manageRoutesAndViews(window.location.hash); // ej: '#/publication'
+  });
+};
 
+<<<<<<< HEAD
 window.onload= root.innerHTML = home();
+=======
+window.onload = init();
+const signUpForm = document.querySelector('#sign-up-form');
+signUpFunction(signUpForm);
+>>>>>>> upstream/master
 
-/* MODAL DE INGRESO */
-// Pestañas
+// Agregando event listeners del modal
 const toggleModalForm = () => {
   const signInTab = document.querySelector('#sign-in-tab');
   const signUpTab = document.querySelector('#sign-up-tab');
   const signInForm = document.querySelector('#sign-in-form');
-  const signUpForm = document.querySelector('#sign-up-form');
   signInTab.addEventListener('click', () => {
     signInForm.classList.remove('hidden-component');
     signUpForm.classList.add('hidden-component');
@@ -41,12 +53,10 @@ const openSignModal = () => {
 };
 // Agregar a opción "Ingresar" event listener de apertura de modal
 const signBtn = document.querySelector('.sign-btn');
-if (signBtn != null) {
-  signBtn.addEventListener('click', () => {
-    openSignModal();
-  });
-}
 
+signBtn.addEventListener('click', () => {
+  openSignModal();
+});
 
 // PUBLICACIONES
 
@@ -71,24 +81,7 @@ if (signBtn != null) {
 
 // Eliminar publicaciones
 
-// USUARIOS
-// Registro
-const signUpForm = document.querySelector('#sign-up-form');
-signUpForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const userName = signUpForm['user-name'].value;
-  const email = signUpForm.email.value;
-  const password = signUpForm.password.value;
 
-  auth.createUserWithEmailAndPassword(email, password).then(credential => {
-    return db.collection('user').doc(credential.user.uid).set({
-      userName,
-    });
-  }).then(() => {
-    console.log('Usuario creado y autenticado');
-  });
-
-});
 
 // Inicio de sesión
 
