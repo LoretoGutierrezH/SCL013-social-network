@@ -77,8 +77,3 @@ signBtn.addEventListener('click', () => {
 
 // Eliminar publicaciones
 
-
-
-// Inicio de sesión
-
-// Cerrar sesión

@@ -34,9 +34,9 @@ body {
 
 /*iconos del header*/
 
-.sign-btn {
-  float: right;
-}
+/*.sign-btn {
+  
+}*/
 
 /*grid header*/
 #header-orden {
@@ -276,21 +276,6 @@ li.burguer {
     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
     transform: translate3d(30%,0,-200px);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .hidden-component {
   opacity: 0;
