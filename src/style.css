@@ -22,52 +22,68 @@ body {
        "footer footer footer";     
     grid-template-columns: 25% 50% 25%;
 
-    grid-template-rows: 15% 10% 5% 60% 10%;
+    grid-template-rows: 10% 10% 5% 65% 10%;
     overflow: hidden;
     z-index: 0;
 }
 
+/*grid header*/
 .top {
   grid-area: header;
   background: #81D2CB;
+  display: flex;
+  align-items: center;
 }
 
 /*iconos del header*/
-
-.sign-btn {
-  float: right;
+.one {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: 20%;
 }
-
-/*grid header*/
-#header-orden {
-  display: grid;
-  grid-template-columns: 30% 10% 20% 20% 20%;
-  grid-template-rows: 100%;
-  
+.two {
+  display: flex;
+  justify-content: flex-start;
+  width: 20%;
 }
-
-/* #header-orden ul {
+.three {
   display: flex;
   justify-content: flex-end;
-  
-} */
-.searchBtn {
-display: inline;
-left: 80%;
-color: #000000;
+  width: 60%;
+}
+  .logo {
+    width: 130px;
+    height: 80px;
+  }
+
+.sign-btn {
+display: flex;
+font-family: FontAwesome;
+text-align: center;
+}
+/* buscador*/
+
+
+input.search-bar {
+  display: flex;
+  border-radius: 30px;
+  padding: 2px 6px;
+  margin-top: 60px;
+  justify-items: center;
 }
 
-.logo {
-  width: 130px;
-  height: 80px;
-  margin-left: 1px;
-  text-align: left;
-  display: inline-block;
+#lupa {
+  margin-top: 25px;
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
 }
 
 .categorysBtn {
   font-family: FontAwesome;
-  display: inline-block;
+  display: flex;
+  text-align: center;
   color: #000000;
 }
 li a,
@@ -80,17 +96,14 @@ li a,
   margin-top: 10px;
   margin: 10px;
 }
-
 li a:hover,
 .category:hover .categorysBtn {
   background-color: #77B1AC;
   border-radius: 4px;
 }
-
 li.category {
   display: inline-block;
 }
-
 .category-content {
    display: none;
  position: absolute;
@@ -100,7 +113,6 @@ li.category {
   z-index: 1;
   border-radius: 10px;
 }
-
 .category-content a {
   color: black;
   padding: 12px 16px;
@@ -108,16 +120,12 @@ li.category {
   display: block;
   text-align: left;
 }
-
 .category-content a:hover {
   background-color: #CBCCCC;
 }
-
 .category:hover .category-content {
   display: block;
 }
-
-
 .blue {
   background: #81D2CB;
   border-radius: 10px;
@@ -132,7 +140,7 @@ border-radius: 10px;
 }
 .burguerBtn {
   font-family: FontAwesome;
-  display: inline-block;
+  display: flex;
   color: #000000;
 }
 li a,
@@ -145,17 +153,14 @@ li a,
   margin-top: 10px;
   margin: 10px;
 }
-
 li a:hover,
 .burguer:hover .burguerBtn {
   background-color: #77B1AC;
   border-radius: 4px;
 }
-
 li.burguer {
   display: inline-block;
 }
-
 .burguer-content {
    display: none;
  position: absolute;
@@ -165,7 +170,6 @@ li.burguer {
   z-index: 2;
   border-radius: 10px;
 }
-
 .burguer-content a {
   color: black;
   padding: 12px 12px;
@@ -173,15 +177,12 @@ li.burguer {
   display: block;
   text-align: left;
 }
-
 .burguer-content a:hover {
   background-color: #CBCCCC;
 }
-
 .burguer:hover .burguer-content {
   display: block;
 }
-
 /*.secondary-navbar {
   grid-area: secondary-nav;
   background: #B3CD12;
@@ -194,7 +195,6 @@ li.burguer {
 .middle-center {
   grid-area: main;
   background: #C9B09C;
-  
 }
 .middle-right {
   grid-area: aside-right;
@@ -204,7 +204,6 @@ li.burguer {
   grid-area: footer;
   background: #81D2CB;
 }
-
 .main-nav ul li, .secondary-navbar ul li {
   list-style: none;
 }
@@ -229,8 +228,7 @@ li.burguer {
   z-index: 4;
   position: absolute;
   top: 0;
-  left: 0;
-  
+  left: 0; 
 }
 
 .modal-container {
@@ -240,7 +238,6 @@ li.burguer {
   min-height: 90%;
   transform: translateX(4.8%) translateY(5%);
   border-radius: 10px;
- 
 }
 
 .modal-header {
@@ -251,10 +248,8 @@ li.burguer {
   height: 5.2rem;
   position: relative;
   border-radius: 5px;
-  font-size: 0.2rem;
-  
+  font-size: 0.2rem;  
 }
-
 
 .modal-header li {
   list-style: none;
@@ -309,14 +304,11 @@ li.burguer {
   z-index: 1;
 }
 
-
-
 .modal-content {
   position: relative;
   display: flex;
   justify-content: center;
 }
-
 
 #sign-in-form, #sign-up-form {
   position: absolute;
@@ -330,7 +322,6 @@ li.burguer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 #sign-in-form button, #sign-up-form button {
@@ -340,18 +331,14 @@ li.burguer {
   background-color: #F6F9FA;
   border-radius: 20px;
   font-family: 'Manjar', 'sans-serif';
-  margin: 1.5rem auto;
-  
+  margin: 1.5rem auto;  
 }
-
-
 
 #sign-in-form input, #sign-up-form input {
   padding: 1rem;
   border-radius: 10px;
   background-color: rgba(246, 249, 250, 0.7);
-  width: 100%;
-  
+  width: 100%; 
 }
 
 #sign-in-form input {

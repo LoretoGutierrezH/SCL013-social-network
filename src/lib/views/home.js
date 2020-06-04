@@ -40,41 +40,46 @@ export const home = () => {
         </div>
       </div>
     <header id="header-orden" class="top">
+    <div class="one">
       <div class="logo" id="logo-container">
       <img src="/images/logoPawLovers.png" alt="" class="logo">
       </div>
+      </div>
+      <div class="two">
       <nav class="main-nav">
         <ul>
           <li class="sign-btn"><i class="fas fa-user"></i></li>
-          <li></li>
-          <li class="category">
-          <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
-          <div class="category-content">
-              <a href="#/mas-sobre-PL" class="blue" id="masPl">Mas sobre PL</a>
-              <a href="#/tips" class="green" id="tips">Tips</a>
-              <a href="#/cuarentena" class="brown" id="cuarentena">Mas sobre 40tena</a>
-              <a href="#/cuidados" class="blue" id="cuidados">Cuidados</a>
-              <a href="#/memes" class="green" id="memes">Memes</a>
-              <a href="#/adopcion" class="brown" id="adopcion">Adopcion</a>
-              <a href="#/servicios" class="blue" id="servicios">Servicios</a>
-              <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
-          </div>
-      </li>
-      <li class="burguer">
-          <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
-          <div class="burguer-content">
-              <a href="#" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
-              <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
-              <a href="#" class="exit" id="exit"><i class="fas fa-sign-out-alt"></i></a>
-          </div>
-      </li>
-      <a href="#" class="searchBtn"><i class="fas fa-search"></i></a>
-        
-     <!--<span><input class="search-bar" type="text" placeholder="Buscar..."></span>-->
-        </ul>
+          </ul>
       </nav>
-      
+      </div>
+          <div class="three">
+          
+          <input type="text" id="formulario" class="search-bar" placeholder="Buscar">
+          <i class="fas fa-search" type="button" id="lupa"></i>
+      <li class="category">
+      <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
+      <div class="category-content">
+          <a href="#/mas-sobre-PL" class="blue" id="masPl">Mas sobre PL</a>
+          <a href="#/tips" class="green" id="tips">Tips</a>
+          <a href="#/cuarentena" class="brown" id="cuarentena">Mas sobre 40tena</a>
+          <a href="#/cuidados" class="blue" id="cuidados">Cuidados</a>
+          <a href="#/memes" class="green" id="memes">Memes</a>
+          <a href="#/adopcion" class="brown" id="adopcion">Adopcion</a>
+          <a href="#/servicios" class="blue" id="servicios">Servicios</a>
+          <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
+      </div>
+  </li>
+      <li class="burguer">
+      <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
+      <div class="burguer-content">
+          <a href="#" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
+          <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
+          <a href="#" class="exit" id="exit"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+  </li>
+  </div>
     </header>
+
     <nav class="secondary-navbar">
       <ul>
         <li>Tips</li>
@@ -102,5 +107,4 @@ export const home = () => {
     </footer> </div>
     `;
   return viewHome;
-
 }
