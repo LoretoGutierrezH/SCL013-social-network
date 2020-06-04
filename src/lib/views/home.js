@@ -82,10 +82,11 @@ export const home = () => {
         <li>Paseos</li>
       </ul>
     </nav>
-
+    
     <aside class="middle-left" id="photo-carousel">
-      <p>Carrusel/Slider de concurso</p>
+  
     </aside>
+    
     <main class="middle-center" id="publication">
       <p>Publicaciones</p>
       
