@@ -84,9 +84,9 @@ export const home = () => {
     </nav>
     
     <aside class="middle-left" id="photo-carousel">
-  
+    </ul>
     </aside>
-    
+
     <main class="middle-center" id="publication">
       <p>Publicaciones</p>
       
