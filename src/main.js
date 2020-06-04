@@ -1,7 +1,8 @@
 // Este es el punto de entrada de tu aplicacion
 import { home } from './lib/views/home.js';
 import { manageRoutesAndViews } from './lib/router.js';
-import { signUpFunction } from './lib/authentication/authentication.js';
+import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
+import { modalListeners } from './lib/views/modal.js';
 
 const root = document.querySelector('#root');
 
@@ -15,44 +16,21 @@ const init = () => {
 
 window.onload = init();
 const signUpForm = document.querySelector('#sign-up-form');
+const signInForm = document.querySelector('#sign-in-form');
+const exit = document.querySelector('.exit');
 signUpFunction(signUpForm);
+signInFunction(signInForm);
+exitFunction(exit);
 
-// Agregando event listeners del modal
-const toggleModalForm = () => {
-  const signInTab = document.querySelector('#sign-in-tab');
-  const signUpTab = document.querySelector('#sign-up-tab');
-  const signInForm = document.querySelector('#sign-in-form');
-  signInTab.addEventListener('click', () => {
-    signInForm.classList.remove('hidden-component');
-    signUpForm.classList.add('hidden-component');
-    signUpTab.classList.add('inactive-tab');
-    signUpTab.classList.remove('active-tab');
-    signInTab.classList.add('active-tab');
-  });
-  signUpTab.addEventListener('click', () => {
-    signUpForm.classList.remove('hidden-component');
-    signInForm.classList.add('hidden-component');
-    signInTab.classList.remove('active-tab');
-    signInTab.classList.add('inactive-tab');
-    signUpTab.classList.add('active-tab');
-  });
-};
-// Abrir y cerrar modal
-const openSignModal = () => {
-  const modal = document.querySelector('.modal');
-  modal.classList.remove('hidden-component');
-  const closeModal = document.querySelector('#close-modal');
-  closeModal.addEventListener('click', () => {
-    modal.classList.add('hidden-component');
-  });
-  toggleModalForm();
-};
-// Agregar a opción "Ingresar" event listener de apertura de modal
+const signInTab = document.querySelector('#sign-in-tab');
+const signUpTab = document.querySelector('#sign-up-tab');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('#close-modal');
 const signBtn = document.querySelector('.sign-btn');
 
-signBtn.addEventListener('click', () => {
-  openSignModal();
-});
+modalListeners(signInForm, signInTab, signUpTab, modal, closeModal, signBtn, signUpForm);
+
+
 
 // PUBLICACIONES
 

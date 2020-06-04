@@ -40,14 +40,22 @@ export const home = () => {
         </div>
       </div>
     <header id="header-orden" class="top">
+    <div class="one">
       <div class="logo" id="logo-container">
       <img src="/images/logoPawLovers.png" alt="" class="logo">
       </div>
+      </div>
+      <div class="two">
       <nav class="main-nav">
         <ul>
-          <li class="sign-btn"><iclass="fas fa-user" ></iclass=></li>
-          <li></li>
-      <a href="#" class="searchBtn"><i class="fas fa-search"></i></a>
+          <li class="sign-btn"><i class="fas fa-user"></i></li>
+          </ul>
+      </nav>
+      </div>
+          <div class="three">
+          
+          <input type="text" id="formulario" class="search-bar" placeholder="Buscar">
+          <i class="fas fa-search" type="button" id="lupa"></i>
       <li class="category">
       <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
@@ -61,9 +69,6 @@ export const home = () => {
           <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
       </div>
   </li>
-     <!--<span><input class="search-bar" type="text" placeholder="Buscar..."></span>-->
-        </ul>
-      </nav>
       <li class="burguer">
       <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
       <div class="burguer-content">
@@ -72,7 +77,9 @@ export const home = () => {
           <a href="#" class="exit" id="exit"><i class="fas fa-sign-out-alt"></i></a>
       </div>
   </li>
+  </div>
     </header>
+
     <nav class="secondary-navbar">
       <ul>
         <li>Tips</li>
