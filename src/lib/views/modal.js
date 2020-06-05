@@ -1,11 +1,15 @@
 export const modalListeners = (...modalElements) => {
   // Agregando event listeners del modal
   // signInForm, signInTab, signUpTab, modal, closeModal, signBtn, signUpForm
+  const signInForm = modalElements[0];
+  const signInTab = modalElements[1];
+  const signUpTab = modalElements[2];
+  const modal = modalElements[3];
+  const closeModal = modalElements[4];
+  const signBtn = modalElements[5];
+  const signUpForm = modalElements[6];
+  
   const toggleModalForm = () => {
-    const signInForm = modalElements[0];
-    const signInTab = modalElements[1];
-    const signUpTab = modalElements[2];
-    const signUpForm = modalElements[6];
     signInTab.addEventListener('click', () => {
       signInForm.classList.remove('hidden-component');
       signUpForm.classList.add('hidden-component');
@@ -24,17 +28,16 @@ export const modalListeners = (...modalElements) => {
   // Abrir y cerrar modal
   const openSignModal = () => {
     // signInForm, signInTab, signUpTab, modal, closeModal, signBtn
-    const modal = modalElements[3];
     modal.classList.remove('hidden-component');
-    const closeModal = modalElements[4];
     closeModal.addEventListener('click', () => {
       modal.classList.add('hidden-component');
     });
     toggleModalForm();
   };
+
   // Agregar a opción "Ingresar" event listener de apertura de modal
-  const signBtn = modalElements[5];
   signBtn.addEventListener('click', () => {
     openSignModal();
   });
-}
+  
+};
