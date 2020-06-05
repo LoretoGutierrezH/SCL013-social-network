@@ -18,17 +18,16 @@ window.onload = init();
 const signUpForm = document.querySelector('#sign-up-form');
 const signInForm = document.querySelector('#sign-in-form');
 const exit = document.querySelector('.exit');
-signUpFunction(signUpForm);
-signInFunction(signInForm);
-exitFunction(exit);
-
 const signInTab = document.querySelector('#sign-in-tab');
 const signUpTab = document.querySelector('#sign-up-tab');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('#close-modal');
 const signBtn = document.querySelector('.sign-btn');
-
+signUpFunction(signUpForm);
+signInFunction(signInForm);
+exitFunction(exit);
 modalListeners(signInForm, signInTab, signUpTab, modal, closeModal, signBtn, signUpForm);
+
 
 
 

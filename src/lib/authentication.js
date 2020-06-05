@@ -16,6 +16,9 @@ export const signUpFunction = (signUpForm) => {
     }).then(() => {
       console.log('Usuario creado y autenticado');
       signUpForm.reset();
+      //Seleccionando el modal completo a través del formulario de registro para ocultarlo
+      const modal = signUpForm.parentElement.parentElement.parentElement;
+      modal.classList.add('hidden-component');
     });
 
   });
@@ -30,6 +33,10 @@ export const signInFunction = (signInForm) => {
 
   auth.signInWithEmailAndPassword(email, password).then(() => {
     console.log('Usuario ingresado');
+    signInForm.reset();
+    //Seleccionando el modal completo a través del formulario de registro para ocultarlo
+    const modal = signInForm.parentElement.parentElement.parentElement;
+    modal.classList.add('hidden-component');
   });
   });
 };
