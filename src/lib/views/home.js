@@ -44,18 +44,20 @@ export const home = () => {
       <div class="logo" id="logo-container">
       <img src="/images/logoPawLovers.png" alt="" class="logo">
       </div>
-      </div>
-      <div class="two">
       <nav class="main-nav">
         <ul>
           <li class="sign-btn"><i class="fas fa-user"></i></li>
           </ul>
       </nav>
       </div>
-          <div class="three">
           
-          <input type="text" id="formulario" class="search-bar" placeholder="Buscar">
-          <i class="fas fa-search" type="button" id="lupa"></i>
+          <div class="two">
+<div id="search-wrapper">
+  <input type="text" id="search" placeholder="buscar..." />
+  <div id="close-icon"></div>
+</div>
+          <!--<input type="text" id="formulario" class="search-bar" placeholder="Buscar">
+          <i class="fas fa-search" type="button" id="lupa"></i>-->
       <li class="category">
       <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
