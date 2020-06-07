@@ -79,25 +79,120 @@ export const home = () => {
   </li>
   </div>
     </header>
-
-    <nav class="secondary-navbar">
-      <ul>
-        <li>Tips</li>
-        <li>Cuidados</li>
-        <li>Paseos</li>
-      </ul>
-    </nav>
-
     <aside class="middle-left" id="photo-carousel">
       <p>Carrusel/Slider de concurso</p>
     </aside>
     <main class="middle-center" id="publication">
-      <p>Publicaciones</p>
-      
+      <section id="home-post-container">
+        <div class="home-post">
+          <h4 class="home-post-title">Título</h4>
+          <h5 class="home-post-category">Categoría</h5>
+          <p class="home-post-content">Contenido</p>
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">Me gusta</button>
+          <button class="trigger-comment-form-btn">Comentar</button>
+          <button class="share-comment-btn">Compartir</button>
+        </div>
+        <div class="post-comment-form">
+          <form form action="submit" class="hidden-component comment-form">
+            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+            <button class="publish-comment-btn">Publicar</button>
+          </form>
+        </div>
+      </section>
+      <section id="home-post-container">
+        <div class="home-post">
+          <h4 class="home-post-title">Título</h4>
+          <h5 class="home-post-category">Categoría</h5>
+          <p class="home-post-content">Contenido</p>
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">Me gusta</button>
+          <button class="trigger-comment-form-btn">Comentar</button>
+          <button class="share-comment-btn">Compartir</button>
+        </div>
+        <div class="post-comment-form">
+          <form form action="submit" class="hidden-component comment-form">
+            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+            <button class="publish-comment-btn">Publicar</button>
+          </form>
+        </div>
+      </section>
+      <section id="home-post-container">
+        <div class="home-post">
+          <h4 class="home-post-title">Título</h4>
+          <h5 class="home-post-category">Categoría</h5>
+          <p class="home-post-content">Contenido</p>
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">Me gusta</button>
+          <button class="trigger-comment-form-btn">Comentar</button>
+          <button class="share-comment-btn">Compartir</button>
+        </div>
+        <div class="post-comment-form">
+          <form form action="submit" class="hidden-component comment-form">
+            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+            <button class="publish-comment-btn">Publicar</button>
+          </form>
+        </div>
+      </section>
+      <section id="home-post-container">
+        <div class="home-post">
+          <h4 class="home-post-title">Título</h4>
+          <h5 class="home-post-category">Categoría</h5>
+          <p class="home-post-content">Contenido</p>
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">Me gusta</button>
+          <button class="trigger-comment-form-btn">Comentar</button>
+          <button class="share-comment-btn">Compartir</button>
+        </div>
+        <div class="post-comment-form">
+          <form form action="submit" class="hidden-component comment-form">
+            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+            <button class="publish-comment-btn">Publicar</button>
+          </form>
+        </div>
+      </section>
+      <section id="home-post-container">
+        <div class="home-post">
+          <h4 class="home-post-title">Título</h4>
+          <h5 class="home-post-category">Categoría</h5>
+          <p class="home-post-content">Contenido</p>
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">Me gusta</button>
+          <button class="trigger-comment-form-btn">Comentar</button>
+          <button class="share-comment-btn">Compartir</button>
+        </div>
+        <div class="post-comment-form">
+          <form form action="submit" class="hidden-component comment-form">
+            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+            <button class="publish-comment-btn">Publicar</button>
+          </form>
+        </div>
+      </section>
+      <section id="home-post-container">
+        <div class="home-post">
+          <h4 class="home-post-title">Título</h4>
+          <h5 class="home-post-category">Categoría</h5>
+          <p class="home-post-content">Contenido</p>
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">Me gusta</button>
+          <button class="trigger-comment-form-btn">Comentar</button>
+          <button class="share-comment-btn">Compartir</button>
+        </div>
+        <div class="post-comment-form">
+          <form form action="submit" class="hidden-component comment-form">
+            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+            <button class="publish-comment-btn">Publicar</button>
+          </form>
+        </div>
+      </section>
     </main>
-    <aside class="middle-right" id="categories">
-      <p>Categorías (desktop)</p>
-    </aside>
+   
 
 
     <footer class="bottom">
@@ -107,3 +202,10 @@ export const home = () => {
     `;
   return viewHome;
 }
+
+// para versión de escritorio, después lo hacemos calzar
+/*  < aside class = "middle-right hidden-component"
+ id = "categories" >
+   <
+   p > Categorías(desktop) < /p> <
+   /aside> */
