@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 import { home } from './lib/views/home.js';
+import { userprofile } from './lib/views/userProfile.js';
 import { manageRoutesAndViews } from './lib/router.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
 import { modalListeners } from './lib/views/modal.js';

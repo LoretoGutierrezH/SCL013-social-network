@@ -74,7 +74,7 @@ export const home = () => {
       <li class="burguer">
       <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
       <div class="burguer-content">
-          <a href="#" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
+          <a href="#/userprofile" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
           <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
           <a href="#" class="exit" id="exit"><i class="fas fa-sign-out-alt"></i></a>
       </div>
@@ -194,8 +194,6 @@ export const home = () => {
         </div>
       </section>
     </main>
-   
-
 
     <footer class="bottom">
 
