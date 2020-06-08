@@ -15,6 +15,7 @@ const init = () => {
 };
 
 window.onload = init();
+//1. Event listeners y funciones del modal de la página de inicio
 const signUpForm = document.querySelector('#sign-up-form');
 const signInForm = document.querySelector('#sign-in-form');
 const exit = document.querySelector('.exit');
@@ -23,10 +24,27 @@ const signUpTab = document.querySelector('#sign-up-tab');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('#close-modal');
 const signBtn = document.querySelector('.sign-btn');
+// Dando funcionalidad de autenticación a formulario de registros, inicio de sesión e ícono de cierre de sesión
 signUpFunction(signUpForm);
 signInFunction(signInForm);
 exitFunction(exit);
+// Ejecutando función para agregar listeners al modal
 modalListeners(signInForm, signInTab, signUpTab, modal, closeModal, signBtn, signUpForm);
+
+// 2. Event listeners de la sección de publicaciones de la página de inicio
+const likeBtn = document.querySelector('.like-btn');
+const triggerCommentFormBtn = document.querySelectorAll('.trigger-comment-form-btn');
+const publishCommentBtn = document.querySelector('.publish-comment-btn');
+const commentContent = document.querySelector('.comment-content');
+const commentForm = document.querySelector('.comment-form');
+triggerCommentFormBtn.forEach(btn => {
+  
+  btn.addEventListener('click', () => {
+  commentForm.classList.toggle('hidden-component');
+  console.log("aloha");
+})
+});
+
 
 
 
