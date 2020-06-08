@@ -71,7 +71,7 @@ export const home = () => {
           <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
       </div>
   </li>
-      <li class="burguer">
+      <li class="burguer hidden-component">
       <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
       <div class="burguer-content">
           <a href="#" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
@@ -85,114 +85,7 @@ export const home = () => {
       <p>Carrusel/Slider de concurso</p>
     </aside>
     <main class="middle-center" id="publication">
-      <section id="home-post-container">
-        <div class="home-post">
-          <h4 class="home-post-title">Título</h4>
-          <h5 class="home-post-category">Categoría</h5>
-          <p class="home-post-content">Contenido</p>
-        </div>
-        <div class="post-actions">
-          <button class="like-btn">Me gusta</button>
-          <button class="trigger-comment-form-btn">Comentar</button>
-          <button class="share-comment-btn">Compartir</button>
-        </div>
-        <div class="post-comment-form">
-          <form form action="submit" class="hidden-component comment-form">
-            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
-            <button class="publish-comment-btn">Publicar</button>
-          </form>
-        </div>
-      </section>
-      <section id="home-post-container">
-        <div class="home-post">
-          <h4 class="home-post-title">Título</h4>
-          <h5 class="home-post-category">Categoría</h5>
-          <p class="home-post-content">Contenido</p>
-        </div>
-        <div class="post-actions">
-          <button class="like-btn">Me gusta</button>
-          <button class="trigger-comment-form-btn">Comentar</button>
-          <button class="share-comment-btn">Compartir</button>
-        </div>
-        <div class="post-comment-form">
-          <form form action="submit" class="hidden-component comment-form">
-            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
-            <button class="publish-comment-btn">Publicar</button>
-          </form>
-        </div>
-      </section>
-      <section id="home-post-container">
-        <div class="home-post">
-          <h4 class="home-post-title">Título</h4>
-          <h5 class="home-post-category">Categoría</h5>
-          <p class="home-post-content">Contenido</p>
-        </div>
-        <div class="post-actions">
-          <button class="like-btn">Me gusta</button>
-          <button class="trigger-comment-form-btn">Comentar</button>
-          <button class="share-comment-btn">Compartir</button>
-        </div>
-        <div class="post-comment-form">
-          <form form action="submit" class="hidden-component comment-form">
-            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
-            <button class="publish-comment-btn">Publicar</button>
-          </form>
-        </div>
-      </section>
-      <section id="home-post-container">
-        <div class="home-post">
-          <h4 class="home-post-title">Título</h4>
-          <h5 class="home-post-category">Categoría</h5>
-          <p class="home-post-content">Contenido</p>
-        </div>
-        <div class="post-actions">
-          <button class="like-btn">Me gusta</button>
-          <button class="trigger-comment-form-btn">Comentar</button>
-          <button class="share-comment-btn">Compartir</button>
-        </div>
-        <div class="post-comment-form">
-          <form form action="submit" class="hidden-component comment-form">
-            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
-            <button class="publish-comment-btn">Publicar</button>
-          </form>
-        </div>
-      </section>
-      <section id="home-post-container">
-        <div class="home-post">
-          <h4 class="home-post-title">Título</h4>
-          <h5 class="home-post-category">Categoría</h5>
-          <p class="home-post-content">Contenido</p>
-        </div>
-        <div class="post-actions">
-          <button class="like-btn">Me gusta</button>
-          <button class="trigger-comment-form-btn">Comentar</button>
-          <button class="share-comment-btn">Compartir</button>
-        </div>
-        <div class="post-comment-form">
-          <form form action="submit" class="hidden-component comment-form">
-            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
-            <button class="publish-comment-btn">Publicar</button>
-          </form>
-        </div>
-      </section>
-      <section id="home-post-container">
-        <div class="home-post">
-          <h4 class="home-post-title">Título</h4>
-          <h5 class="home-post-category">Categoría</h5>
-          <p class="home-post-content">Contenido</p>
-        </div>
-        <div class="post-actions">
-          <button class="like-btn">Me gusta</button>
-          <button class="trigger-comment-form-btn">Comentar</button>
-          <button class="share-comment-btn">Compartir</button>
-        </div>
-        <div class="post-comment-form">
-          <form form action="submit" class="hidden-component comment-form">
-            <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
-            <button class="publish-comment-btn">Publicar</button>
-          </form>
-        </div>
-      </section>
+      
     </main>
    
 

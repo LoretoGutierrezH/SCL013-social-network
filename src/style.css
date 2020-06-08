@@ -12,51 +12,11 @@ body {
   width: 100vw;
 }
 
-/* GRID */
-#root {
-    min-height: 100vh;
-    display: grid;
-    grid-template-areas: 
-       "header header header"
-       "aside-left aside-left aside-left"
-       "main main main"
-       "footer footer footer";     
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 10% 10% 1fr 5%;
-    overflow-x: visible;
-    z-index: 0;
-}
-
-/*grid header*/
-.top {
-  grid-area: header;
-  background: #81D2CB;
-  display: flex;
-  align-items: center;
-}
-
-.middle-left {
-  grid-area: aside-left;
-  background: white;
-}
-
-.middle-center {
-  grid-area: main;
-  background: #C9B09C;
-}
-
-.middle-right {
-  grid-area: aside-right;
-  background: white;
-}
-
-.bottom {
-  grid-area: footer;
-  background: #81D2CB;
-}
-
-footer {
-  margin-bottom: 0;
+/* HELPERS */
+/*Para ocultar lo que sea*/
+.hidden-component {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*iconos del header*/
@@ -81,6 +41,10 @@ footer {
     height: 80px;
 }
 
+footer {
+  min-height: 5vh;
+  max-height: 10vh;
+}
 
 .sign-btn {
 display: flex;
@@ -215,14 +179,7 @@ li.burguer {
   list-style: none;
 }
 
-
-
 /* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
-.hidden-component {
-  opacity: 0;
-  visibility: hidden;
-}
-
 .modal {
   width: 100vw;
   height: 100vh;
@@ -230,12 +187,12 @@ li.burguer {
   z-index: 4;
   position: absolute;
   top: 0;
-  left: 0; 
+  left: 0;
 }
 
 .modal-container {
   background-color: #F6F9FA;
-  font-family: 'Manjari', sans-serif; 
+  font-family: 'Manjari', sans-serif;
   width: 90vw;
   min-height: 90%;
   transform: translateX(4.8%) translateY(5%);
@@ -250,7 +207,7 @@ li.burguer {
   height: 5.2rem;
   position: relative;
   border-radius: 5px;
-  font-size: 0.2rem;  
+  font-size: 0.2rem;
 }
 
 .modal-header li {
@@ -260,7 +217,7 @@ li.burguer {
   position: absolute;
   text-align: center;
   padding-top: 1rem;
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
 }
 
 .modal-header li:first-child {
@@ -312,7 +269,8 @@ li.burguer {
   justify-content: center;
 }
 
-#sign-in-form, #sign-up-form {
+#sign-in-form,
+#sign-up-form {
   position: absolute;
   top: 0;
   margin-top: 1rem;
@@ -326,21 +284,23 @@ li.burguer {
   justify-content: space-between;
 }
 
-#sign-in-form button, #sign-up-form button {
+#sign-in-form button,
+#sign-up-form button {
   outline: none;
   padding: 1rem;
   margin-top: 0.5rem;
   background-color: #F6F9FA;
   border-radius: 20px;
   font-family: 'Manjar', 'sans-serif';
-  margin: 1.5rem auto;  
+  margin: 1.5rem auto;
 }
 
-#sign-in-form input, #sign-up-form input {
+#sign-in-form input,
+#sign-up-form input {
   padding: 1rem;
   border-radius: 10px;
   background-color: rgba(246, 249, 250, 0.7);
-  width: 100%; 
+  width: 100%;
 }
 
 #sign-in-form input {
@@ -357,20 +317,18 @@ li.burguer {
   font-size: 1.5rem;
 }
 
-
 /* HOME POSTS */
 
 #home-post-container {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   width: 80vw;
-  margin: 0 auto;
+  margin: 3rem auto;
 
 }
 
 .home-post {
   background-color: #F6F9FA;
   color: black;
-  width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1.5rem;
@@ -395,8 +353,9 @@ li.burguer {
 }
 
 div.post-comment-form {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   text-align: center;
+  margin-top: 2rem;
 }
 
 textarea.comment-content {
