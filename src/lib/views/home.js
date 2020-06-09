@@ -62,7 +62,7 @@ export const home = () => {
       <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
           <a href="#/mas-sobre-PL" class="blue" id="masPl">Mas sobre PL</a>
-          <a href="#/tips" class="green" id="tips">Tips</a>
+          <a href="#/tips" data-category="tips" class="green" id="tips">Tips</a>
           <a href="#/cuarentena" class="brown" id="cuarentena">Mas sobre 40tena</a>
           <a href="#/cuidados" class="blue" id="cuidados">Cuidados</a>
           <a href="#/memes" class="green" id="memes">Memes</a>
