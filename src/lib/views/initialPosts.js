@@ -1,5 +1,5 @@
-import { db } from '../index.js';
-export const homePost = (doc) => {
+import { db } from '../functions.js';
+export const initialPosts = (doc) => {
   let docData = doc.data();
   const homePostView = `
     <section data-postid="${doc.id}" id="home-post-container">
