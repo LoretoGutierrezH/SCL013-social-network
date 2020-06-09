@@ -1,13 +1,13 @@
-export const modalListeners = (...modalElements) => {
+export const modalListeners = () => {
   // Agregando event listeners del modal
-  // signInForm, signInTab, signUpTab, modal, closeModal, signBtn, signUpForm
-  const signInForm = modalElements[0];
-  const signInTab = modalElements[1];
-  const signUpTab = modalElements[2];
-  const modal = modalElements[3];
-  const closeModal = modalElements[4];
-  const signBtn = modalElements[5];
-  const signUpForm = modalElements[6];
+  const signUpForm = document.querySelector('#sign-up-form');
+  const signInForm = document.querySelector('#sign-in-form');
+  const exit = document.querySelector('.exit');
+  const signInTab = document.querySelector('#sign-in-tab');
+  const signUpTab = document.querySelector('#sign-up-tab');
+  const modal = document.querySelector('.modal');
+  const closeModal = document.querySelector('#close-modal');
+  const signBtn = document.querySelector('.sign-btn');
   
   const toggleModalForm = () => {
     signInTab.addEventListener('click', () => {

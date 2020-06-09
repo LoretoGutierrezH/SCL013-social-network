@@ -1,5 +1,5 @@
 import { home } from './views/home.js';
-import { posts } from './views/posts.js';
+import { aboutUs } from './views/aboutUs.js';
 
 /* Lee el hash de la url (location.hash) y si coincide con una de las opciones, muestra la vista correspondiente, todo en un solo paso */
 export const manageRoutesAndViews = (hash) => {
@@ -7,7 +7,7 @@ export const manageRoutesAndViews = (hash) => {
   if (hash === '#/home') {
     document.querySelector('#root').innerHTML = home();
   } else if (hash === '#/mas-sobre-PL') {
-    document.querySelector('#publication').innerHTML = posts();
+    document.querySelector('#publication').innerHTML = aboutUs();
     currentURL = window.location.href;
     //history.pushState(`${currentURL}`, null, "");
   } 

@@ -1,8 +1,8 @@
 import { auth, db } from './index.js';
 
-// USUARIOS
 // Registro
-export const signUpFunction = (signUpForm) => {
+export const signUpFunction = () => {
+  const signUpForm = document.querySelector('#sign-up-form');
   signUpForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const userName = signUpForm['user-name'].value;
@@ -25,7 +25,8 @@ export const signUpFunction = (signUpForm) => {
 };
 
 // Inicio de sesión
-export const signInFunction = (signInForm) => {
+export const signInFunction = () => {
+  const signInForm = document.querySelector('#sign-in-form');
   signInForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const email = signInForm.email.value;
@@ -42,9 +43,9 @@ export const signInFunction = (signInForm) => {
 };
 
 
-
 // Cerrar sesión
-export const exitFunction = (exit) =>{
+export const exitFunction = () => {
+const exit = document.querySelector('.exit');
 exit.addEventListener('click', (event) => {
     auth.signOut();
     console.log('Sali, me fui');
