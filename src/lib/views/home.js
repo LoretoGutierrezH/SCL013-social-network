@@ -44,18 +44,20 @@ export const home = () => {
       <div class="logo" id="logo-container">
       <img src="/images/logoPawLovers.png" alt="" class="logo">
       </div>
-      </div>
-      <div class="two">
       <nav class="main-nav">
         <ul>
           <li class="sign-btn"><i class="fas fa-user"></i></li>
           </ul>
       </nav>
       </div>
-          <div class="three">
           
-          <input type="text" id="formulario" class="search-bar" placeholder="Buscar">
-          <i class="fas fa-search" type="button" id="lupa"></i>
+          <div class="two">
+<div id="search-wrapper">
+  <input type="text" id="search" placeholder="buscar..." />
+  <div id="close-icon"></div>
+</div>
+          <!--<input type="text" id="formulario" class="search-bar" placeholder="Buscar">
+          <i class="fas fa-search" type="button" id="lupa"></i>-->
       <li class="category">
       <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
@@ -69,16 +71,17 @@ export const home = () => {
           <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
       </div>
   </li>
-      <li class="burguer">
+      <li class="burguer hidden-component">
       <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
       <div class="burguer-content">
-          <a href="#" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
+          <a href="#/userprofile" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
           <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
           <a href="#" class="exit" id="exit"><i class="fas fa-sign-out-alt"></i></a>
       </div>
   </li>
   </div>
     </header>
+<<<<<<< HEAD
 
     <nav class="secondary-navbar">
       <ul>
@@ -88,18 +91,15 @@ export const home = () => {
       </ul>
     </nav>
     
+=======
+>>>>>>> upstream/master
     <aside class="middle-left" id="photo-carousel">
     </ul>
     </aside>
 
     <main class="middle-center" id="publication">
-      <p>Publicaciones</p>
       
     </main>
-    <aside class="middle-right" id="categories">
-      <p>Categorías (desktop)</p>
-    </aside>
-
 
     <footer class="bottom">
 
@@ -108,3 +108,10 @@ export const home = () => {
     `;
   return viewHome;
 }
+
+// para versión de escritorio, después lo hacemos calzar
+/*  < aside class = "middle-right hidden-component"
+ id = "categories" >
+   <
+   p > Categorías(desktop) < /p> <
+   /aside> */
