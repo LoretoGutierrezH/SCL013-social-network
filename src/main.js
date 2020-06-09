@@ -1,11 +1,11 @@
 import { home } from './lib/views/home.js';
 import { homePost } from './lib/views/homePost.js';
-import { homePostsFn, showOrHideOptions } from './lib/index.js';
+import { tipsPost } from './lib/views/tips.js';
+import { homePostsFn, showOrHideOptions, categoryFilterFn } from './lib/index.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
 import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 import { manageRoutesAndViews } from './lib/router.js';
-import { auth, db } from './lib/index.js';
 
 
 const root = document.querySelector('#root');
@@ -27,5 +27,11 @@ homePostsFn(homePost); //agrega funciones a botones de posts del home (homePostF
 showOrHideOptions(); //muestra/oculta opciones según usuario conectado/desconectado
 
 
-
-
+const tips = document.querySelector('#tips');
+//console.log(tips);
+//console.log(tips.getAttribute('data-category'));
+tips.addEventListener('click', (event) => {
+  const tipsCategory = event.target.getAttribute('data-category'); //tips
+  //console.log(tipsCategory);
+  categoryFilterFn(tipsCategory, tipsPost);
+});
