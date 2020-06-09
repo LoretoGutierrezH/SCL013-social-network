@@ -138,11 +138,6 @@ div.post-comment-form {
   margin-top: 2rem;
 }
 
-<<<<<<< HEAD
-.error-message {
-  color: #b42828;
-  font-size: 1.5rem;
-=======
 textarea.comment-content {
   width: 90%;
   min-height: 15vh;
@@ -153,5 +148,4 @@ textarea.comment-content {
     'sans-serif';
   padding: 1rem;
   border-radius: 5px;
->>>>>>> upstream/master
 }

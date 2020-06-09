@@ -81,18 +81,6 @@ export const home = () => {
   </li>
   </div>
     </header>
-<<<<<<< HEAD
-
-    <nav class="secondary-navbar">
-      <ul>
-        <li>Tips</li>
-        <li>Cuidados</li>
-        <li>Paseos</li>
-      </ul>
-    </nav>
-    
-=======
->>>>>>> upstream/master
     <aside class="middle-left" id="photo-carousel">
     </ul>
     </aside>
