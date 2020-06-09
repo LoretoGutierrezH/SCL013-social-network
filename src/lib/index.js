@@ -8,14 +8,10 @@ export const homePostsFn = (homePost) => {
   db.collection('posts').onSnapshot(docs => {
     publicationContainer.innerHTML = "";
     docs.forEach(doc => {
-      publicationContainer.innerHTML += homePost(doc);
-      const likeBtn = document.querySelectorAll('.like-btn');
-      const triggerCommentFormBtn = document.querySelectorAll('.trigger-comment-form-btn');
-      const post = document.querySelectorAll('.home-post-container');
-      const commentForm = document.querySelectorAll('.post-comment-form');
-
-      const publishCommentBtn = document.querySelector('.publish-comment-btn');
-      const commentContent = document.querySelector('.comment-content');
+        publicationContainer.innerHTML += homePost(doc);
+        const likeBtn = document.querySelectorAll('.like-btn');
+        const triggerCommentFormBtn = document.querySelectorAll('.trigger-comment-form-btn');
+        const commentForm = document.querySelectorAll('.post-comment-form');
 
       // Le da función al botón "Comentar" para mostrar/ocultar el formulario
       triggerCommentFormBtn.forEach(btn => {
