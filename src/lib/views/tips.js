@@ -27,12 +27,12 @@ export const tipsPost = (doc) => {
   return tipsView;
 }
 
-export const tipsPostsFn = (tipsPost, ) => {
+export const tipsPostsFn = (tipsPost) => {
   const publicationContainer = document.querySelector('#tips');
   db.collection('posts').onSnapshot(docs => {
     publicationContainer.innerHTML = "";
     docs.forEach(doc => {
-        publicationContainer.innerHTML += homePost(doc);
+        publicationContainer.innerHTML += tipsPost(doc);
         const likeBtn = document.querySelectorAll('.like-btn');
         const triggerCommentFormBtn = document.querySelectorAll('.trigger-comment-form-btn');
         const commentForm = document.querySelectorAll('.post-comment-form');
