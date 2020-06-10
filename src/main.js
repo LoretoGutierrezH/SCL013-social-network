@@ -76,6 +76,9 @@ const init = () => {
 init();
 
 
+
+
+
 /* ESTO NO ES NECESARIO SI SE OCUPA EL ROUTER! :D
 const tips = document.querySelector('#tips');
 tips.addEventListener('click', (event) => {

@@ -2,7 +2,7 @@ import { db } from '../functions.js';
 export const categoryView = (doc) => {
   let docData = doc.data();
   const postsView = `
-    <section data-postid="${doc.id}" id="home-post-container">
+  <section data-postid="${doc.id}" id="home-post-container">
     <div class="home-post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
@@ -10,7 +10,7 @@ export const categoryView = (doc) => {
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
 
-    </div>
+    </div>    
     <div class="post-actions">
       <button class="like-btn">Me gusta</button>
       <button class="trigger-comment-form-btn">Comentar</button>
