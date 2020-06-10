@@ -12,8 +12,16 @@ const root = document.querySelector('#root');
 
 const init = () => {
   root.innerHTML = home();
+  homePostsFn(initialPosts);
+  signUpFunction();
+  signInFunction();
+  exitFunction();
+  modalListeners();
+  showOrHideOptions();
   window.location.hash = '#/home';
+  console.log("Página completamente cargada");
   window.addEventListener('hashchange', () => {
+      console.log("Hash cambió a " + location.hash);
       let hash = window.location.hash;
       let category;
       switch(hash) {
@@ -67,13 +75,19 @@ const init = () => {
           break;
         
         default:
-          alert("Página no encontrada");
+          document.querySelector('#root').innerHTML = home();
+          signUpFunction();
+          signInFunction();
+          exitFunction();
+          modalListeners();
+          homePostsFn(initialPosts);
+          showOrHideOptions();
       }
      
   });
 };
 
-init();
+window.onload = init();
 
 
 

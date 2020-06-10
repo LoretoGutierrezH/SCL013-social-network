@@ -59,6 +59,7 @@ const setPostsFunctions = () => {
       commentForm.forEach(form => {
         if (form.getAttribute('data-postid') === postID) {
           form.classList.toggle('hidden-component');
+          form.firstChild.setAttribute('autofocus', 'true');
           console.log(`Activaste el formulario de comentario del post ${postID}`);
         }
 

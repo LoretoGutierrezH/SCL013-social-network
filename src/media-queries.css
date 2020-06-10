@@ -1,5 +1,5 @@
 /* Estilos para desktop */
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .modal-container {
     min-height: 75%;
     width: 50vw;
@@ -11,12 +11,12 @@
     left: 75%;
     font-size: 5rem;
   }
-}
+} */
 
 /* Estilos para tablet */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .modal-container {
     min-height: 85%;
   }
-}
+} */
 
