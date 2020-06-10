@@ -34,10 +34,9 @@ export const homePostsFn = (view) => {
 // POSTS SEGÚN CAGETORÍA SELECCIONADA 
 export const postsByCategoryFn = (view, category) => {
     const publicationContainer = document.querySelector('#publication');
-    publicationContainer.innerHTML = "";
-    db.collection('posts').where('category', '==', `${category}`).get().then((snapshots) => {
-      snapshots.forEach(doc => {
-        console.log(doc);
+    db.collection('posts').where('category', '==', `${category}`).onSnapshot((querySnapshots) => {
+      publicationContainer.innerHTML = "";
+      querySnapshots.forEach(doc => {
         publicationContainer.innerHTML += view(doc);
       });
       return setPostsFunctions(); // fns de botones Me gusta, Comentar y Compartir
@@ -54,6 +53,7 @@ const setPostsFunctions = () => {
   // Le da función al botón "Comentar" para mostrar/ocultar el formulario
   triggerCommentFormBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
+      event.preventDefault();
       let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
 
       commentForm.forEach(form => {
@@ -71,6 +71,7 @@ const setPostsFunctions = () => {
   // Relaciona cada "Me gusta" al post correspondiente y actualiza "likes"
   likeBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
+      event.preventDefault();
       let postID = event.target.parentElement.parentElement.getAttribute('data-postid')
       console.log(`Le diste me gusta al post ${postID} (solo se agrega el userName si no se había dado "like" antes - SI HAY ERROR ES PORQUE NO HAY USUARIO CONECTADO!)`);
       // obteniendo el id del usuario conectado
