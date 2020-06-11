@@ -87,9 +87,7 @@ export const home = () => {
     <main class="middle-center" id="publication">
       
     </main>
-
     <footer class="bottom">
-
       <p>FOOTER</p><span><img src="" alt=""></span>
     </footer> </div>
     `;
