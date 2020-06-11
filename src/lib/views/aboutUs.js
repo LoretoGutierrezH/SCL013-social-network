@@ -9,7 +9,6 @@ export const aboutUs = () => {
     <p> Además podrás encontrar empresas y servicios
     profesionales del sector de los animales de compañía, 
     ayudar a otros animales que lo están pasando mal y mucho más.</p>
-    <p>Contenido de la publicación</p>
   `;
   return aboutUsView;
 }

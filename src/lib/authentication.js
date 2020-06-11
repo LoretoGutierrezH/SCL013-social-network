@@ -1,4 +1,4 @@
-import { auth, db } from './index.js';
+import { auth, db } from './functions.js';
 
 // Registro
 export const signUpFunction = () => {

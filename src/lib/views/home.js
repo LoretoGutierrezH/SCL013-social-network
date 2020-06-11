@@ -68,7 +68,7 @@ export const home = () => {
           <a href="#/memes" class="green" id="memes">Memes</a>
           <a href="#/adopcion" class="brown" id="adopcion">Adopcion</a>
           <a href="#/servicios" class="blue" id="servicios">Servicios</a>
-          <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
+          <a href="#/fotos-concurso" class="green" id="fotosConcursos">Fotos Concursos</a>
       </div>
   </li>
       <li class="burguer hidden-component">

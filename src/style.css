@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -12,11 +13,11 @@ html {
 
 body {
   font-size: 2rem;
-  width: 100vw;
+  
 }
 
 /* GRID */
-#root {
+/* #root {
   min-height: 100vh;
   display: grid;
   grid-template-areas:
@@ -25,50 +26,44 @@ body {
     "main main main"
     "footer footer footer";
   grid-template-columns: 25% 50% 25%;
-  grid-template-rows: 5% 5% 1fr 5%;
+  grid-template-rows: 5% 1% 1fr 5%;
   overflow-x: visible;
   z-index: 0;
+  
+} */
+
+/* GRID PARA MOBILE */
+#root {
+  width: 100vw;
+  position: absolute;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "aside-left"
+    "main"
+    "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: 5% 1% 1fr 5%;
+  overflow-x: visible;
+  z-index: 0;
+
 }
 
-/*.secondary-navbar {
-  grid-area: secondary-nav;
-  background: #B3CD12;
-}*/
-.middle-left {
-  grid-area: aside-left;
-  background: white;
-}
 
-.middle-center {
-  grid-area: main;
-  background: #C9B09C;
-}
-
-.middle-right {
-  grid-area: aside-right;
-  background: white;
-}
-
-.bottom {
-  grid-area: footer;
-  background: #81D2CB;
-}
 
 .main-nav ul li,
 .secondary-navbar ul li {
   list-style: none;
 }
 
-.secondary-navbar ul {
-  display: flex;
-  justify-content: space-between;
-}
 
 .top {
   grid-area: header;
   background: #81D2CB;
   display: flex;
   align-items: center;
+
 }
 
 .middle-left {
@@ -92,8 +87,10 @@ body {
 }
 
 footer {
-  margin-bottom: 0;
+  margin-bottom: -3rem;
 }
+
+
 
 /* HOME POSTS */
 
