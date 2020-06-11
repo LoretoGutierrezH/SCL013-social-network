@@ -34,7 +34,7 @@ más comentado.
 (Img)
 ### Prototipo de Alta fidelidad
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/prototipoDeAltaFidelidad.JPG" width= 700px height= 500px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/prototipoDeAltaFidelidad.JPG" width= 747px height= 745px>
 
 ### Busqueda de diseño
 - Paleta de colores
@@ -42,8 +42,7 @@ En la búsqueda de la paleta de colores, se quería demostrar jovialidad y una s
 y se consiguió una paleta que iba de la mano con lo que se estaba buscando.
 [Paleta de Referencia](https://paletasdecolores.com/paleta-de-colores-252/)
 hasta llegar a esto
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/paletaDeColor.png" width= 700px 
-height= 500px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/paletaDeColor.png" width= 592px height= 453px>
 
 - Tipografía 
 La tipografía debía ser sutil y delicada así que se eligió la font manjari  que curiosamente su nombre significa "albahaca sagrada" o "flor".
@@ -53,9 +52,9 @@ En la búsqueda del logo pasamos por varias referencias inspiradoras, que podrá
 
 Luego se prosiguió rápidamente a la creación del mismo,
 se probaron varias ideas una al lado de la otra en el prototipo de alta fidelidad. 
-(img)
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/PruebasLogo.JPG" width= 870px height= 590px>
 Dando como resultado final:
-<img src="falta" width= 700px height= 500px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/logoPawLovers.png" width= 800px height= 300px>
 
 Y se eligió una tipografía que fuera divertida, un poco desordenada, Puedes apreciar un pequeño fragmento comentado del diseñador principal de la Font Neucha "traducido del idioma ruso significa "no saber cómo crear fuentes correctamente". Jovanny Lemonad Era lo que se estaba buscando en ella, una fuente libre y con un toque orgánico que traslada a lo natural.
 
@@ -106,11 +105,11 @@ Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el f
 - Definición de Terminado:
 
 
-* [ ] [Uso de callbacks](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-* [ ] [Consumo de Promesas](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
-* [ ] Uso ES modules
-([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-| [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
+* [ ] Agregar las categorías al header (solo para el móvil)
+* [ ] Asignar color
+* [ ] Ordenar los iconos en el header
+* [ ] Hacer la animación del search
+* [ ] Hacer las redirecciones
 
 ### Historia 4 Carrusel concurso fotográfico
 
@@ -121,18 +120,39 @@ Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el f
 * [ ] [Uso de onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen)
 | [onAuthStateChanged](https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data)
 
-### Testing
+### Historia 5: Plantilla del Home
+
+- Usuario: que entra a ver los nuevos posts
+- Necesita: tener una visión de las últimas actualizaciones.
+- Para: 
+- Criterios de aceptación: 
+- Definición de Terminado: tener una plantilla de home, que contenga me gusta, comentarios, repostearlo.
+- Crear plantilla de home con botones de me gusta, comentarios y compartir (sin formulario)
+- Darle estilo con CSS según la maqueta de Figma
+
 
 * [ ] [Testeo de tus funciones](https://jestjs.io/docs/es-ES/getting-started)
 * [ ] [Testeo asíncrono](https://jestjs.io/docs/es-ES/asynchronous)
 * [ ] [Mocking](https://jestjs.io/docs/es-ES/manual-mocks)
 
-### Git y Github
+### Historia 6: Plantilla de Categorías
+
+- Usuario: que entra a buscar algo en especifico
+- Necesita: 
+- Para: que al buscar sobre 1 categoría en especifica me salga todo relacionado con ella
+- Criterios de aceptación: 
+- Definición de Terminado: tener una plantilla de categorías. que contenga una pestaña para hacer tu post referente a la categoría, y poder ver y comentar, repostear el de otros
 
 * [ ] Colaboración en Github
 * [ ] Organización en Github
 
-### Buenas prácticas de desarrollo
+### Historia 7: Plantilla de Información (más sobre PL)
+
+Usuario: que entra a buscar de qué trata la red social 
+Necesita: que esté todo en un solo lugar
+Para: 
+Criterios de aceptación: 
+Definición de Terminado: tener una plantilla de información. donde puedas saber más sobre los creadores y el fin de la red social.
 
 * [ ] Modularización
 * [ ] Nomenclatura / Semántica
