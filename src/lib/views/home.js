@@ -20,6 +20,7 @@ export const home = () => {
               <a href="#/" id="password-request">¿Olvidaste tu contraseña?</a>
               <button id="sign-in-btn">Iniciar</button>
               <br>
+              <button type="button" class="btn btn-info btn-block" id="googleLogin">Login with Google</button>
               <p id="sign-in-error" class="error-message">*Nombre o contraseña no válidos</p>
             </form>
             
