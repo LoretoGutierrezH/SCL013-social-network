@@ -17,6 +17,16 @@
     z-index: 0;
   }
 
+  .middle-right {
+    grid-area: aside-right;
+    background: white;
+  }
+
+  .mobile-hidden-component {
+    display: block;
+    opacity: 1;
+  }
+
   /* HOME POSTS */
 
   #home-post-container {

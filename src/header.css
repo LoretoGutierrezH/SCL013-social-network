@@ -146,13 +146,22 @@ li.burguer {
   display: block;
 }
 
-/* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
+/* HELPERS */
 .hidden-component {
   opacity: 0;
   display: none;
   /* visibility: hidden; --> estaba mal porque deja el espacio vacío en la pantalla */
 }
 
+/*solo para ocultar ciertos contenedores en mobile*/
+.mobile-hidden-component {
+  opacity: 0;
+  display: none;
+  /* visibility: hidden; --> estaba mal porque deja el espacio vacío en la pantalla */
+}
+
+
+/* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
 .modal {
   width: 100vw;
   height: 55vh;
