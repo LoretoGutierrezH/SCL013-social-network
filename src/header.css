@@ -146,15 +146,25 @@ li.burguer {
   display: block;
 }
 
-/* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
+/* HELPERS */
 .hidden-component {
   opacity: 0;
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; --> estaba mal porque deja el espacio vacío en la pantalla */
 }
 
+/*solo para ocultar ciertos contenedores en mobile*/
+.mobile-hidden-component {
+  opacity: 0;
+  display: none;
+  /* visibility: hidden; --> estaba mal porque deja el espacio vacío en la pantalla */
+}
+
+
+/* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
 .modal {
   width: 100vw;
-  height: 100vh;
+  height: 55vh;
   background-color: rgba(0, 0, 0, 0.301);
   z-index: 4;
   position: absolute;
@@ -184,7 +194,6 @@ li.burguer {
 
 .modal-header li {
   list-style: none;
-  padding-left: 1rem;
   width: 50%;
   position: absolute;
   text-align: center;
@@ -209,7 +218,7 @@ li.burguer {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 84%;
   border-radius: 5px;
 }
 
@@ -233,6 +242,7 @@ li.burguer {
   font-size: 3rem;
   margin-top: -1px;
   z-index: 1;
+  cursor: pointer;
 }
 
 .modal-content {

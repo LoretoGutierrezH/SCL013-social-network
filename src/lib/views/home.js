@@ -81,6 +81,7 @@ export const home = () => {
   </li>
   </div>
     </header>
+
     <aside class="middle-left" id="photo-carousel">
       <p>Carrusel/Slider de concurso</p>
     </aside>
@@ -88,8 +89,11 @@ export const home = () => {
       
     </main>
 
-    <footer class="bottom">
+    <aside class="middle-right mobile-hidden-component" id="categories">
+      <p>Categorías(desktop)</p>
+    </aside>
 
+    <footer class="bottom">
       <p>FOOTER</p><span><img src="" alt=""></span>
     </footer> </div>
     `;
