@@ -1,7 +1,66 @@
 /* Estilos para desktop */
-/* @media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "aside-left  main aside-right"
+      "footer footer footer";
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 10vh 1fr 10vh;  /*usar vh con fr para mantener dimensiones de header y footer (solo 1fr es variable)*/
+    overflow-x: visible;
+    z-index: 0;
+  }
+
+  .middle-right {
+    grid-area: aside-right;
+    background: white;
+  }
+
+  .mobile-hidden-component {
+    display: block;
+    opacity: 1;
+  }
+
+  /* HOME POSTS */
+
+  #home-post-container {
+    /* border: 2px solid blue; */
+    width: 40vw;
+    margin: 3rem auto;
+
+  }
+
+  .like-btn,
+  .trigger-comment-form-btn,
+  .share-comment-btn,
+  .publish-comment-btn {
+    background-color: #81D2CB;
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  textarea.comment-content {
+    height: 5vh;
+    min-width: 20vw;
+    resize: none;
+    font-family: 'Manjar',
+      'sans-serif';
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+
   .modal-container {
-    min-height: 75%;
+    min-height: 115%;
     width: 50vw;
     transform: translateX(50%) translateY(5%);
   }
@@ -11,12 +70,7 @@
     left: 75%;
     font-size: 5rem;
   }
-} */
+} 
 
-/* Estilos para tablet */
-/* @media screen and (min-width: 768px) {
-  .modal-container {
-    min-height: 85%;
-  }
-} */
+
 
