@@ -34,15 +34,8 @@ export const modalListeners = () => {
     });
     toggleModalForm();
   };
-
   // Agregar a opción "Ingresar" event listener de apertura de modal
   signBtn.addEventListener('click', () => {
     openSignModal();
   });
 };
-  //Opcion de login con google
-  const btnGoogle = document.getElementById('#sign-in-google');
-  btnGoogle.addEventListener('click', () => {
-    loginGoogle();
-  });
-

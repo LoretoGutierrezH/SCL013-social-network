@@ -54,7 +54,7 @@ Luego se prosiguió rápidamente a la creación del mismo,
 se probaron varias ideas una al lado de la otra en el prototipo de alta fidelidad. 
 <img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/PruebasLogo.JPG" width= 870px height= 590px>
 Dando como resultado final:
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/logoPawLovers.png" width= 800px height= 300px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/logoPawLovers.png" width= 830px height= 600px>
 
 Y se eligió una tipografía que fuera divertida, un poco desordenada, Puedes apreciar un pequeño fragmento comentado del diseñador principal de la Font Neucha "traducido del idioma ruso significa "no saber cómo crear fuentes correctamente". Jovanny Lemonad Era lo que se estaba buscando en ella, una fuente libre y con un toque orgánico que traslada a lo natural.
 
