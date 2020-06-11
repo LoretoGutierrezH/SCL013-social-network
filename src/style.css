@@ -156,3 +156,50 @@ textarea.comment-content {
   margin: 120rem 72rem 45rem 75rem;
   top: 12rem;
 }
+/* PaW de publicación*/
+ul,
+.paw {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin: 10px;
+}
+
+ul li:hover,
+.paw-content:hover .paw {
+  background-color: #77B1AC;
+  border-radius: 4px;
+}
+
+li.paw-content {
+  display: inline-block;
+}
+
+.user-post-actions {
+  display: none;
+  position: absolute;
+  background-color: #F6F9FA;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.user-post-actions li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.user-post-actions li:hover {
+  background-color: #CBCCCC;
+}
+
+.paw-content:hover .user-post-actions {
+  display: block;
+}

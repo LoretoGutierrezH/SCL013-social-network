@@ -39,5 +39,10 @@ export const modalListeners = () => {
   signBtn.addEventListener('click', () => {
     openSignModal();
   });
-  
 };
+  //Opcion de login con google
+  const btnGoogle = document.getElementById('#sign-in-google');
+  btnGoogle.addEventListener('click', () => {
+    loginGoogle();
+  });
+

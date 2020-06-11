@@ -20,6 +20,7 @@ export const home = () => {
               <a href="#/" id="password-request">¿Olvidaste tu contraseña?</a>
               <button id="sign-in-btn">Iniciar</button>
               <br>
+              <button id="sign-in-google">Acceder con google</button>
               <p id="sign-in-error" class="error-message">*Nombre o contraseña no válidos</p>
             </form>
             
@@ -86,7 +87,12 @@ export const home = () => {
       <p>Carrusel/Slider de concurso</p>
     </aside>
     <main class="middle-center" id="publication">
-      
+      <section id="user-post-container">
+        <form action="submit" class="new-post-form">
+          <textarea class="publi-content" type="text" placeholder="Escribe tu publicación aquí"></textarea><br>
+          <button class="publish-comment-btn">Publicar</button>
+        </form>
+      </section>
     </main>
 
     <aside class="middle-right mobile-hidden-component" id="categories">

@@ -2,15 +2,24 @@ import { db } from '../functions.js';
 export const categoryView = (doc) => {
   let docData = doc.data();
   const postsView = `
-  <section data-postid="${doc.id}" id="home-post-container">
-    <div class="home-post">
+<section data-postid="${doc.id}" id="home-post-container">
+  <div class="home-post" >
+    <ul class="paw-content">
+    <li class="paw">AquiVaLaPaw</li>
+    <div class="user-post-actions">
+        <li class="user-edit-btn">Editar</li>
+        <li class="user-erase-form-btn">Borrar</li>
+    </div>
+    </ul>
+
+    <div class="post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
       <h5 class="home-post-author">Autor: ${docData.author}</h5>
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
-
-    </div>    
+</div>  
+</div>    
     <div class="post-actions">
       <button class="like-btn">Me gusta</button>
       <button class="trigger-comment-form-btn">Comentar</button>
