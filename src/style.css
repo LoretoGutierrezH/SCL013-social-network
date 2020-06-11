@@ -11,10 +11,10 @@ html {
 }
 
 body {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
-/* GRID */
+/* GRID DESKTOP (implementado en media-queries, no descomentar o se chinga todo jajajaja)  */
 /* #root {
   min-height: 100vh;
   display: grid;
@@ -41,9 +41,8 @@ body {
     "main"
     "footer";
   grid-template-columns: 100%;
-  grid-template-rows: 5% 1% 1fr 5%;
-  overflow-x: visible;
-  z-index: 0;
+  grid-template-rows: 15vh 10vh 1fr 5vh;
+  
 
 }
 
@@ -60,7 +59,7 @@ body {
   background: #81D2CB;
   display: flex;
   align-items: center;
-  width: 100vw;
+  
 }
 
 .middle-left {
@@ -83,9 +82,8 @@ body {
   background: #81D2CB;
 }
 
-footer {
-  margin-bottom: -3rem;
-}
+
+
 
 
 
@@ -124,7 +122,8 @@ footer {
   padding: 1rem;
   border-radius: 1rem;
   outline: none;
-  margin: 0.2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 
 div.post-comment-form {

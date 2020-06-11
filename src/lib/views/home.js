@@ -69,7 +69,7 @@ export const home = () => {
           <a href="#/memes" class="green" id="memes">Memes</a>
           <a href="#/adopcion" class="brown" id="adopcion">Adopcion</a>
           <a href="#/servicios" class="blue" id="servicios">Servicios</a>
-          <a href="#/Fotos-Concursos" class="green" id="fotosConcursos">Fotos Concursos</a>
+          <a href="#/fotos-concurso" class="green" id="fotosConcursos">Fotos Concursos</a>
       </div>
   </li>
       <li class="burguer hidden-component">
@@ -82,6 +82,7 @@ export const home = () => {
   </li>
   </div>
     </header>
+
     <aside class="middle-left" id="photo-carousel">
     </ul>
     </aside>
@@ -90,8 +91,11 @@ export const home = () => {
       
     </main>
 
-    <footer class="bottom">
+    <aside class="middle-right mobile-hidden-component" id="categories">
+      <p>Categorías(desktop)</p>
+    </aside>
 
+    <footer class="bottom">
       <p>FOOTER</p><span><img src="" alt=""></span>
     </footer> </div>
     `;

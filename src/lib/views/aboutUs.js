@@ -20,8 +20,12 @@ export const aboutUs = () => {
 <seccion id="about-container">
   <div class="about"><p> Además podrás encontrar empresas y servicios
     profesionales del sector de los animales de compañía, 
+<<<<<<< HEAD
     ayudar a otros animales que lo están pasando mal y mucho más.</p></div>
 </section>
+=======
+    ayudar a otros animales que lo están pasando mal y mucho más.</p>
+>>>>>>> upstream/master
   `;
   return aboutUsView;
 }
