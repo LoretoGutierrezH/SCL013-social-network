@@ -1,4 +1,4 @@
-import { db } from '../functions.js';
+import { db } from '../functions.js;
 export const initialPosts = (doc) => {
   let docData = doc.data();
   const homePostView = `
