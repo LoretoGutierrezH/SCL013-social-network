@@ -179,7 +179,7 @@ li.paw-content {
 }
 
 .user-post-actions {
-  display: none;
+  /*display: none;*/
   position: absolute;
   background-color: #F6F9FA;
   min-width: 160px;

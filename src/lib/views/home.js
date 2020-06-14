@@ -60,7 +60,7 @@ export const home = () => {
           <!--<input type="text" id="formulario" class="search-bar" placeholder="Buscar">
           <i class="fas fa-search" type="button" id="lupa"></i>-->
       <li class="category">
-      <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
+      <a class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
           <a href="#/mas-sobre-PL" class="blue" id="masPl">Mas sobre PL</a>
           <a href="#/tips" data-category="tips" class="green" id="tips">Tips</a>
@@ -86,13 +86,16 @@ export const home = () => {
     <aside class="middle-left" id="photo-carousel">
       <p>Carrusel/Slider de concurso</p>
     </aside>
-    <main class="middle-center" id="publication">
-      <section id="user-post-container">
-        <form action="submit" class="new-post-form">
-          <textarea class="publi-content" type="text" placeholder="Escribe tu publicación aquí"></textarea><br>
-          <button class="publish-comment-btn">Publicar</button>
-        </form>
-      </section>
+    <main class="middle-center" id="publication-area">
+      <div id="main-form">
+
+      </div>
+      <div id="edit-post">
+
+      </div>
+      <div id="publication">
+
+      </div>
     </main>
 
     <aside class="middle-right mobile-hidden-component" id="categories">
