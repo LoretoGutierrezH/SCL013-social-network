@@ -162,27 +162,31 @@ li.burguer {
 
 
 /* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
+
 .modal {
   width: 100vw;
-  height: 55vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.301);
-  z-index: 4;
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
+
 }
 
 .modal-container {
   background-color: #F6F9FA;
-  font-family: 'Manjari', sans-serif;
-  width: 50vw;
-  min-height: 50%;
-  transform: translateX(2%) translateY(2%);
+  font-family: 'Manjari', sans-serif; 
+  width: 90vw;
+  min-height: 90%;
+  transform: translateX(4.8%) translateY(5%);
   border-radius: 10px;
+
 }
 
 .modal-header {
   display: flex;
+  /* justify-content: flex-end; */
   justify-content: space-between;
   padding: 0.5rem 2rem;
   background-color: #81D2CB;
@@ -190,16 +194,20 @@ li.burguer {
   position: relative;
   border-radius: 5px;
   font-size: 0.2rem;
+
 }
+
 
 .modal-header li {
   list-style: none;
+  padding-left: 1rem;
   width: 50%;
   position: absolute;
   text-align: center;
   padding-top: 1rem;
-  font-size: 2.5rem;
+  font-size: 2.5rem; 
 }
+
 
 .modal-header li:first-child {
   top: 0;
@@ -218,7 +226,7 @@ li.burguer {
   position: absolute;
   top: 0;
   left: 0;
-  height: 84%;
+  height: 100%;
   border-radius: 5px;
 }
 
@@ -242,8 +250,9 @@ li.burguer {
   font-size: 3rem;
   margin-top: -1px;
   z-index: 1;
-  cursor: pointer;
 }
+
+
 
 .modal-content {
   position: relative;
@@ -251,45 +260,46 @@ li.burguer {
   justify-content: center;
 }
 
-#sign-in-form,
-#sign-up-form {
+
+#sign-in-form, #sign-up-form {
   position: absolute;
   top: 0;
   margin-top: 1rem;
   background-color: #C9B09C;
   width: 80%;
-  /*height: 45vh;*/
+  /* height: 45vh; */
   padding: 3rem;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
-  /*align-content: center;*/
+  justify-content: space-between;
+
 }
 
-#sign-in-form button,
-#sign-up-form button {
+#sign-in-form button, #sign-up-form button {
   outline: none;
   padding: 1rem;
   margin-top: 0.5rem;
   background-color: #F6F9FA;
   border-radius: 20px;
-  text-align: left;
   font-family: 'Manjar', 'sans-serif';
   margin: 1.5rem auto;
+  z-index: 1;
+
 }
 
-#sign-in-form input,
-#sign-up-form input {
+#sign-in-form input, #sign-up-form input {
   padding: 1rem;
   border-radius: 10px;
   background-color: rgba(246, 249, 250, 0.7);
   width: 100%;
-}
+  z-index: 1;
 
+}
+/* 
 #sign-in-form input {
   margin-top: -20px;
-}
+} */
 
 #password-request {
   font-size: 1.5rem;

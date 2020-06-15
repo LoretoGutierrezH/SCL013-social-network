@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -124,12 +125,31 @@ header {
 .trigger-comment-form-btn,
 .share-comment-btn,
 .publish-comment-btn {
+  display: inline-block;
   background-color: #81D2CB;
   padding: 1rem;
   border-radius: 1rem;
   outline: none;
   margin-top: 1rem;
   font-size: 1rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+.like-btn:hover,
+.trigger-comment-form-btn:hover,
+.share-comment-btn:hover,
+.publish-comment-btn:hover {
+  background-color: #77B1AC;
+  cursor: pointer;
+}
+
+.like-btn:active,
+.trigger-comment-form-btn:active,
+.share-comment-btn:active,
+.publish-comment-btn:active {
+  transform: scale(0.95);
 }
 
 div.post-comment-form {
@@ -165,8 +185,7 @@ textarea.comment-content {
   top: 12rem;
 }
 /* PaW de publicación*/
-ul,
-.paw {
+ul.paw {
   display: inline-block;
   color: black;
   text-align: center;

@@ -20,7 +20,6 @@ export const home = () => {
               <a href="#/" id="password-request">¿Olvidaste tu contraseña?</a>
               <button id="sign-in-btn">Iniciar</button>
               <br>
-              <button id="sign-in-google">Acceder con google</button>
               <p id="sign-in-error" class="error-message">*Nombre o contraseña no válidos</p>
             </form>
             
@@ -73,7 +72,7 @@ export const home = () => {
       </div>
   </li>
       <li class="burguer hidden-component">
-      <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
+      <a class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
       <div class="burguer-content">
           <a href="#/userprofile" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
           <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
