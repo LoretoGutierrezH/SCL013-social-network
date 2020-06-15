@@ -1,3 +1,4 @@
+import { db, auth } from './lib/functions.js';
 import { home } from './lib/views/home.js';
 import { initialPosts } from './lib/views/initialPosts.js';
 import { categoryView } from './lib/views/categoryView.js';
@@ -99,3 +100,4 @@ tips.addEventListener('click', (event) => {
   const tipsCategory = event.target.getAttribute('data-category'); //tips
   postsByCategoryFn(categoryView, tipsCategory);
 }); */
+
