@@ -20,7 +20,7 @@ export const home = () => {
               <a href="#/" id="password-request">¿Olvidaste tu contraseña?</a>
               <button id="sign-in-btn">Iniciar</button>
               <br>
-              <button type="button" class="btn btn-info btn-block" id="googleLogin">Login with Google</button>
+              
               <p id="sign-in-error" class="error-message">*Nombre o contraseña no válidos</p>
             </form>
             
@@ -35,6 +35,7 @@ export const home = () => {
               <input id="password" type="password">
               <br>
               <button id="sign-up-btn">Registrarse</button>
+              <button id="sign-in-google">Acceder con google</button>
               <p id="sign-up-error" class="error-message">*La contraseña debe tener 6 caracteres como mínimo</p>
             </form>
           </div>

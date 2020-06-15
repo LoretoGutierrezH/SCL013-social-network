@@ -70,8 +70,7 @@ const init = () => {
           break;
 
         case '#/fotos-concurso':
-          category = "fotos-concurso";
-          postsByCategoryFn(categoryView, category);
+          document.querySelector('#publication').innerHTML = photo();
           break;
         
         default:

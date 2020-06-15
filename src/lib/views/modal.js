@@ -1,3 +1,4 @@
+import {loginGoogle} from '../authentication.js';
 export const modalListeners = () => {
   // Agregando event listeners del modal
   const signUpForm = document.querySelector('#sign-up-form');
@@ -8,6 +9,8 @@ export const modalListeners = () => {
   const modal = document.querySelector('.modal');
   const closeModal = document.querySelector('#close-modal');
   const signBtn = document.querySelector('.sign-btn');
+  const btnGoogle = document.getElementById('#sign-in-google');
+
   
   const toggleModalForm = () => {
     signInTab.addEventListener('click', () => {
@@ -39,5 +42,15 @@ export const modalListeners = () => {
   signBtn.addEventListener('click', () => {
     openSignModal();
   });
-  
+
+  //Opcion de login con google
+
+  btnGoogle.addEventListener('click', () => {
+    console.log(btnGoogle);
+    loginGoogle();
+  });
+
 };
+  
+ 
+  
