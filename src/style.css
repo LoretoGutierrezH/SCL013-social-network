@@ -172,6 +172,46 @@ textarea.comment-content {
 }
 /* PaW de publicación*/
 
+.pawBtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin: 10px;
+}
+
+.pawEdit:hover .pawBtn:hover {
+  background-color: #77B1AC;
+  border-radius: 4px;
+}
+
 .pawEdit {
-padding: 10;
+  display: inline-block;
+}
+
+.paw-content {
+  display: none;
+  position: absolute;
+  background-color: #F6F9FA;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.paw-content {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: left;
+}
+
+.paw-content li:hover {
+  background-color: #CBCCCC;
+}
+
+.pawEdit:hover .paw-content {
+  display: block;
 }

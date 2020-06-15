@@ -4,8 +4,8 @@ export const categoryView = (doc) => {
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
-    <ul id="pawEdit">
-      <div class="paw user-post-actions"><img src="./images/Paw.png"></div>
+    <ul class="pawEdit" data-postid="${doc.id}">
+      <div class="pawBtn user-post-actions"><img src="./images/Paw.png"></div>
         <div class="paw-content">
           <li class="editOption"><a href="#" id="edit">Editar</a></li>
           <li class="eraseOption"><a href="#" id="erase">Borrar</a></li>
@@ -49,8 +49,6 @@ export const newPostForm = (category) => {
   return formView;
 }
 
-
-
 export const editModal = (category) => {
 
   const editView = `
@@ -66,6 +64,22 @@ export const editModal = (category) => {
 </div>`;
   return editView;
 }
+
+/*export const editModal = (category) => {
+
+  const editView = `
+<div id="edit-modal-container" class="modal edit-modal-container">
+         <span id="close-modal1">&times</span>
+  <div class="modal-container">
+    <div class="modal-content">
+      <form action="" id="edit-form">
+      <input id="title-post-edit" placeholder="hola soy un titulo">
+      <input id="content-post-edit" placeholder=" hola soy un comentario">
+      <button class="aceptar" id="">Aceptar</button>
+    </form>
+</div>`;
+  return editView;
+}*/
 
 
 

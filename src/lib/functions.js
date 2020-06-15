@@ -143,23 +143,21 @@ const setPostsFunctions = () => {
 
 
   // Patita con opciones de editar y borrar publicación
-  paws.forEach(paw => {
-    paw.addEventListener('click', (event) => {
+  // clases: editOption  eraseOption
+const editOption = document.querySelectorAll('.editOption');   
+const  eraseOption = document.querySelectorAll('.eraseOption');
+eraseOption.forEach(eraseOption => {
+    eraseOption.addEventListener('click', (event) => {
       event.preventDefault();
-      
-
-
-
-
-
-
-
-      if (event.target.value === "Borrar") {
-        let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
+        let postID = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         db.collection('posts').doc(`${postID}`).delete();
         console.log("Borraste " + postID);
-      } else if (event.target.value === "Editar") {
-        let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
+    })
+  });
+editOption.forEach(editOption => {
+    editOption.addEventListener('click', (event) => {
+      event.preventDefault();
+        let postID = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         const editContainer = document.querySelector('#edit-modal-container');
         const formEdit = document.querySelector('#edit-form');
         editContainer.classList.remove('hidden-component');
@@ -174,10 +172,11 @@ const setPostsFunctions = () => {
           });
           console.log("Editaste la publicación");
         });
-      }
-    })
   })
-}
+  });
+};
+
+
 
 // Agregando funcionalidad al formulario de nueva publicación
 const setPublicationForm = (publicationForm, category) => {
