@@ -53,7 +53,7 @@ export const editModal = (category) => {
 
   const editView = `
 <div id="edit-modal-container" class="modal hidden-component">
-         <span id="close-modal">&times</span>
+         <span id="close-modal1">&times</span>
   <div class="modal-container">
     <div class="modal-content">
       <form action="" id="edit-form">

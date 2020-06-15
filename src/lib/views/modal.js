@@ -47,14 +47,14 @@ export const modalListeners = () => {
   const editOption = document.querySelectorAll('.editOption');
 
   //modal de Editar
-  const openSignModalEdit = () => {
+  const openModalEdit = () => {
     //modal, closeModal, edit
-    modal1.classList.remove('.modal1');
+    modal1.classList.remove('.modal');
     closeModal1.addEventListener('click', () => {
-      modal1.classList.add('.modal1');
+      modal1.classList.add('.modal');
     });
   };
   editOption.addEventListener('click', () => {
-    openSignModalEdit();
+    openModalEdit();
   });
 };*/
