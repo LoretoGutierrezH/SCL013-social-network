@@ -3,13 +3,14 @@ export const categoryView = (doc) => {
   let docData = doc.data();
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
-  <div>
-    <select class="user-post-actions">
-      <option>Patita</option>
-      <option>Editar</option>
-      <option>Borrar</option>
-    </select>
-  </div>
+<div>
+<select class="user-post-actions">
+<option>paw</option>
+  <option>Editar</option>
+  <option>Borrar</option>
+</select>
+</div>
+
   <div class="home-post">
     <div class="post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
@@ -53,7 +54,7 @@ export const newPostForm = (category) => {
 
 export const editModal = (category) => {
 
-const editView= `
+  const editView = `
 <div id="edit-modal-container" class="modal hidden-component">
          <span id="close-modal">&times</span>
   <div class="modal-container">
@@ -64,7 +65,7 @@ const editView= `
       <button id="">Aceptar</button>
     </form>
 </div>`;
-return editView;
+  return editView;
 }
 
 
