@@ -206,6 +206,7 @@ li.burguer {
   text-align: center;
   padding-top: 1rem;
   font-size: 2.5rem; 
+  cursor: pointer;
 }
 
 
@@ -250,6 +251,7 @@ li.burguer {
   font-size: 3rem;
   margin-top: -1px;
   z-index: 1;
+  cursor: pointer;
 }
 
 
@@ -277,15 +279,32 @@ li.burguer {
 }
 
 #sign-in-form button, #sign-up-form button {
-  outline: none;
-  padding: 1rem;
-  margin-top: 0.5rem;
+  display: inline-block;
   background-color: #F6F9FA;
-  border-radius: 20px;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
   font-family: 'Manjar', 'sans-serif';
   margin: 1.5rem auto;
   z-index: 1;
 
+}
+
+#sign-in-form button:hover,
+#sign-up-form button:hover {
+  background-color: #CBCCCC;
+  cursor: pointer;
+}
+
+#sign-in-form button:active,
+#sign-up-form button:active {
+  transform: scale(0.95);
 }
 
 #sign-in-form input, #sign-up-form input {
