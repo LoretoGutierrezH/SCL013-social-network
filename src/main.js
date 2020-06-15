@@ -1,3 +1,4 @@
+import { db, auth } from './lib/functions.js';
 import { home } from './lib/views/home.js';
 import { initialPosts } from './lib/views/initialPosts.js';
 import { categoryView } from './lib/views/categoryView.js';
@@ -21,7 +22,7 @@ const init = () => {
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
   window.addEventListener('hashchange', () => {
-      console.log("Hash cambió a " + location.hash);
+     console.log("Hash cambió a " + location.hash);
       let hash = window.location.hash;
       let category;
       switch(hash) {
@@ -98,3 +99,4 @@ tips.addEventListener('click', (event) => {
   const tipsCategory = event.target.getAttribute('data-category'); //tips
   postsByCategoryFn(categoryView, tipsCategory);
 }); */
+

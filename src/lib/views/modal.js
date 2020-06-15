@@ -37,7 +37,6 @@ export const modalListeners = () => {
     });
     toggleModalForm();
   };
-
   // Agregar a opción "Ingresar" event listener de apertura de modal
   signBtn.addEventListener('click', () => {
     openSignModal();

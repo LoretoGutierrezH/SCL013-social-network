@@ -60,7 +60,7 @@
 
 
   .modal-container {
-    min-height: 115%;
+    min-height: 90%;
     width: 50vw;
     transform: translateX(50%) translateY(5%);
   }

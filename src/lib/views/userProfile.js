@@ -10,7 +10,6 @@ export const userprofile = () => {
     <div class="user-post-actions">
       <button class="user-edit-btn">editar</button>
       <button class="user-erase-form-btn">borrar</button>
-      <button class="user-share-comment-btn"></button>
     </div>
     <div class="user-post-actions">
       <button class="user-like-btn">Me gusta</button>

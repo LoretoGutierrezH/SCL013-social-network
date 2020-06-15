@@ -61,7 +61,7 @@ export const home = () => {
           <!--<input type="text" id="formulario" class="search-bar" placeholder="Buscar">
           <i class="fas fa-search" type="button" id="lupa"></i>-->
       <li class="category">
-      <a href="#" class="categorysBtn"><i class="fas fa-caret-down"></i></a>
+      <a class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
           <a href="#/mas-sobre-PL" class="blue" id="masPl">Mas sobre PL</a>
           <a href="#/tips" data-category="tips" class="green" id="tips">Tips</a>
@@ -74,7 +74,7 @@ export const home = () => {
       </div>
   </li>
       <li class="burguer hidden-component">
-      <a href="#" class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
+      <a class="burguerBtn"><i class="fas fa-ellipsis-v"></i></i></a>
       <div class="burguer-content">
           <a href="#/userprofile" class="profile" id="profile"><i class="fas fa-user-edit"></i></a>
           <a href="#" class="direct" id="direct"><i class="fas fa-envelope"></i></a>
@@ -87,9 +87,16 @@ export const home = () => {
     <aside class="middle-left" id="photo-carousel">
     </ul>
     </aside>
+    <main class="middle-center" id="publication-area">
+      <div id="main-form">
 
-    <main class="middle-center" id="publication">
-      
+      </div>
+      <div id="edit-post">
+
+      </div>
+      <div id="publication">
+
+      </div>
     </main>
 
     <aside class="middle-right mobile-hidden-component" id="categories">
