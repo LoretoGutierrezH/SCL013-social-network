@@ -59,8 +59,14 @@ body {
   grid-area: header;
   background: #81D2CB;
   display: flex;
-  align-items: center;
-  
+  align-items: center;  
+}
+header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
 }
 
 header {
@@ -185,7 +191,8 @@ textarea.comment-content {
   top: 12rem;
 }
 /* PaW de publicación*/
-ul.paw {
+
+.pawBtn {
   display: inline-block;
   color: black;
   text-align: center;
@@ -195,18 +202,17 @@ ul.paw {
   margin: 10px;
 }
 
-ul li:hover,
-.paw-content:hover .paw {
+.pawEdit:hover .pawBtn:hover {
   background-color: #77B1AC;
   border-radius: 4px;
 }
 
-li.paw-content {
+.pawEdit {
   display: inline-block;
 }
 
-.user-post-actions {
-  /*display: none;*/
+.paw-content {
+  display: none;
   position: absolute;
   background-color: #F6F9FA;
   min-width: 160px;
@@ -215,18 +221,17 @@ li.paw-content {
   border-radius: 10px;
 }
 
-.user-post-actions li {
+.paw-content {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
   text-align: left;
 }
 
-.user-post-actions li:hover {
+.paw-content li:hover {
   background-color: #CBCCCC;
 }
 
-.paw-content:hover .user-post-actions {
+.pawEdit:hover .paw-content {
   display: block;
 }

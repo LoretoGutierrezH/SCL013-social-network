@@ -8,7 +8,7 @@ export const modalListeners = () => {
   const modal = document.querySelector('.modal');
   const closeModal = document.querySelector('#close-modal');
   const signBtn = document.querySelector('.sign-btn');
-  
+
   const toggleModalForm = () => {
     signInTab.addEventListener('click', () => {
       signInForm.classList.remove('hidden-component');
@@ -40,3 +40,21 @@ export const modalListeners = () => {
   });
 };
 
+
+/*export const modalEdit = () => {
+  const modal1 = document.querySelectorAll('.modal');
+  const closeModal1 = document.querySelectorAll('#close-modal1');    
+  const editOption = document.querySelectorAll('.editOption');
+
+  //modal de Editar
+  const openSignModalEdit = () => {
+    //modal, closeModal, edit
+    modal1.classList.remove('.modal1');
+    closeModal1.addEventListener('click', () => {
+      modal1.classList.add('.modal1');
+    });
+  };
+  editOption.addEventListener('click', () => {
+    openSignModalEdit();
+  });
+};*/

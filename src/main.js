@@ -22,7 +22,7 @@ const init = () => {
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
   window.addEventListener('hashchange', () => {
-      console.log("Hash cambió a " + location.hash);
+     console.log("Hash cambió a " + location.hash);
       let hash = window.location.hash;
       let category;
       switch(hash) {
