@@ -3,15 +3,14 @@ export const categoryView = (doc) => {
   let docData = doc.data();
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
-<div>
-<select class="user-post-actions">
-<option>paw</option>
-  <option>Editar</option>
-  <option>Borrar</option>
-</select>
-</div>
-
   <div class="home-post">
+    <ul id="pawEdit">
+      <div class="paw user-post-actions"><img src="./images/Paw.png"></div>
+        <div class="paw-content">
+          <li class="editOption"><a href="#" id="edit">Editar</a></li>
+          <li class="eraseOption"><a href="#" id="erase">Borrar</a></li>
+      </div>
+    </ul>
     <div class="post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>

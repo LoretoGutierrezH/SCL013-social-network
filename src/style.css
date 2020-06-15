@@ -172,6 +172,6 @@ textarea.comment-content {
 }
 /* PaW de publicación*/
 
-.user-post-actions {
-  background-image: url('./images/Paw.png');
+.pawEdit {
+padding: 10;
 }

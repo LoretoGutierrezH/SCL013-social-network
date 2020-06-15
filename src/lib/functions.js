@@ -144,8 +144,16 @@ const setPostsFunctions = () => {
 
   // Patita con opciones de editar y borrar publicación
   paws.forEach(paw => {
-    paw.addEventListener('change', (event) => {
+    paw.addEventListener('click', (event) => {
       event.preventDefault();
+      
+
+
+
+
+
+
+
       if (event.target.value === "Borrar") {
         let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
         db.collection('posts').doc(`${postID}`).delete();
@@ -167,12 +175,9 @@ const setPostsFunctions = () => {
           console.log("Editaste la publicación");
         });
       }
-
     })
   })
-
 }
-
 
 // Agregando funcionalidad al formulario de nueva publicación
 const setPublicationForm = (publicationForm, category) => {
@@ -183,8 +188,7 @@ const setPublicationForm = (publicationForm, category) => {
     console.log("Evento de formulario funcionando ok");
     let postTitle = publicationForm['form-post-title'].value;
     let postContent = publicationForm['form-post-content'].value;
-    newPost(postTitle, postContent, category)
-    
+    newPost(postTitle, postContent, category);   
   });
 }
 
@@ -207,4 +211,3 @@ const newPost = (postTitle, postContent, category) => {
     });
   });
 }
-
