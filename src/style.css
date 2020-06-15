@@ -67,6 +67,15 @@ header{
   right: 0px;
   height: 80px;
 }
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+}
+
 .middle-left {
   grid-area: aside-left;
   background: white;

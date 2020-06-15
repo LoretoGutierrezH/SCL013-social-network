@@ -19,6 +19,29 @@ export const showOrHideOptions = () => {
   });
 }
 
+// Función para obtener la fecha y hora actual en base a una API, en lugar de en base a la fecha y hora del computador del usuario
+const time = async () => {
+  let response = await fetch('http://worldclockapi.com/api/json/est/now');
+  let result = await response.json()
+    .then(time => {
+      //se obtiene la fecha y hora a partir del objeto y se separan ambos elementos
+      let timeString = time.currentDateTime.split("T");
+      let currentDate = timeString[0];
+      let currentTime = timeString[1];
+
+      //se separan y ordena la fecha, resultado: día-mes-año
+      let currentDateSplit = currentDate.split("-");
+      let currentFormattedDate = [currentDateSplit[2], currentDateSplit[1], currentDateSplit[0]].join("-");
+      let formattedTandD = [currentFormattedDate, currentTime].join(" ");
+
+      //console.log(currentFormattedDate);
+
+      //así podemos darle la fecha y hora correcta a la publicación
+      /* console.log(`Según la API: hoy es ${currentFormattedDate} y son las ${currentTime}`);
+      console.log(`Según mi pc la fecha y hora actual es: ${new Date()}`); */
+    });
+}
+
 // POSTS DEL HOME
 export const homePostsFn = (view) => {
   const publicationContainer = document.querySelector('#publication');
@@ -38,13 +61,10 @@ export const postsByCategoryFn = (view, category) => {
     const publicationContainer = document.querySelector('#publication');
     const mainForm = document.querySelector('#main-form');
     const editContainer = document.querySelector('#edit-post'); 
-    
     publicationContainer.innerHTML = "";
     mainForm.innerHTML = newPostForm(category);
     editContainer.innerHTML = editModal(category);
-    const formEdit = document.querySelector('#edit-form');
 
-    setEditPost(formEdit, category);
 
 
 
@@ -60,12 +80,17 @@ export const postsByCategoryFn = (view, category) => {
         console.log(change);
         if (change.type === "added") {
           publicationContainer.insertAdjacentHTML('beforeend', view(change.doc));
-           
         } else if (change.type === "removed") {
           let postId = change.doc.id;
           let post = document.querySelector(`[data-postid="${postId}"]`);
           publicationContainer.removeChild(post);
-          console.log("Post eliminado");
+          console.log("Post eliminado del DOM");
+        } else if (change.type === "modified") {
+          let postId = change.doc.id;
+          let post = document.querySelector(`[data-postid="${postId}"]`);
+          publicationContainer.removeChild(post);
+          publicationContainer.insertAdjacentHTML('beforeend', view(change.doc));
+          console.log("Post antiguo eliminado del DOM y post nuevo agregado al DOM");
         }
       })
       setPostsFunctions();
@@ -127,10 +152,20 @@ const setPostsFunctions = () => {
         console.log("Borraste " + postID);
       } else if (event.target.value === "Editar") {
         let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
-        let editContainer = document.querySelector('#edit-modal-container');
+        const editContainer = document.querySelector('#edit-modal-container');
+        const formEdit = document.querySelector('#edit-form');
         editContainer.classList.remove('hidden-component');
-        updatePost(postID);
-        console.log("Lo podrías EDITAR aunque no fuera tuyo");
+        formEdit.addEventListener('submit', (event) => {
+          event.preventDefault();
+          let postTitle = formEdit['title-post-edit'].value;
+          let postContent = formEdit['content-post-edit'].value;
+
+          db.collection('posts').doc(`${postID}`).update({
+            title: `${postTitle}`,
+            content: `${postContent}`
+          });
+          console.log("Editaste la publicación");
+        });
       }
 
     })
@@ -152,36 +187,24 @@ const setPublicationForm = (publicationForm, category) => {
     
   });
 }
-const setEditPost = (form, category) => {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    let postTitle = form['title-post-edit'].value;
-    let postContent = form['content-post-edit'].value; 
-   // db.collection('posts').doc(`${postID}`).delete();
-    
-  }
-  
-  )
-}
-const updatePost = (postId) => {
-
-  db.collection('posts').doc(`${postID}`).update({
-    title: `${postTitle}`,
-    content: `${postContent}`
-  });
-}
 
 //Crear nueva publicación
 const newPost = (postTitle, postContent, category) => {
+  //let dateAndTime = time().then(result => result);
+
   db.collection('user').doc(`${auth.currentUser.uid}`).onSnapshot(user => {
     db.collection('posts').add({
       uid: auth.currentUser.uid,
       author: `${user.data().userName}`,
       category: `${category}`,
       title: `${postTitle}`,
-      content: `${postContent}`
+      content: `${postContent}`,
+      likes: [],
+      comments: {},
+     /*  timestamp: `${dateAndTime}` */
     }).then(() => {
       console.log(`Publicación ${postTitle} creada por ${user.data().userName}`);
     });
   });
 }
+
