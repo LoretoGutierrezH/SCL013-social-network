@@ -19,33 +19,11 @@ export const showOrHideOptions = () => {
   });
 }
 
-// Función para obtener la fecha y hora actual en base a una API, en lugar de en base a la fecha y hora del computador del usuario
-const time = async () => {
-  let response = await fetch('http://worldclockapi.com/api/json/est/now');
-  let result = await response.json()
-    .then(time => {
-      //se obtiene la fecha y hora a partir del objeto y se separan ambos elementos
-      let timeString = time.currentDateTime.split("T");
-      let currentDate = timeString[0];
-      let currentTime = timeString[1];
-
-      //se separan y ordena la fecha, resultado: día-mes-año
-      let currentDateSplit = currentDate.split("-");
-      let currentFormattedDate = [currentDateSplit[2], currentDateSplit[1], currentDateSplit[0]].join("-");
-      let formattedTandD = [currentFormattedDate, currentTime].join(" ");
-
-      //console.log(currentFormattedDate);
-
-      //así podemos darle la fecha y hora correcta a la publicación
-      /* console.log(`Según la API: hoy es ${currentFormattedDate} y son las ${currentTime}`);
-      console.log(`Según mi pc la fecha y hora actual es: ${new Date()}`); */
-    });
-}
 
 // POSTS DEL HOME
 export const homePostsFn = (view) => {
   const publicationContainer = document.querySelector('#publication');
-  db.collection('posts').get().then((docs => {
+  db.collection('posts').orderBy("timestamp", "desc").get().then((docs => {
     publicationContainer.innerHTML = "";
     docs.forEach(doc => {
       publicationContainer.innerHTML += view(doc);
@@ -68,30 +46,28 @@ export const postsByCategoryFn = (view, category) => {
 
 
 
-    db.collection('posts').where('category', '==', `${category}`).onSnapshot(querySnapshots => {
+    db.collection(`${category}`).where('category', '==', `${category}`).orderBy("timestamp", "asc").onSnapshot(querySnapshots => {
       let publicationForm = document.querySelector('#new-post-form');
       //Configurando la funcionalidad del formulario de nueva publicación
       setPublicationForm(publicationForm, category);
 
       let postsChanges = querySnapshots.docChanges();
-      console.log(postsChanges);
       //Evaluación de tipo de cambio (post agregado o eliminado)
       postsChanges.forEach(change => {
-        console.log(change);
         if (change.type === "added") {
-          publicationContainer.insertAdjacentHTML('beforeend', view(change.doc));
+          publicationContainer.insertAdjacentHTML('afterbegin', view(change.doc));
         } else if (change.type === "removed") {
           let postId = change.doc.id;
           let post = document.querySelector(`[data-postid="${postId}"]`);
           publicationContainer.removeChild(post);
           console.log("Post eliminado del DOM");
-        } else if (change.type === "modified") {
+        } /* else if (change.type === "modified") {
           let postId = change.doc.id;
           let post = document.querySelector(`[data-postid="${postId}"]`);
           publicationContainer.removeChild(post);
-          publicationContainer.insertAdjacentHTML('beforeend', view(change.doc));
+          publicationContainer.insertAdjacentHTML('afterbegin', view(change.doc));
           console.log("Post antiguo eliminado del DOM y post nuevo agregado al DOM");
-        }
+        } */
       })
       setPostsFunctions();
     });
@@ -186,7 +162,21 @@ const setPublicationForm = (publicationForm, category) => {
     console.log("Evento de formulario funcionando ok");
     let postTitle = publicationForm['form-post-title'].value;
     let postContent = publicationForm['form-post-content'].value;
-    newPost(postTitle, postContent, category);   
+    //Crear nueva publicación
+      db.collection('posts').add({
+        uid: auth.currentUser.uid,
+        author: `${auth.currentUser.displayName}`,
+        category: `${category}`,
+        title: `${postTitle}`,
+        content: `${postContent}`,
+        likes: [],
+        comments: {},
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
+      }).catch(error => {
+        console.log(error);
+      })
   });
 }
 
