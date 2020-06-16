@@ -177,7 +177,6 @@ editOption.forEach(editOption => {
 };
 
 
-
 // Agregando funcionalidad al formulario de nueva publicación
 const setPublicationForm = (publicationForm, category) => {
   //console.log(publicationForm['post-title']);
@@ -210,3 +209,23 @@ const newPost = (postTitle, postContent, category) => {
     });
   });
 }
+
+/*//filtro de categorias
+export const categoryFilter = (category) => {
+  const categoryForm = [];
+  for (let i = 0; i < category.length; i += 1) {
+    categoryForm.push(category[i]);
+  }
+  return categoryForm.filter(post => category.includes(tips));
+};
+
+const selectorCategoryE = document.querySelector("");
+selectorCategory.addEventListener("change", () => {
+    let categoryPubli = selectorCategory.value;
+    if (categoryPubli === `${category}`) {
+      postsByCategoryFn(category);
+    } else {
+        let result = categoryFilter(category);
+        postsByCategoryFn(result);
+    }
+});*/
