@@ -46,7 +46,7 @@ export const postsByCategoryFn = (view, category) => {
 
 
 
-    db.collection('posts').where('category', '==', `${category}`).orderBy("timestamp", "asc").onSnapshot(querySnapshots => {
+    db.collection(`${category}`).where('category', '==', `${category}`).orderBy("timestamp", "asc").onSnapshot(querySnapshots => {
       let publicationForm = document.querySelector('#new-post-form');
       //Configurando la funcionalidad del formulario de nueva publicación
       setPublicationForm(publicationForm, category);
@@ -163,26 +163,22 @@ const setPublicationForm = (publicationForm, category) => {
     console.log("Evento de formulario funcionando ok");
     let postTitle = publicationForm['form-post-title'].value;
     let postContent = publicationForm['form-post-content'].value;
-    newPost(postTitle, postContent, category);   
+    //Crear nueva publicación
+      db.collection('posts').add({
+        uid: auth.currentUser.uid,
+        author: `${auth.currentUser.displayName}`,
+        category: `${category}`,
+        title: `${postTitle}`,
+        content: `${postContent}`,
+        likes: [],
+        comments: {},
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
+      }).catch(error => {
+        console.log(error);
+      })
   });
 }
 
-//Crear nueva publicación
-const newPost = (postTitle, postContent, category) => {
-    db.collection('posts').add({
-      uid: auth.currentUser.uid,
-      author: `${auth.currentUser.displayName}`,
-      category: `${category}`,
-      title: `${postTitle}`,
-      content: `${postContent}`,
-      likes: [],
-      comments: {},
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    }).then(() => {
-      console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
-    }).catch(error => {
-      console.log(error);
-    })
-
-}
 
