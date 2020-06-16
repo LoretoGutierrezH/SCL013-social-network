@@ -9,8 +9,11 @@ export const signUpFunction = () => {
     const email = signUpForm.email.value;
     const password = signUpForm.password.value;
 
-    auth.createUserWithEmailAndPassword(email, password).then(credential => {
-      return db.collection('users').doc(credential.user.uid).set({
+    auth.createUserWithEmailAndPassword(email, password).then(userData => {
+      userData.user.updateProfile({
+          displayName: userName,
+      });
+      return db.collection('users').doc(userData.user.uid).set({
         userName,
       });
     }).then(() => {

@@ -1,13 +1,11 @@
-import { db, auth } from './lib/functions.js';
 import { home } from './lib/views/home.js';
 import { initialPosts } from './lib/views/initialPosts.js';
 import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
+/*import { slider } from './lib/views/slider.js';*/
 import { modalListeners } from './lib/views/modal.js';
-import { slider } from './lib/views/slider.js';
-import { modalListeners, modalEdit } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
 
@@ -21,7 +19,7 @@ const init = () => {
   exitFunction();
   modalListeners();
   showOrHideOptions();
-  slider();
+  //slider();
   //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
@@ -38,7 +36,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
-          slider();
+         // slider();
          // modalEdit();
           break;
 
@@ -47,32 +45,32 @@ const init = () => {
           break;
         
         case '#/tips':
-          category = "tips";
+          category = "Tips";
           postsByCategoryFn(categoryView, category);
           break;
 
         case '#/cuarentena':
-          category = "cuarentena";
+          category = "Cuarentena";
           postsByCategoryFn(categoryView, category);
           break;
 
         case '#/cuidados':
-          category = "cuidados";
+          category = "Cuidados";
           postsByCategoryFn(categoryView, category);
           break;
 
         case '#/memes':
-          category = "memes";
+          category = "Memes";
           postsByCategoryFn(categoryView, category);
           break;
 
         case '#/adopcion':
-          category = "adopcion";
+          category = "Adopcion";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/servicios':
-          category = "servicios";
+        case '#/Servicios':
+          category = "Servicios";
           postsByCategoryFn(categoryView, category);
           break;
 
@@ -88,7 +86,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
-          slider();
+         // slider();
          // modalEdit();
       }
      
@@ -97,14 +95,4 @@ const init = () => {
 
 window.onload = init();
 
-
-
-
-
-/* ESTO NO ES NECESARIO SI SE OCUPA EL ROUTER! :D
-const tips = document.querySelector('#tips');
-tips.addEventListener('click', (event) => {
-  const tipsCategory = event.target.getAttribute('data-category'); //tips
-  postsByCategoryFn(categoryView, tipsCategory);
-}); */
 
