@@ -5,6 +5,8 @@ import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
+import { modalListeners } from './lib/views/modal.js';
+import { slider } from './lib/views/slider.js';
 import { modalListeners, modalEdit } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
@@ -19,6 +21,7 @@ const init = () => {
   exitFunction();
   modalListeners();
   showOrHideOptions();
+  slider();
   //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
@@ -35,6 +38,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
+          slider();
          // modalEdit();
           break;
 
@@ -73,8 +77,7 @@ const init = () => {
           break;
 
         case '#/fotos-concurso':
-          category = "fotos-concurso";
-          postsByCategoryFn(categoryView, category);
+          document.querySelector('#publication').innerHTML = photo();
           break;
         
         default:
@@ -85,6 +88,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
+          slider();
          // modalEdit();
       }
      
