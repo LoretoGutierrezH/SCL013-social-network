@@ -44,37 +44,37 @@ const init = () => {
           document.querySelector('#publication').innerHTML = aboutUs();
           break;
         
-        case '#/Tips':
-          category = "tips";
+        case '#/tips':
+          category = "Tips";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/Cuarentena':
-          category = "cuarentena";
+        case '#/cuarentena':
+          category = "Cuarentena";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/Cuidados':
-          category = "cuidados";
+        case '#/cuidados':
+          category = "Cuidados";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/Memes':
-          category = "memes";
+        case '#/memes':
+          category = "Memes";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/Adopcion':
-          category = "adopcion";
+        case '#/adopcion':
+          category = "Adopcion";
           postsByCategoryFn(categoryView, category);
           break;
 
         case '#/Servicios':
-          category = "servicios";
+          category = "Servicios";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/Fotos-concurso':
+        case '#/fotos-concurso':
           document.querySelector('#publication').innerHTML = photo();
           break;
         
