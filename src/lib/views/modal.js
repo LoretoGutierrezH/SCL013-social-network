@@ -43,18 +43,25 @@ export const modalListeners = () => {
 
 /*export const modalEdit = () => {
   const modal1 = document.querySelectorAll('.modal');
-  const closeModal1 = document.querySelectorAll('#close-modal1');    
-  const editOption = document.querySelectorAll('.editOption');
+  const close = document.querySelectorAll('#close-modal');
 
-  //modal de Editar
-  const openModalEdit = () => {
     //modal, closeModal, edit
-    modal1.classList.remove('.modal');
-    closeModal1.addEventListener('click', () => {
-      modal1.classList.add('.modal');
+    
+    close.addEventListener('click', () => {
+      modal1.classList.remove('hidden-component');
     });
-  };
-  editOption.addEventListener('click', () => {
-    openModalEdit();
-  });
-};*/
+  };*/
+
+
+
+
+/*export const modalEdit = () => {
+  const modal1 = document.querySelectorAll('.modal');
+  const modalContainer = document.querySelectorAll('.modal-container');
+
+  let span = document.getElementsByClassName("close")[0]; // al momento de cerrar, hace este evento/
+            span.addEventListener('click', () => { //evento del click en la x
+                modal1.style.display = "none"; //Escondemos el modal general
+                modalContainer.innerHTML = ""; //Limpiamos el modal con la informacion (cuadrito blanco)
+            });
+           };*/

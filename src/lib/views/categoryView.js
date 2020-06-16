@@ -63,23 +63,4 @@ export const editModal = (category) => {
       </form>
   </div>`;
   return editView;
-}
-
-/*export const editModal = (category) => {
-
-  const editView = `
-<div id="edit-modal-container" class="modal edit-modal-container">
-         <span id="close-modal1">&times</span>
-  <div class="modal-container">
-    <div class="modal-content">
-      <form action="" id="edit-form">
-      <input id="title-post-edit" placeholder="hola soy un titulo">
-      <input id="content-post-edit" placeholder=" hola soy un comentario">
-      <button class="aceptar" id="">Aceptar</button>
-    </form>
-</div>`;
-  return editView;
-}*/
-
-
-
+};
