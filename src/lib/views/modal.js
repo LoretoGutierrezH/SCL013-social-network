@@ -9,7 +9,7 @@ export const modalListeners = () => {
   const modal = document.querySelector('.modal');
   const closeModal = document.querySelector('#close-modal');
   const signBtn = document.querySelector('.sign-btn');
-  const btnGoogle = document.getElementById('#sign-in-google');
+  //const btnGoogle = document.getElementById('#sign-in-google');
 
   
   const toggleModalForm = () => {

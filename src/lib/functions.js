@@ -46,7 +46,7 @@ export const postsByCategoryFn = (view, category) => {
 
 
 
-    db.collection(`${category}`).where('category', '==', `${category}`).orderBy("timestamp", "asc").onSnapshot(querySnapshots => {
+    db.collection('posts').where('category', '==', `${category}`).orderBy("timestamp", "asc").onSnapshot(querySnapshots => {
       let publicationForm = document.querySelector('#new-post-form');
       //Configurando la funcionalidad del formulario de nueva publicación
       setPublicationForm(publicationForm, category);

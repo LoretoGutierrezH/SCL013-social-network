@@ -4,8 +4,8 @@ import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
-import { slider } from './lib/views/slider.js';
-import { modalListeners, /*modalEdit*/ } from './lib/views/modal.js';
+/*import { slider } from './lib/views/slider.js';*/
+import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
 
@@ -19,7 +19,7 @@ const init = () => {
   exitFunction();
   modalListeners();
   showOrHideOptions();
-  slider();
+  //slider();
   //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
@@ -36,7 +36,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
-          slider();
+         // slider();
          // modalEdit();
           break;
 
@@ -44,37 +44,37 @@ const init = () => {
           document.querySelector('#publication').innerHTML = aboutUs();
           break;
         
-        case '#/tips':
+        case '#/Tips':
           category = "tips";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/cuarentena':
+        case '#/Cuarentena':
           category = "cuarentena";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/cuidados':
+        case '#/Cuidados':
           category = "cuidados";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/memes':
+        case '#/Memes':
           category = "memes";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/adopcion':
+        case '#/Adopcion':
           category = "adopcion";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/servicios':
+        case '#/Servicios':
           category = "servicios";
           postsByCategoryFn(categoryView, category);
           break;
 
-        case '#/fotos-concurso':
+        case '#/Fotos-concurso':
           document.querySelector('#publication').innerHTML = photo();
           break;
         
@@ -86,7 +86,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
-          slider();
+         // slider();
          // modalEdit();
       }
      
