@@ -5,9 +5,8 @@ import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
-import { modalListeners } from './lib/views/modal.js';
 import { slider } from './lib/views/slider.js';
-import { modalListeners, modalEdit } from './lib/views/modal.js';
+import { modalListeners, /*modalEdit*/ } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
 
