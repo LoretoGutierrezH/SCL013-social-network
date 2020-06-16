@@ -10,7 +10,7 @@ export const signUpFunction = () => {
     const password = signUpForm.password.value;
 
     auth.createUserWithEmailAndPassword(email, password).then(credential => {
-      return db.collection('user').doc(credential.user.uid).set({
+      return db.collection('users').doc(credential.user.uid).set({
         userName,
       });
     }).then(() => {
@@ -42,29 +42,24 @@ export const signInFunction = () => {
   });
 };
 //Acceder con google
-export const loginGoogle = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  return  firebase.auth().signInWithPopup(provider)
-
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const token = result.credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      const credential = error.credential;
-      // ...
-    });
-};
-
+export const iniciarSesion = () => {
+  const btngoogle = document.querySelector('#btngoogle')
+  btngoogle.addEventListener('click', async () => {
+ 
+      try {
+          const provider = new firebase.auth.GoogleAuthProvider()
+          await firebase.auth().signInWithPopup(provider)
+      } catch (error) {
+          console.log(error)
+      }
+  })
+}  
+/*Eviar correo
+export const enviarCorreo = () => {
+  firebase.auth().currentUser.sendEmailVerification().then(function () {
+    alert('¡Verificación de correo enviada!');
+  });
+}*/
 
 // Cerrar sesión
 export const exitFunction = () => {

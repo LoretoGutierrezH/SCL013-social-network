@@ -11,7 +11,7 @@ export const showOrHideOptions = () => {
     if (user !== null) {
       signBtn.classList.add('hidden-component');
       burgerMenu.classList.remove('hidden-component');
-      console.log(`ID de suario actual: ${auth.currentUser.uid}`);
+      //console.log(`ID de suario actual: ${auth.currentUser.uid}`);
     } else {
       signBtn.classList.remove('hidden-component');
       burgerMenu.classList.add('hidden-component');
@@ -74,17 +74,17 @@ export const postsByCategoryFn = (view, category) => {
       setPublicationForm(publicationForm, category);
 
       let postsChanges = querySnapshots.docChanges();
-      console.log(postsChanges);
+      //console.log(postsChanges);
       //Evaluación de tipo de cambio (post agregado o eliminado)
       postsChanges.forEach(change => {
-        console.log(change);
+        //console.log(change);
         if (change.type === "added") {
           publicationContainer.insertAdjacentHTML('beforeend', view(change.doc));
         } else if (change.type === "removed") {
           let postId = change.doc.id;
           let post = document.querySelector(`[data-postid="${postId}"]`);
           publicationContainer.removeChild(post);
-          console.log("Post eliminado del DOM");
+          //console.log("Post eliminado del DOM");
         } else if (change.type === "modified") {
           let postId = change.doc.id;
           let post = document.querySelector(`[data-postid="${postId}"]`);
@@ -151,7 +151,7 @@ eraseOption.forEach(eraseOption => {
       event.preventDefault();
         let postID = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         db.collection('posts').doc(`${postID}`).delete();
-        console.log("Borraste " + postID);
+        //console.log("Borraste " + postID);
     })
   });
 editOption.forEach(editOption => {
@@ -184,7 +184,7 @@ const setPublicationForm = (publicationForm, category) => {
   //console.log(publicationForm);
   publicationForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log("Evento de formulario funcionando ok");
+    //console.log("Evento de formulario funcionando ok");
     let postTitle = publicationForm['form-post-title'].value;
     let postContent = publicationForm['form-post-content'].value;
     newPost(postTitle, postContent, category);   
@@ -206,7 +206,7 @@ const newPost = (postTitle, postContent, category) => {
       comments: {},
      /*  timestamp: `${dateAndTime}` */
     }).then(() => {
-      console.log(`Publicación ${postTitle} creada por ${user.data().userName}`);
+      //console.log(`Publicación ${postTitle} creada por ${user.data().userName}`);
     });
   });
 }
