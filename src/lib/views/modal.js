@@ -44,12 +44,30 @@ export const modalListeners = () => {
 
   //Opcion de login con google importar info
 
+
   /*btnGoogle.addEventListener('click', () => {
     console.log(btnGoogle);
     loginGoogle();
   });*/
 
 };
-  
- 
-  
+/*export const modalEdit = () => {
+  const modal1 = document.querySelectorAll('.modal');
+  const close = document.querySelectorAll('#close-modal');
+
+    //modal, closeModal, edit
+    
+    close.addEventListener('click', () => {
+      modal1.classList.remove('hidden-component');
+    });
+  };*/
+/*export const modalEdit = () => {
+  const modal1 = document.querySelectorAll('.modal');
+  const modalContainer = document.querySelectorAll('.modal-container');
+
+  let span = document.getElementsByClassName("close")[0]; // al momento de cerrar, hace este evento/
+            span.addEventListener('click', () => { //evento del click en la x
+                modal1.style.display = "none"; //Escondemos el modal general
+                modalContainer.innerHTML = ""; //Limpiamos el modal con la informacion (cuadrito blanco)
+            });
+           };*/
