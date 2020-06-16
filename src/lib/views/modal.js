@@ -42,7 +42,7 @@ export const modalListeners = () => {
     openSignModal();
   });
 
-  //Opcion de login con google
+  //Opcion de login con google importar info
 
   /*btnGoogle.addEventListener('click', () => {
     console.log(btnGoogle);
