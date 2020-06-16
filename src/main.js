@@ -7,6 +7,7 @@ import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functio
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
 import { modalListeners } from './lib/views/modal.js';
 import { slider } from './lib/views/slider.js';
+import { modalListeners, modalEdit } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
 
@@ -21,6 +22,7 @@ const init = () => {
   modalListeners();
   showOrHideOptions();
   slider();
+  //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
   window.addEventListener('hashchange', () => {
@@ -37,6 +39,7 @@ const init = () => {
           homePostsFn(initialPosts);
           showOrHideOptions();
           slider();
+         // modalEdit();
           break;
 
         case '#/mas-sobre-PL':
@@ -86,6 +89,7 @@ const init = () => {
           homePostsFn(initialPosts);
           showOrHideOptions();
           slider();
+         // modalEdit();
       }
      
   });
