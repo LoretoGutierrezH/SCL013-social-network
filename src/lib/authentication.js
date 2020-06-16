@@ -9,10 +9,10 @@ export const signUpFunction = () => {
     const email = signUpForm.email.value;
     const password = signUpForm.password.value;
 
-    auth.createUserWithEmailAndPassword(email, password).then(credential => {
-      return db.collection('user').doc(credential.user.uid).set({
-        userName,
-      });
+    auth.createUserWithEmailAndPassword(email, password).then(userData => {
+            userData.user.updateProfile({
+              displayName: userName,
+            });
     }).then(() => {
       console.log('Usuario creado y autenticado');
       signUpForm.reset();
