@@ -213,6 +213,7 @@ export const home = () => {
     <aside class="middle-right mobile-hidden-component" id="categories">
       <p>Categorías(desktop)</p>
     </aside>
+    h2
 
     <footer class="bottom">
       <p>FOOTER</p><span><img src="" alt=""></span>
