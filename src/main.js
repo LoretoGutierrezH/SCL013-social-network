@@ -4,7 +4,7 @@ import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
 import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
-/*import { slider } from './lib/views/slider.js';*/
+import { slider } from './lib/views/slider.js';
 import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
@@ -19,7 +19,7 @@ const init = () => {
   exitFunction();
   modalListeners();
   showOrHideOptions();
-  //slider();
+  slider();
   //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
@@ -36,7 +36,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
-         // slider();
+          slider();
          // modalEdit();
           break;
 
@@ -86,7 +86,7 @@ const init = () => {
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
-         // slider();
+          slider();
          // modalEdit();
       }
      
