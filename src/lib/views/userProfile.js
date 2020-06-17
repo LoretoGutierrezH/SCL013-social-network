@@ -1,5 +1,5 @@
 export const userprofile = () => {
-    const viewUserProfile = `
+  const viewUserProfile = `
     <main class= "userprofile" id="profile">
 <section id="user-post-container">
     <div class="user-post">
@@ -26,4 +26,4 @@ export const userprofile = () => {
   </main>
   `;
   return viewUserProfile;
-}
+};

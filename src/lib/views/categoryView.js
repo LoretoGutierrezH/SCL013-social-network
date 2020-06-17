@@ -1,6 +1,5 @@
-import { db } from '../functions.js';
 export const categoryView = (doc) => {
-  let docData = doc.data();
+  const docData = doc.data();
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
@@ -35,10 +34,9 @@ export const categoryView = (doc) => {
   </section>
   `;
   return postsView;
-}
+};
 
 export const newPostForm = (category) => {
-
   const formView = `
     <section id="new-post-container" data-category="${category}">
       <form id="new-post-form">
@@ -49,9 +47,9 @@ export const newPostForm = (category) => {
     </section>
   `;
   return formView;
-}
+};
 
-export const editModal = (category) => {
+export const editModal = () => {
   const editView = `
   <div id="edit-modal-container" class="modal hidden-component">
           <span id="close-modal">&times</span>

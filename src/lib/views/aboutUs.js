@@ -24,4 +24,4 @@ export const aboutUs = () => {
 </section>
   `;
   return aboutUsView;
-}
+};
