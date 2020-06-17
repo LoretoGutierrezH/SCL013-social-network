@@ -1,4 +1,5 @@
-//import { db } from '../functions.js';
+import { db } from '../functions.js';
+
 export const categoryView = (doc) => {
   const docData = doc.data();
   const postsView = `
@@ -51,7 +52,7 @@ export const newPostForm = (category) => {
   return formView;
 };
 
-export const editModal = (category) => {
+export const editModal = () => {
   const editView = `
   <div id="edit-modal-container" class="modal hidden-component">
           <span id="close-modal">&times</span>
