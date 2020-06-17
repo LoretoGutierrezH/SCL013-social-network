@@ -138,7 +138,6 @@ export const categoryFilter = (category) => {
   }
   return categoryForm.filter(post => category.includes(tips));
 };
-
 const selectorCategoryE = document.querySelector("");
 selectorCategory.addEventListener("change", () => {
     let categoryPubli = selectorCategory.value;

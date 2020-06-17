@@ -115,11 +115,6 @@ header{
   background: #81D2CB;
 }
 
-
-
-
-
-
 /* HOME POSTS */
 
 #home-post-container {
@@ -257,8 +252,7 @@ textarea.comment-content {
 
 /*Form publi*/
   #new-post-container {
-    /* border: 2px solid blue; */
-    width: 80vw;
+    width: 40vw;
     margin: 3rem auto;
   }
 
@@ -269,7 +263,7 @@ textarea.comment-content {
   padding-top: 1.5rem;
   padding-bottom: 4rem;
   border-radius: 10px;
-  
+  //width: 100%;
 }
 
 #form-post-title {

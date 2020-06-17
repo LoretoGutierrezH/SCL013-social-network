@@ -7,7 +7,6 @@ import { signUpFunction, signInFunction, exitFunction, singInGoogle } from './li
 import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
-
 const root = document.querySelector('#root');
 
 const init = () => {
@@ -20,8 +19,6 @@ const init = () => {
   showOrHideOptions();
   postsByCategoryFn(categoryView, "Tips");
   //slider();
-
-  //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
   window.addEventListener('hashchange', () => {
@@ -41,8 +38,6 @@ const init = () => {
           postsByCategoryFn(categoryView, category);
           console.log("se ejecutó todo");
          // slider();
-
-         // modalEdit();
           break;
 
         case '#/mas-sobre-PL':
@@ -98,13 +93,8 @@ const init = () => {
           postsByCategoryFn(categoryView, category);
           console.log("se ejecutó todo");
          // slider();
-
-         // modalEdit();
       }
-     
   });
 };
 
 window.onload = init();
-
-
