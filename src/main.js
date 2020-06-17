@@ -3,7 +3,7 @@ import { initialPosts } from './lib/views/initialPosts.js';
 import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
-import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
+import { signUpFunction, signInFunction, exitFunction, iniciarSesion, enviarCorreo } from './lib/authentication.js';
 /*import { slider } from './lib/views/slider.js';*/
 import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
@@ -17,6 +17,8 @@ const init = () => {
   signUpFunction();
   signInFunction();
   exitFunction();
+  iniciarSesion();
+  enviarCorreo();
   modalListeners();
   showOrHideOptions();
   //slider();
@@ -33,6 +35,8 @@ const init = () => {
           signUpFunction();
           signInFunction();
           exitFunction();
+          iniciarSesion();
+          enviarCorreo();
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();
@@ -83,6 +87,8 @@ const init = () => {
           signUpFunction();
           signInFunction();
           exitFunction();
+          iniciarSesion();
+          enviarCorreo();
           modalListeners();
           homePostsFn(initialPosts);
           showOrHideOptions();

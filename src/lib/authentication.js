@@ -44,6 +44,40 @@ export const signInFunction = () => {
   });
   });
 };
+/*Acceder con google
+export const loginGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  return  firebase.auth().signInWithPopup(provider)
+
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const token = result.credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      const credential = error.credential;
+      // ...
+    });
+};*/
+
+
+// Cerrar sesión
+export const exitFunction = () => {
+const exit = document.querySelector('.exit');
+exit.addEventListener('click', (event) => {
+    auth.signOut();
+    console.log('Sali, me fui');
+});
+};
+
 //Acceder con google
 export const iniciarSesion = () => {
   const btngoogle = document.querySelector('#btngoogle')
@@ -57,18 +91,9 @@ export const iniciarSesion = () => {
       }
   })
 }  
-/*Eviar correo
+//Enviar correo
 export const enviarCorreo = () => {
   firebase.auth().currentUser.sendEmailVerification().then(function () {
     alert('¡Verificación de correo enviada!');
   });
-}*/
-
-// Cerrar sesión
-export const exitFunction = () => {
-const exit = document.querySelector('.exit');
-exit.addEventListener('click', (event) => {
-    auth.signOut();
-    console.log('Sali, me fui');
-});
-};
+}
