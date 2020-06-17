@@ -1,10 +1,9 @@
 import { home } from './lib/views/home.js';
-import { initialPosts } from './lib/views/initialPosts.js';
 import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
-import { homePostsFn, showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
-import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
-import { slider } from './lib/views/slider.js';
+import { showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
+import { signUpFunction, signInFunction, exitFunction, singInGoogle } from './lib/authentication.js';
+/*import { slider } from './lib/views/slider.js';*/
 import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
 
@@ -13,13 +12,15 @@ const root = document.querySelector('#root');
 
 const init = () => {
   root.innerHTML = home();
-  homePostsFn(initialPosts);
   signUpFunction();
   signInFunction();
   exitFunction();
+  singInGoogle();
   modalListeners();
   showOrHideOptions();
-  slider();
+  postsByCategoryFn(categoryView, "Tips");
+  //slider();
+
   //modalEdit();
   window.location.hash = '#/home';
   console.log("Página completamente cargada");
@@ -29,14 +30,18 @@ const init = () => {
       let category;
       switch(hash) {
         case '#/home':
+          category = "Tips";
           document.querySelector('#root').innerHTML = home();
           signUpFunction();
           signInFunction();
           exitFunction();
+          singInGoogle();
           modalListeners();
-          homePostsFn(initialPosts);
           showOrHideOptions();
-          slider();
+          postsByCategoryFn(categoryView, category);
+          console.log("se ejecutó todo");
+         // slider();
+
          // modalEdit();
           break;
 
@@ -83,10 +88,13 @@ const init = () => {
           signUpFunction();
           signInFunction();
           exitFunction();
+          singInGoogle();
           modalListeners();
-          homePostsFn(initialPosts);
           showOrHideOptions();
-          slider();
+          postsByCategoryFn(categoryView, category);
+          console.log("se ejecutó todo");
+         // slider();
+
          // modalEdit();
       }
      

@@ -4,13 +4,14 @@ export const categoryView = (doc) => {
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
-    <ul class="pawEdit" data-postid="${doc.id}">
+    <ul class="pawEdit hidden-component" data-postid="${doc.id}">
       <div class="pawBtn user-post-actions"><img src="./images/Paw.png"></div>
         <div class="paw-content">
-          <li class="editOption"><a href="#" id="edit">Editar</a></li>
-          <li class="eraseOption"><a href="#" id="erase">Borrar</a></li>
+          <li class="editOption"><a id="edit">Editar</a></li>
+          <li class="eraseOption"><a id="erase">Borrar</a></li>
       </div>
     </ul>
+
     <div class="post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
@@ -51,7 +52,6 @@ export const newPostForm = (category) => {
 }
 
 export const editModal = (category) => {
-
   const editView = `
   <div id="edit-modal-container" class="modal hidden-component">
           <span id="close-modal">&times</span>

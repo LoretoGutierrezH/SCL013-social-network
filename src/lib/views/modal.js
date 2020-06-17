@@ -1,4 +1,3 @@
-import {loginGoogle} from '../authentication.js';
 export const modalListeners = () => {
   // Agregando event listeners del modal
   const signUpForm = document.querySelector('#sign-up-form');
@@ -51,7 +50,7 @@ export const modalListeners = () => {
   });*/
 
 };
-/*export const modalEdit = () => {
+/* export const modalEdit = () => {
   const modal1 = document.querySelectorAll('.modal');
   const close = document.querySelectorAll('#close-modal');
 
@@ -60,8 +59,8 @@ export const modalListeners = () => {
     close.addEventListener('click', () => {
       modal1.classList.remove('hidden-component');
     });
-  };*/
-/*export const modalEdit = () => {
+  }; */
+/* export const modalEdit = () => {
   const modal1 = document.querySelectorAll('.modal');
   const modalContainer = document.querySelectorAll('.modal-container');
 
@@ -70,4 +69,5 @@ export const modalListeners = () => {
                 modal1.style.display = "none"; //Escondemos el modal general
                 modalContainer.innerHTML = ""; //Limpiamos el modal con la informacion (cuadrito blanco)
             });
-           };*/
+           };
+ */

@@ -330,6 +330,14 @@ li.burguer {
   font-size: 1.5rem;
 }
 
+.success-message {
+  color: #196406;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/*//////////////////////////*/
+
 /*search*/
 #search-wrapper {
   display: inline-block;
