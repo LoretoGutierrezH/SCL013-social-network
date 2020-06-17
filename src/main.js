@@ -2,7 +2,7 @@ import { home } from './lib/views/home.js';
 import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
-import { signUpFunction, signInFunction, exitFunction } from './lib/authentication.js';
+import { signUpFunction, signInFunction, exitFunction, singInGoogle } from './lib/authentication.js';
 /*import { slider } from './lib/views/slider.js';*/
 import { modalListeners } from './lib/views/modal.js';
 import { userprofile } from './lib/views/userProfile.js';
@@ -15,6 +15,7 @@ const init = () => {
   signUpFunction();
   signInFunction();
   exitFunction();
+  singInGoogle();
   modalListeners();
   showOrHideOptions();
   postsByCategoryFn(categoryView, "Tips");
@@ -33,6 +34,7 @@ const init = () => {
           signUpFunction();
           signInFunction();
           exitFunction();
+          singInGoogle();
           modalListeners();
           showOrHideOptions();
           postsByCategoryFn(categoryView, category);
@@ -84,6 +86,7 @@ const init = () => {
           signUpFunction();
           signInFunction();
           exitFunction();
+          singInGoogle();
           modalListeners();
           showOrHideOptions();
           postsByCategoryFn(categoryView, category);

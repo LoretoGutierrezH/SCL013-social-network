@@ -63,9 +63,18 @@ export const postsByCategoryFn = (view, category) => {
       editOption.forEach(btn => {
         btn.addEventListener('click', (event) => {
           event.preventDefault();
+          const editModal = document.querySelector('#edit-modal-container');
+          const editForm = document.querySelector("#edit-form");
+          editModal.classList.remove("hidden-component"); 
           let postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
           console.log(postId);
-          //updatePost(postId, category, postTitle, postContent);
+          
+          editForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            let postTitle = editForm['title-post-edit'].value;
+            let postContent = editForm['content-post-edit'].value;
+            updatePost(postId, category, postTitle, postContent);
+          })
         })
       })
 
@@ -117,8 +126,8 @@ const deletePost = (postId, category) => {
 // Función editar post
 const updatePost = (postId, category, postTitle, postContent) => {
   db.collection(`${category}`).doc(`${postId}`).update({
-    title: postTitle,
-    content: postContent
+    title: `${postTitle}`,
+    content:`${postContent}`
   });
 }
 

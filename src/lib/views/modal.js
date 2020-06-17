@@ -1,4 +1,3 @@
-import {loginGoogle} from '../authentication.js';
 export const modalListeners = () => {
   // Agregando event listeners del modal
   const signUpForm = document.querySelector('#sign-up-form');

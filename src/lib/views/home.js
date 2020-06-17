@@ -20,7 +20,7 @@ export const home = () => {
               <a href="#/" id="password-request">¿Olvidaste tu contraseña?</a>
               <button id="sign-in-btn">Iniciar</button>
               <br>
-              
+              <button class="btngoogle">Acceder con google</button>
               <p id="sign-in-error" class="error-message"></p>
               <p id="sign-in-success" class="success-message"></p>
 
@@ -37,7 +37,7 @@ export const home = () => {
               <input id="password" type="password">
               <br>
               <button id="sign-up-btn">Registrarse</button>
-              <button id="sign-in-google">Acceder con google</button>
+              <button class="btngoogle">Acceder con google</button>
               <p id="sign-up-error" class="error-message"></p>
               <p id="sign-up-success" class="success-message"></p>
             </form>
