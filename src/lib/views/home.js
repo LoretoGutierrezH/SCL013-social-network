@@ -95,7 +95,9 @@ export const home = () => {
     </div>
     </aside>
     <main class="middle-center" id="publication-area">
-      <h1 id="category-heading"></h1>
+      <div class="category-title"> 
+        <h1 id="category-heading"></h1>
+      </div>
       <div id="main-form">
 
       </div>

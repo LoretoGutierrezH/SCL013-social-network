@@ -2,7 +2,7 @@ export const aboutUs = () => {
   const aboutUsView = `
 <seccion id="about-container">
   <div class="about">
-  <h1>Más sobre PawLovers</h1></div>
+  <h1 class="about-heading">Más sobre PawLovers</h1></div>
 </section>
 
 <seccion id="about-container">
