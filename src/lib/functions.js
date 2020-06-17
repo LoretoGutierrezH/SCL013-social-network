@@ -20,6 +20,11 @@ export const showOrHideOptions = () => {
   });
 };
 
+/* const showOrHideSpinner = () => {
+  const loadingContainer = document.querySelector('#loading-container');
+  loadingContainer.classList.toggle('hidden-component');
+}; */
+
 // FUNCIONES DEL CRUD
 
 // Función crear nuevo post
@@ -96,6 +101,23 @@ export const postsByCategoryFn = (view, category) => {
         });
       }
     });
+
+    // spinner (hay que moverlo a otro lado)
+    const loadingContainer = document.getElementById('loading-container');
+    const showSpinner = () => {
+      loadingContainer.classList.remove('hidden-component');
+    };
+
+    const hideSpinner = () => {
+      loadingContainer.classList.add('hidden-component');
+    };
+
+    if (publicationContainer.innerHTML !== '') {
+      hideSpinner();
+      console.log("aloha");
+    } else {
+      showSpinner();
+    }
     // 3. Editar publicación por su id
     const editOption = document.querySelectorAll('.editOption');
     editOption.forEach((btn) => {
@@ -114,7 +136,24 @@ export const postsByCategoryFn = (view, category) => {
         });
       });
     });
-
+    // 3. Editar publicación por su id
+    const editOption = document.querySelectorAll('.editOption');
+    editOption.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const editModalContainer = document.querySelector('#edit-modal-container');
+        const editForm = document.querySelector('#edit-form');
+        editModalContainer.classList.remove('hidden-component');
+        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
+        console.log(postId);
+        editForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const postTitle = editForm['title-post-edit'].value;
+          const postContent = editForm['content-post-edit'].value;
+          updatePost(postId, category, postTitle, postContent);
+        });
+      });
+    });
     // 4. Borrar publicación por su id
     const eraseBtn = document.querySelectorAll('.eraseOption');
     eraseBtn.forEach((btn) => {

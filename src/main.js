@@ -33,6 +33,7 @@ const init = () => {
     let category;
     const categoryHeading = document.querySelector('#category-heading');
     switch (hash) {
+        
       case '#/home':
         document.querySelector('#root').innerHTML = home();
         signUpFunction();
@@ -53,6 +54,7 @@ const init = () => {
         categoryHeading.innerHTML = '';
         mainForm.innerHTML = '';
         break;
+
       case '#/tips':
         category = 'Tips';
         categoryHeading.innerHTML = `${category}`;
@@ -104,10 +106,16 @@ const init = () => {
         postsByCategoryFn(categoryView, category);
         console.log('se ejecutó todo');
          // slider();
-
          // modalEdit();
     }
   });
 };
 
 window.onload = init();
+
+let timestamp = {
+  nanoseconds: 0,
+  seconds: 1562524200,
+};
+
+console.log(new Date(timestamp.seconds * 1000));
