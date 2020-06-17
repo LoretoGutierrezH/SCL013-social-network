@@ -101,9 +101,16 @@ export const home = () => {
       <div id="main-form">
 
       </div>
+      
       <div id="edit-post">
-
+        
       </div>
+      <div id="spinner">
+        <div id="loading-container">
+         <div id="loading"></div>
+        </div>
+      </div>
+      
       <div id="publication">
         
       </div>
@@ -111,6 +118,7 @@ export const home = () => {
 
     <aside class="middle-right mobile-hidden-component" id="categories">
       <p>Categorías(desktop)</p>
+      
     </aside>
 
     <footer class="bottom">

@@ -181,7 +181,7 @@ li.burguer {
 .modal-header li {
   list-style: none;
   padding-left: 1rem;
-  width: 50%;
+  width: 48.5%;
   position: absolute;
   text-align: center;
   padding-top: 1rem;
@@ -207,7 +207,7 @@ li.burguer {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 85%;
   border-radius: 5px;
 }
 

@@ -33,7 +33,7 @@ const init = () => {
     let category;
     const categoryHeading = document.querySelector('#category-heading');
     switch (hash) {
-      case '#/home':
+      case '#/mas-sobre-PL':
         document.querySelector('#root').innerHTML = home();
         signUpFunction();
         signInFunction();
@@ -46,12 +46,6 @@ const init = () => {
         document.querySelector('#publication').innerHTML = aboutUs();
         // slider();
         // modalEdit();
-        break;
-
-      case '#/mas-sobre-PL':
-        document.querySelector('#publication').innerHTML = aboutUs();
-        categoryHeading.innerHTML = '';
-        mainForm.innerHTML = '';
         break;
       case '#/tips':
         category = 'Tips';
@@ -111,3 +105,10 @@ const init = () => {
 };
 
 window.onload = init();
+
+let timestamp = {
+  nanoseconds: 0,
+  seconds: 1562524200,
+};
+
+console.log(new Date(timestamp.seconds * 1000));
