@@ -39,11 +39,13 @@ export const categoryView = (doc) => {
 export const newPostForm = (category) => {
   const formView = `
     <section id="new-post-container" data-category="${category}">
+    <div class="new-post">
       <form id="new-post-form">
         <input id="form-post-title" type="text" placeholder="Título"><br>
         <textarea id="form-post-content" type="text" placeholder="Escribe tu publicación aquí"></textarea><br>
-        <button id="new-post-btn">Publicar</button>
+        <button class="new-post-btn" id="new-post-btn">Publicar</button>
       </form>
+      </div>
     </section>
   `;
   return formView;

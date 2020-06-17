@@ -61,7 +61,6 @@ const updatePost = (postId, category, postTitle, postContent) => {
   });
 };
 
-
 // POSTS SEGÚN CAGETORÍA SELECCIONADA
 export const postsByCategoryFn = (view, category) => {
   const publicationContainer = document.querySelector('#publication');
