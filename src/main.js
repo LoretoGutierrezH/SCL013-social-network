@@ -104,6 +104,7 @@ const init = () => {
         postsByCategoryFn(categoryView, category);
         console.log('se ejecutó todo');
          // slider();
+
          // modalEdit();
     }
   });
