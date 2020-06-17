@@ -1,16 +1,17 @@
+import { db } from '../functions.js';
+
 export const categoryView = (doc) => {
   const docData = doc.data();
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
     <ul class="pawEdit hidden-component" data-postid="${doc.id}">
-      <div class="pawBtn user-post-actions"><img src="./images/Paw.png"></div>
+      <div class="pawBtn user-post-actions"><img src="/images/iconos/Paw.png"></div>
         <div class="paw-content">
           <li class="editOption"><a id="edit">Editar</a></li>
           <li class="eraseOption"><a id="erase">Borrar</a></li>
       </div>
     </ul>
-
     <div class="post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
