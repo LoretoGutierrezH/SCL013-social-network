@@ -45,9 +45,10 @@ export const home = () => {
         </div>
       </div>
     <header id="header-orden" class="top">
+    <div class="space1"></div>
     <div class="one">
       <div class="logo" id="logo-container">
-      <img src="/images/logoPawLovers.png" alt="" class="logo">
+      <a href="#/home" class=""><img src="/images/logoPawLovers.png" alt="" class="logo"></a>
       </div>
       <nav class="main-nav">
         <ul>
@@ -85,6 +86,7 @@ export const home = () => {
       </div>
   </li>
   </div>
+  <div class="space2"></div>
     </header>
 
     <aside class="middle-left" id="photo-carousel">

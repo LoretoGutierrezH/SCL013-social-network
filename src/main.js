@@ -82,6 +82,10 @@ const init = () => {
         case '#/fotos-concurso':
           document.querySelector('#publication').innerHTML = photo();
           break;
+
+          case '#/home':
+          document.querySelector('#publication').innerHTML = photo();
+          break;
         
         default:
           document.querySelector('#root').innerHTML = home();

@@ -17,7 +17,7 @@ export const showOrHideOptions = () => {
       burgerMenu.classList.add('hidden-component');
     }
   });
-}
+};
 
 
 // POSTS SEGÚN CAGETORÍA SELECCIONADA 
@@ -36,7 +36,7 @@ export const postsByCategoryFn = (view, category) => {
       const postTitle = postForm['form-post-title'].value;
       const postContent = postForm['form-post-content'].value;
       newPost(postTitle, postContent, category);
-    })
+    });
 
     //2. Leer publicaciones por categoría
     db.collection(`${category}`).onSnapshot(docs => {
@@ -76,7 +76,7 @@ export const postsByCategoryFn = (view, category) => {
             updatePost(postId, category, postTitle, postContent);
           })
         })
-      })
+      });
 
       //4. Borrar publicación por su id
       let eraseBtn;
@@ -90,8 +90,7 @@ export const postsByCategoryFn = (view, category) => {
         })
       });
     });
-
-}
+};
 
 // Función crear nuevo post
 const newPost = (postTitle, postContent, category) => {
@@ -113,15 +112,14 @@ const newPost = (postTitle, postContent, category) => {
   } /* else {
     alert("Solo los usuarios registrados pueden publicar :)");
   } */
-   
-}
+};
 
 // Función borrar post
 const deletePost = (postId, category) => {
   db.collection(`${category}`).doc(`${postId}`).delete().then(() => {
     console.log(`El post ${postId} fue eliminado de la base de datos`);
   }).catch(error => alert(`${error.message} - TRADUCCIÓN: no tení permisos oe!`));
-}
+};
 
 // Función editar post
 const updatePost = (postId, category, postTitle, postContent) => {
@@ -129,8 +127,7 @@ const updatePost = (postId, category, postTitle, postContent) => {
     title: `${postTitle}`,
     content:`${postContent}`
   });
-}
-
+};
 
 
 /*//filtro de categorias

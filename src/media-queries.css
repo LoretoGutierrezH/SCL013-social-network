@@ -16,7 +16,33 @@
     overflow-x: visible;
     z-index: 0;
   }
+/*iconos del header*/
+.space1 {
+  display: flex;
+  width: 20%;
+}
+.one {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 15%;
+}
 
+.two {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 45%;
+}
+
+.logo {
+  width: 130px;
+  height: 80px;
+}
+.space2 {
+  display: flex;
+  width: 20%;
+}
   .middle-right {
     grid-area: aside-right;
     background: white;
@@ -52,8 +78,7 @@
     height: 5vh;
     min-width: 20vw;
     resize: none;
-    font-family: 'Manjar',
-      'sans-serif';
+    font-family: 'Manjari', sans-serif;
     padding: 1rem;
     border-radius: 5px;
   }
@@ -72,5 +97,18 @@
   }
 } 
 
+/*publi form*/
+#new-post-container {
+  width: 40vw;
+  margin: 3rem auto;
+}
+
+.new-post-btn {
+  background-color: #81D2CB;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-top: 1rem;
+}
 
 
