@@ -66,6 +66,36 @@ const updatePost = (postId, category, postTitle, postContent) => {
   });
 };
 
+// Funciones dar/quitar like
+const likeOrUnlike = (postId, category) => {
+  db.collection(`${category}`).doc(`${postId}`).get().then((doc) => {
+    const docLikes = doc.data().likes;
+    const foundUser = docLikes.find(user => user === auth.currentUser.displayName);
+    console.log(foundUser);
+    let likedState;
+    if (foundUser === auth.currentUser.displayName) {
+      db.collection(`${category}`).doc(`${postId}`).update({
+        likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
+      });
+      likedState = true;
+      console.log("LIKE SACADO");
+    } else if (foundUser === undefined) {
+      db.collection(`${category}`).doc(`${postId}`).update({
+        likes: firebase.firestore.FieldValue.arrayUnion(`${auth.currentUser.displayName}`),
+      });
+      likedState = false;
+      console.log("LIKE AGREGADO");
+    }
+    return likedState;
+  });
+};
+
+/* const unlike = (postId, category) => {
+  db.collection(`${category}`).doc(`${postId}`).update({
+    likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
+  });
+}; */
+
 // POSTS SEGÚN CAGETORÍA SELECCIONADA
 export const postsByCategoryFn = (view, category) => {
   const publicationContainer = document.querySelector('#publication');
@@ -86,9 +116,9 @@ export const postsByCategoryFn = (view, category) => {
   db.collection(`${category}`).onSnapshot((docs) => {
     publicationContainer.innerHTML = '';
     docs.forEach((doc) => {
-      const formattedDate = doc.data().timestamp.toDate().toString();
-      const splitDate = formattedDate.split(' ');
-      console.log(splitDate);
+      // const formattedDate = doc.data().timestamp.toDate().toString();
+      // const splitDate = formattedDate.split(' ');
+      // console.log(splitDate);
       /* patita solo se muestra para post del usuario conectado */
       publicationContainer.innerHTML += view(doc);
       if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
@@ -122,8 +152,8 @@ export const postsByCategoryFn = (view, category) => {
       showSpinner();
     }
     // 3. Editar publicación por su id
-    const editOption = document.querySelectorAll('.editOption');
-    editOption.forEach((btn) => {
+    const editOptions = document.querySelectorAll('.editOption');
+    editOptions.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const editModalContainer = document.querySelector('#edit-modal-container');
@@ -140,8 +170,8 @@ export const postsByCategoryFn = (view, category) => {
       });
     });
     // 4. Borrar publicación por su id
-    const eraseBtn = document.querySelectorAll('.eraseOption');
-    eraseBtn.forEach((btn) => {
+    const eraseBtns = document.querySelectorAll('.eraseOption');
+    eraseBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
@@ -149,5 +179,20 @@ export const postsByCategoryFn = (view, category) => {
         deletePost(postId, category);
       });
     });
+
+    const likeBtns = document.querySelectorAll('.like-btn');
+    likeBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
+        // console.log(postId);
+        likeOrUnlike(postId, category);
+        btn.innerHTML = "Ya no me gusta";
+
+      });
+    });
+
+
+
   });
 };
