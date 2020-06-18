@@ -1,6 +1,6 @@
 import { db } from '../functions.js';
 
-export const categoryView = (doc) => {
+export const categoryView = (doc, formattedDate) => {
   const docData = doc.data();
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
@@ -17,7 +17,7 @@ export const categoryView = (doc) => {
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
       <h5 class="home-post-author">Autor: ${docData.author}</h5>
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
-      <h5 class="home-post-timestamp">Publicado: ${docData.timestamp.toDate()}</h5>
+      <h5 class="home-post-timestamp">Publicado: ${formattedDate}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
   </div>    

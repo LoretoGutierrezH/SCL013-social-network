@@ -20,6 +20,18 @@ export const showOrHideOptions = () => {
   });
 };
 
+const formattingDate = (doc) => {
+  const formattedDate = doc.data().timestamp.toDate().toString();
+  const splitDate = formattedDate.split(' ');
+  // console.log(splitDate[1], splitDate[2], splitDate[3], splitDate[4]);
+  let month;
+  if (splitDate[1] === "Jun") { // porque solo es para mostrar :D xd
+    month = "Junio";
+  }
+  console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
+  return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
+};
+
 /* const showOrHideSpinner = () => {
   const loadingContainer = document.querySelector('#loading-container');
   loadingContainer.classList.toggle('hidden-component');
@@ -116,11 +128,9 @@ export const postsByCategoryFn = (view, category) => {
   db.collection(`${category}`).onSnapshot((docs) => {
     publicationContainer.innerHTML = '';
     docs.forEach((doc) => {
-      // const formattedDate = doc.data().timestamp.toDate().toString();
-      // const splitDate = formattedDate.split(' ');
-      // console.log(splitDate);
+      const formattedDate = formattingDate(doc);
       /* patita solo se muestra para post del usuario conectado */
-      publicationContainer.innerHTML += view(doc);
+      publicationContainer.innerHTML += view(doc, formattedDate);
       if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
         const paws = document.querySelectorAll('.pawEdit');
         paws.forEach((paw) => {
@@ -186,13 +196,9 @@ export const postsByCategoryFn = (view, category) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
         // console.log(postId);
-        likeOrUnlike(postId, category);
-        btn.innerHTML = "Ya no me gusta";
+        likeOrUnlike(postId, category, btn);
 
       });
     });
-
-
-
   });
 };
