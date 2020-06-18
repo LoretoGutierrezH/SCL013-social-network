@@ -19,11 +19,14 @@ export const showOrHideOptions = () => {
     }
   });
 };
+
 /* const showOrHideSpinner = () => {
   const loadingContainer = document.querySelector('#loading-container');
   loadingContainer.classList.toggle('hidden-component');
 }; */
+
 // FUNCIONES DEL CRUD
+
 // Función crear nuevo post
 const newPost = (postTitle, postContent, category) => {
   if (auth.currentUser) {
@@ -83,6 +86,9 @@ export const postsByCategoryFn = (view, category) => {
   db.collection(`${category}`).onSnapshot((docs) => {
     publicationContainer.innerHTML = '';
     docs.forEach((doc) => {
+      const formattedDate = doc.data().timestamp.toDate().toString();
+      // const splitDate = formattedDate.split('');
+      console.log(typeof (formattedDate));
       /* patita solo se muestra para post del usuario conectado */
       publicationContainer.innerHTML += view(doc);
       if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
@@ -115,6 +121,7 @@ export const postsByCategoryFn = (view, category) => {
     } else {
       showSpinner();
     }
+
     // 3. Editar publicación por su id
     const editOption = document.querySelectorAll('.editOption');
     editOption.forEach((btn) => {
@@ -133,6 +140,7 @@ export const postsByCategoryFn = (view, category) => {
         });
       });
     });
+
     // 4. Borrar publicación por su id
     const eraseBtn = document.querySelectorAll('.eraseOption');
     eraseBtn.forEach((btn) => {
