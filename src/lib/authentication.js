@@ -93,7 +93,7 @@ export const iniciarSesion = () => {
 }  
 //Enviar correo
 export const enviarCorreo = () => {
-  firebase.auth().currentUser.sendEmailVerification().then(function () {
+  firebase.auth().currentUser.sendEmailVerification().then(() => {
     alert('¡Verificación de correo enviada!');
   });
 }
