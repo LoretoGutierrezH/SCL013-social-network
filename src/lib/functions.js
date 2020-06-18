@@ -86,6 +86,9 @@ export const postsByCategoryFn = (view, category) => {
   db.collection(`${category}`).onSnapshot((docs) => {
     publicationContainer.innerHTML = '';
     docs.forEach((doc) => {
+      const formattedDate = doc.data().timestamp.toDate().toString();
+      const splitDate = formattedDate.split(' ');
+      console.log(splitDate);
       /* patita solo se muestra para post del usuario conectado */
       publicationContainer.innerHTML += view(doc);
       if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {

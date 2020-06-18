@@ -16,7 +16,7 @@ export const categoryView = (doc) => {
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
       <h5 class="home-post-author">Autor: ${docData.author}</h5>
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
-      <h5 class="home-post-timestamp">Publicado: ${docData.date}</h5>
+      <h5 class="home-post-timestamp">Publicado: ${docData.timestamp.toDate()}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
   </div>    
