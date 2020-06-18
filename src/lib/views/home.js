@@ -88,7 +88,6 @@ export const home = () => {
   </div>
   <div class="space2"></div>
     </header>
-
     <aside class="middle-left" id="photo-carousel">
     <div class="carousel">
      
