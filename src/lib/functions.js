@@ -63,20 +63,6 @@ const updatePost = (postId, category, postTitle, postContent) => {
   });
 };
 
-<<<<<<< HEAD
-
-  // Patita con opciones de editar y borrar publicación
-  // clases: editOption  eraseOption
-const editOption = document.querySelectorAll('.editOption');   
-const  eraseOption = document.querySelectorAll('.eraseOption');
-eraseOption.forEach(eraseOption => {
-    eraseOption.addEventListener('click', (event) => {
-      event.preventDefault();
-        let postID = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
-        db.collection('posts').doc(`${postID}`).delete();
-        //console.log("Borraste " + postID);
-    })
-=======
 // POSTS SEGÚN CAGETORÍA SELECCIONADA
 export const postsByCategoryFn = (view, category) => {
   const publicationContainer = document.querySelector('#publication');
@@ -91,7 +77,6 @@ export const postsByCategoryFn = (view, category) => {
     const postTitle = postForm['form-post-title'].value;
     const postContent = postForm['form-post-content'].value;
     newPost(postTitle, postContent, category);
->>>>>>> upstream/master
   });
 
   // 2. Leer publicaciones por categoría
@@ -114,59 +99,16 @@ export const postsByCategoryFn = (view, category) => {
       }
     });
 
-<<<<<<< HEAD
-// Agregando funcionalidad al formulario de nueva publicación
-const setPublicationForm = (publicationForm, category) => {
-  //console.log(publicationForm['post-title']);
-  //console.log(publicationForm);
-  publicationForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    //console.log("Evento de formulario funcionando ok");
-    let postTitle = publicationForm['form-post-title'].value;
-    let postContent = publicationForm['form-post-content'].value;
-    //Crear nueva publicación
-      db.collection('posts').add({
-        uid: auth.currentUser.uid,
-        author: `${auth.currentUser.displayName}`,
-        category: `${category}`,
-        title: `${postTitle}`,
-        content: `${postContent}`,
-        likes: [],
-        comments: {},
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      }).then(() => {
-        console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
-      }).catch(error => {
-        console.log(error);
-      })
-  });
-}
-=======
     // spinner (hay que moverlo a otro lado)
     const loadingContainer = document.getElementById('loading-container');
     const showSpinner = () => {
       loadingContainer.classList.remove('hidden-component');
     };
->>>>>>> upstream/master
 
     const hideSpinner = () => {
       loadingContainer.classList.add('hidden-component');
     };
 
-<<<<<<< HEAD
-  db.collection('user').doc(`${auth.currentUser.uid}`).onSnapshot(user => {
-    db.collection('posts').add({
-      uid: auth.currentUser.uid,
-      author: `${user.data().userName}`,
-      category: `${category}`,
-      title: `${postTitle}`,
-      content: `${postContent}`,
-      likes: [],
-      comments: {},
-     /*  timestamp: `${dateAndTime}` */
-    }).then(() => {
-      //console.log(`Publicación ${postTitle} creada por ${user.data().userName}`);
-=======
     if (publicationContainer.innerHTML !== '') {
       hideSpinner();
       console.log("aloha");
@@ -200,7 +142,6 @@ const setPublicationForm = (publicationForm, category) => {
         console.log(postId);
         deletePost(postId, category);
       });
->>>>>>> upstream/master
     });
   });
 };
