@@ -87,6 +87,7 @@ const likeOrUnlike = (postId, category) => {
       db.collection(`${category}`).doc(`${postId}`).update({
         likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
       });
+
       console.log("LIKE SACADO");
     } else if (includesUser === false) {
       db.collection(`${category}`).doc(`${postId}`).update({
