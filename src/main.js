@@ -112,3 +112,4 @@ const init = () => {
 };
 
 window.onload = init();
+console.log(window.location.hash);

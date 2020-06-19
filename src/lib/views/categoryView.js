@@ -1,7 +1,14 @@
-import { db } from '../functions.js';
+import { auth } from '../functions.js';
 
 export const categoryView = (doc, formattedDate) => {
   const docData = doc.data();
+  const liked = doc.data().likes.includes(`${auth.currentUser.displayName}`);
+  let likeString;
+    if (liked === true) {
+      likeString = "Ya no me gusta";
+    } else {
+      likeString = "Me gusta";
+    }
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
@@ -22,7 +29,7 @@ export const categoryView = (doc, formattedDate) => {
     </div>  
   </div>    
     <div class="post-actions">
-      <button class="like-btn">Me gusta</button>
+      <button class="like-btn">${likeString}</button>
       <button class="trigger-comment-form-btn">Comentar</button>
       <button class="share-comment-btn">Compartir</button>
     </div>
@@ -34,6 +41,7 @@ export const categoryView = (doc, formattedDate) => {
     </div>
   </section>
   `;
+
   return postsView;
 };
 

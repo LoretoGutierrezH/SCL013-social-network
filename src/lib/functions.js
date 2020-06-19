@@ -28,7 +28,7 @@ const formattingDate = (doc) => {
   if (splitDate[1] === "Jun") { // porque solo es para mostrar :D xd
     month = "Junio";
   }
-  console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
+  // console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
   return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
 };
 
@@ -82,31 +82,21 @@ const updatePost = (postId, category, postTitle, postContent) => {
 const likeOrUnlike = (postId, category) => {
   db.collection(`${category}`).doc(`${postId}`).get().then((doc) => {
     const docLikes = doc.data().likes;
-    const foundUser = docLikes.find(user => user === auth.currentUser.displayName);
-    console.log(foundUser);
-    let likedState;
-    if (foundUser === auth.currentUser.displayName) {
+    const includesUser = docLikes.includes(`${auth.currentUser.displayName}`);
+    if (includesUser === true) {
       db.collection(`${category}`).doc(`${postId}`).update({
         likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
       });
-      likedState = true;
       console.log("LIKE SACADO");
-    } else if (foundUser === undefined) {
+    } else if (includesUser === false) {
       db.collection(`${category}`).doc(`${postId}`).update({
         likes: firebase.firestore.FieldValue.arrayUnion(`${auth.currentUser.displayName}`),
       });
-      likedState = false;
       console.log("LIKE AGREGADO");
     }
-    return likedState;
   });
 };
 
-/* const unlike = (postId, category) => {
-  db.collection(`${category}`).doc(`${postId}`).update({
-    likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
-  });
-}; */
 
 // POSTS SEGÚN CAGETORÍA SELECCIONADA
 export const postsByCategoryFn = (view, category) => {
@@ -123,44 +113,33 @@ export const postsByCategoryFn = (view, category) => {
     const postContent = postForm['form-post-content'].value;
     newPost(postTitle, postContent, category);
   });
-
+  // para que el spinner se muestre desde un principio en las vistas correctas
+  const loadingContainer = document.getElementById('loading-container');
+  loadingContainer.classList.remove('hidden-component');
   // 2. Leer publicaciones por categoría
   db.collection(`${category}`).onSnapshot((docs) => {
-    publicationContainer.innerHTML = '';
-    docs.forEach((doc) => {
-      const formattedDate = formattingDate(doc);
-      /* patita solo se muestra para post del usuario conectado */
-      publicationContainer.innerHTML += view(doc, formattedDate);
-      if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
-        const paws = document.querySelectorAll('.pawEdit');
-        paws.forEach((paw) => {
-        /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
-              paw.classList.remove('hidden-component');
-            } else {
-              console.log(paw.getAttribute('data-postid'));
-            } */
-          // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
-          paw.classList.remove('hidden-component');
-        });
-      }
-    });
+      publicationContainer.innerHTML = '';
+      docs.forEach((doc) => {
+        const formattedDate = formattingDate(doc);
+        /* patita solo se muestra para post del usuario conectado */
+        
+        publicationContainer.innerHTML += view(doc, formattedDate);
+        loadingContainer.classList.add('hidden-component');
+        if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
+          const paws = document.querySelectorAll('.pawEdit');
+          paws.forEach((paw) => {
+            /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
+                  paw.classList.remove('hidden-component');
+                } else {
+                  console.log(paw.getAttribute('data-postid'));
+                } */
+            // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
+            paw.classList.remove('hidden-component');
+          });
+        }
+      });
+    
 
-    // spinner (hay que moverlo a otro lado)
-    const loadingContainer = document.getElementById('loading-container');
-    const showSpinner = () => {
-      loadingContainer.classList.remove('hidden-component');
-    };
-
-    const hideSpinner = () => {
-      loadingContainer.classList.add('hidden-component');
-    };
-
-    if (publicationContainer.innerHTML !== '') {
-      hideSpinner();
-      console.log("aloha");
-    } else {
-      showSpinner();
-    }
     // 3. Editar publicación por su id
     const editOptions = document.querySelectorAll('.editOption');
     editOptions.forEach((btn) => {
@@ -195,8 +174,12 @@ export const postsByCategoryFn = (view, category) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
-        // console.log(postId);
-        likeOrUnlike(postId, category, btn);
+        console.log(postId);
+        if (auth.currentUser !== null) {
+          likeOrUnlike(postId, category, btn);
+        } else {
+          alert("Inicia sesión para dar like a esta publicación");
+        }
 
       });
     });
