@@ -126,7 +126,7 @@ li.burguer {
   display: block;
 }
 
-/* HELPERS */
+/* MODAL DE INGRESO (INICIO DE SESIÓN/REGISTRO) */
 .hidden-component {
   opacity: 0;
   display: none;

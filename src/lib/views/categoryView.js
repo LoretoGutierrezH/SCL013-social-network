@@ -1,5 +1,14 @@
-export const categoryView = (doc) => {
+import { auth } from '../functions.js';
+
+export const categoryView = (doc, formattedDate) => {
   const docData = doc.data();
+  const liked = doc.data().likes.includes(`${auth.currentUser.displayName}`);
+  let likeString;
+    if (liked === true) {
+      likeString = "Ya no me gusta";
+    } else {
+      likeString = "Me gusta";
+    }
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
@@ -10,7 +19,7 @@ export const categoryView = (doc) => {
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
       <h5 class="home-post-author">Autor: ${docData.author}</h5>
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
-      <h5 class="home-post-timestamp">Publicado: ${docData.timestamp.toDate()}</h5>
+      <h5 class="home-post-timestamp">Publicado: ${formattedDate}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
   </div>  
@@ -26,7 +35,7 @@ export const categoryView = (doc) => {
     </div> 
     </div>
     <div class="post-actions">
-      <button class="like-btn">Me gusta</button>
+      <button class="like-btn">${likeString}</button>
       <button class="trigger-comment-form-btn">Comentar</button>
       <button class="share-comment-btn">Compartir</button>
     </div>
@@ -38,6 +47,7 @@ export const categoryView = (doc) => {
     </div>
   </section>
   `;
+
   return postsView;
 };
 
