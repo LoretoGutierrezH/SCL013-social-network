@@ -97,8 +97,6 @@ const likeOrUnlike = (postId, category) => {
     }
   });
 };
-
-
 // POSTS SEGÚN CAGETORÍA SELECCIONADA
 export const postsByCategoryFn = (view, category) => {
   const publicationContainer = document.querySelector('#publication');
@@ -140,6 +138,22 @@ export const postsByCategoryFn = (view, category) => {
         }
       });
     
+   /* // spinner (hay que moverlo a otro lado)
+    const loadingContainer = document.getElementById('loading-container');
+    const showSpinner = () => {
+      loadingContainer.classList.remove('hidden-component');
+    };
+
+    const hideSpinner = () => {
+      loadingContainer.classList.add('hidden-component');
+    };
+
+    if (publicationContainer.innerHTML !== '') {
+      hideSpinner();
+      console.log("aloha");
+    } else {
+      showSpinner();
+    }*/
 
     // 3. Editar publicación por su id
     const editOptions = document.querySelectorAll('.editOption');
@@ -159,19 +173,12 @@ export const postsByCategoryFn = (view, category) => {
         });
       });
     });
-    // 4. Borrar publicación por su id
-    const eraseBtns = document.querySelectorAll('.eraseOption');
-    eraseBtns.forEach((btn) => {
-      btn.addEventListener('click', (event) => {
-        event.preventDefault();
-        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
-        console.log(postId);
-        deletePost(postId, category);
-      });
-    });
 
     const likeBtns = document.querySelectorAll('.like-btn');
     likeBtns.forEach((btn) => {
+    // 4. Borrar publicación por su id
+    const eraseBtn = document.querySelectorAll('.eraseOption');
+    eraseBtn.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
