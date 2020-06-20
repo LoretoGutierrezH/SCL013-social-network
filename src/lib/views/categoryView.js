@@ -2,7 +2,13 @@ import { auth } from '../functions.js';
 
 export const categoryView = (doc, formattedDate) => {
   const docData = doc.data();
-  const liked = doc.data().likes.includes(`${auth.currentUser.displayName}`);
+  let liked;
+  if (auth.currentUser !== null) {
+    liked = doc.data().likes.includes(`${auth.currentUser.displayName}`);
+  } else {
+    liked = false;
+  }
+
   let likeString;
     if (liked === true) {
       likeString = "Ya no me gusta";
@@ -54,6 +60,7 @@ export const newPostForm = (category) => {
         <textarea id="form-post-content" type="text" placeholder="Escribe tu publicación aquí"></textarea><br>
         <button class="new-post-btn" id="new-post-btn">Publicar</button>
       </form>
+      <p id="new-post-success" class="success-message"></p>
       </div>
     </section>
   `;

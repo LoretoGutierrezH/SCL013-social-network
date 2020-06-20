@@ -21,6 +21,7 @@ export const showOrHideOptions = () => {
 };
 
 const formattingDate = (doc) => {
+  console.log(doc.data().timestamp);
   const formattedDate = doc.data().timestamp.toDate().toString();
   const splitDate = formattedDate.split(' ');
   // console.log(splitDate[1], splitDate[2], splitDate[3], splitDate[4]);
@@ -52,6 +53,10 @@ const newPost = (postTitle, postContent, category) => {
       comments: {},
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     }).then(() => {
+      const successMssge = document.querySelector('#new-post-success');
+      setTimeout(() => {
+        successMssge.innerHTML = "Publicación creada correctamente :)";
+      }, 2000);
       console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
     }).catch((error) => {
       console.log(error);
@@ -87,7 +92,6 @@ const likeOrUnlike = (postId, category) => {
       db.collection(`${category}`).doc(`${postId}`).update({
         likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
       });
-
       console.log("LIKE SACADO");
     } else if (includesUser === false) {
       db.collection(`${category}`).doc(`${postId}`).update({
@@ -118,14 +122,15 @@ export const postsByCategoryFn = (view, category) => {
   const loadingContainer = document.getElementById('loading-container');
   loadingContainer.classList.remove('hidden-component');
   // 2. Leer publicaciones por categoría
-  db.collection(`${category}`).onSnapshot((docs) => {
+  db.collection(`${category}`).orderBy('timestamp', 'desc').onSnapshot((docs) => {
       publicationContainer.innerHTML = '';
       docs.forEach((doc) => {
         const formattedDate = formattingDate(doc);
         /* patita solo se muestra para post del usuario conectado */
-        
+        console.log(doc);
         publicationContainer.innerHTML += view(doc, formattedDate);
         loadingContainer.classList.add('hidden-component');
+        console.log(doc.data().likes.length);
         if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
           const paws = document.querySelectorAll('.pawEdit');
           paws.forEach((paw) => {
