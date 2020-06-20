@@ -19,7 +19,7 @@ export const categoryView = (doc, formattedDate) => {
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
   <div class="partDad">
-    <div class="partOne">
+  <div class="partOne">
     <div class="post">
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
@@ -28,18 +28,18 @@ export const categoryView = (doc, formattedDate) => {
       <h5 class="home-post-timestamp">Publicado: ${formattedDate}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
-  </div>  
+  </div> 
   <div class="partTwo">
     <ul class="pawEdit hidden-component" data-postid="${doc.id}">
-      <div class="pawBtn user-post-actions"><img src="./images/iconos/Paw.png"></div>
+      <div class="pawBtn user-post-actions"><img src="/images/iconos/Paw.png"></div>
         <div class="paw-content">
           <li class="editOption"><a id="edit">Editar</a></li>
           <li class="eraseOption"><a id="erase">Borrar</a></li>
       </div>
     </ul>
     </div>
-    </div> 
-    </div>
+  </div> 
+  </div>  
     <div class="post-actions">
       <button class="like-btn">${likeString}</button>
       <button class="trigger-comment-form-btn">Comentar</button>
@@ -53,7 +53,6 @@ export const categoryView = (doc, formattedDate) => {
     </div>
   </section>
   `;
-
   return postsView;
 };
 

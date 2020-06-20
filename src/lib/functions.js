@@ -3,7 +3,6 @@ import { newPostForm, editModal } from './views/categoryView.js';
 export const db = firebase.firestore();
 export const auth = firebase.auth();
 
-
 // HELPER - Muestra/oculta opciones del menú según usuario conectado/desconectado
 export const showOrHideOptions = () => {
   const signBtn = document.querySelector('.sign-btn');
@@ -32,12 +31,10 @@ const formattingDate = (doc) => {
   // console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
   return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
 };
-
 /* const showOrHideSpinner = () => {
   const loadingContainer = document.querySelector('#loading-container');
   loadingContainer.classList.toggle('hidden-component');
 }; */
-
 // FUNCIONES DEL CRUD
 
 // Función crear nuevo post
@@ -66,7 +63,6 @@ const newPost = (postTitle, postContent, category) => {
      alert("Solo los usuarios registrados pueden publicar :)");
    } */
 };
-
 // Función borrar post
 const deletePost = (postId, category) => {
   db.collection(`${category}`).doc(`${postId}`).delete().then(() => {
@@ -74,7 +70,6 @@ const deletePost = (postId, category) => {
   })
     .catch(error => alert(`${error.message} - TRADUCCIÓN: no tení permisos oe!`));
 };
-
 // Función editar post
 const updatePost = (postId, category, postTitle, postContent) => {
   db.collection(`${category}`).doc(`${postId}`).update({
@@ -143,22 +138,6 @@ export const postsByCategoryFn = (view, category) => {
         }
       });
     
-   /* // spinner (hay que moverlo a otro lado)
-    const loadingContainer = document.getElementById('loading-container');
-    const showSpinner = () => {
-      loadingContainer.classList.remove('hidden-component');
-    };
-
-    const hideSpinner = () => {
-      loadingContainer.classList.add('hidden-component');
-    };
-
-    if (publicationContainer.innerHTML !== '') {
-      hideSpinner();
-      console.log("aloha");
-    } else {
-      showSpinner();
-    }*/
 
     // 3. Editar publicación por su id
     const editOptions = document.querySelectorAll('.editOption');
@@ -178,12 +157,19 @@ export const postsByCategoryFn = (view, category) => {
         });
       });
     });
+    // 4. Borrar publicación por su id
+    const eraseBtns = document.querySelectorAll('.eraseOption');
+    eraseBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
+        console.log(postId);
+        deletePost(postId, category);
+      });
+    });
 
     const likeBtns = document.querySelectorAll('.like-btn');
     likeBtns.forEach((btn) => {
-    // 4. Borrar publicación por su id
-    const eraseBtn = document.querySelectorAll('.eraseOption');
-    eraseBtn.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
@@ -198,3 +184,30 @@ export const postsByCategoryFn = (view, category) => {
     });
   });
 };
+
+/*//like
+likeBtns.forEach(btn => {
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
+    console.log(`Le diste me gusta al post ${postID} (solo se agrega el userName si no se había dado "like" antes - SI HAY ERROR ES PORQUE NO HAY USUARIO CONECTADO!)`);
+    // obteniendo el id del usuario conectado
+    db.collection('user').doc(`${auth.currentUser.uid}`).get().then(user => {
+      // agregando likes
+      db.collection('posts').doc(`${postID}`).update({
+        likes: firebase.firestore.FieldValue.arrayUnion(`${user.data().userName}`),
+      })
+    });
+  });
+});
+// POSTS DEL HOME
+export const homePostsFn = (view) => {
+  const publicationContainer = document.querySelector('#publication');
+  db.collection('posts').orderBy("timestamp", "desc").get().then((docs => {
+    publicationContainer.innerHTML = "";
+    docs.forEach(doc => {
+      publicationContainer.innerHTML += view(doc);
+    });
+    setPostsFunctions(); // fns de botones Me gusta, Comentar y Compartir
+  }));
+}*/
