@@ -115,15 +115,38 @@ header{
   background: #81D2CB;
 }
 
-/* HOME POSTS */
 
+
+
+
+
+/* HOME POSTS */
+/*orden*/
+.partDad {
+  display: flex;
+  justify-content: stretch;
+}
+.partOne {
+  display: flex;
+  justify-content: flex-start;
+  /*display:inline-block
+  align-items: center;*/
+  height: 100%;
+  width: 80%;
+}
+.partTwo {
+  display: flex;
+  justify-content: flex-end;
+  /*align-items: center;*/
+  height: 100%;
+  width: 20%;
+}
 #home-post-container {
   /* border: 2px solid blue; */
   width: 80vw;
   margin: 3rem auto;
 
 }
-
 .home-post {
   background-color: #F6F9FA;
   color: black;
@@ -218,11 +241,7 @@ textarea.comment-content {
 .pawBtn {
   display: inline-block;
   color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  margin-top: 10px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .pawEdit:hover .pawBtn:hover {
@@ -261,7 +280,8 @@ textarea.comment-content {
 
 /*Form publi*/
   #new-post-container {
-    width: 40vw;
+    /* border: 2px solid blue; */
+    width: 80vw;
     margin: 3rem auto;
   }
 
@@ -272,7 +292,7 @@ textarea.comment-content {
   padding-top: 1.5rem;
   padding-bottom: 4rem;
   border-radius: 10px;
-  //width: 100%;
+  
 }
 
 #form-post-title {
