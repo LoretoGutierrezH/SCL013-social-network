@@ -105,10 +105,4 @@ const init = () => {
 };
 
 window.onload = init();
-
-let timestamp = {
-  nanoseconds: 0,
-  seconds: 1562524200,
-};
-
-console.log(new Date(timestamp.seconds * 1000));
+console.log(window.location.hash);
