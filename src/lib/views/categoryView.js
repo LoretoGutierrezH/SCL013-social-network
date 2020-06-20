@@ -68,14 +68,14 @@ export const newPostForm = (category) => {
 
 export const editModal = () => {
   const editView = `
-  <div id="edit-modal-container" class="modal edit-component">
+  <div id="edit-modal-container" class="modalEdit edit-component">
           <span id="closeEdit">&times</span>
     <div class="modalEdit-container">
       <div class="modalEdit-content">
         <form action="" id="edit-form">
-        <input id="title-post-edit" placeholder="hola soy un titulo">
-        <input id="content-post-edit" placeholder=" hola soy un comentario">
-        <button id="">Aceptar</button>
+        <input id="title-post-edit" placeholder="Deja tu Titulo aquí">
+        <input id="content-post-edit" placeholder=" Deja un comentario aquí">
+        <button id="accept">Aceptar</button>
       </form>
   </div>`;
   return editView;
