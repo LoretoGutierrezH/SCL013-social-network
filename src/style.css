@@ -161,7 +161,6 @@ header{
   margin-top: 0.5rem;
 }
 
-.like-btn,
 .trigger-comment-form-btn,
 .share-comment-btn,
 .publish-comment-btn {
@@ -177,7 +176,6 @@ header{
   border: none;
 }
 
-.like-btn:hover,
 .trigger-comment-form-btn:hover,
 .share-comment-btn:hover,
 .publish-comment-btn:hover {
@@ -185,7 +183,6 @@ header{
   cursor: pointer;
 }
 
-.like-btn:active,
 .trigger-comment-form-btn:active,
 .share-comment-btn:active,
 .publish-comment-btn:active {
@@ -456,83 +453,36 @@ textarea.comment-content {
   display: block;
 }
 
-/*Like
-.like-post{
+/*Like*/
+
+.like-btn {
+  background: url('./images/iconos/heartPL.png');
+  background-repeat:no-repeat;
+  height:100px;
+  width:100px;
+  background-position:center;
+  border: none;
+  font-family: 'Manjari', sans-serif;
+  margin: 0;
+}
+.like-btn:active {
+  background: url('./images/iconos/disLike.png');
+  background-repeat:no-repeat;
+  height:100px;
+  width:100px;
+  background-position:center;
+  border: none;
+  font-family: 'Manjari', sans-serif;
+  margin: 0;
+}
+
+.grupLike {
   display: flex;
-  height: 15em;
-  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
   align-items: center;
-  justify-content: space-between;
-}
-.like-picture{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-bottom: 0.5em;
-}
-.like-counter{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.heart {
-  background-color: #C4C4C4;
-  height: 20px;
-  transform: rotate(-45deg);
-  width: 20px;
-  margin-bottom: 0.5em;
-}
-
-.heart:before,
-.heart:after {
-content: "";
-background-color: #C4C4C4;
-border-radius: 50%;
-height: 20px;
-position: absolute;
-width: 20px;
-}
-
-.heart:before {
-  top: -10px;
-  left: 0;
-}
-
-.heart:after {
-  left: 10px;
-  top: 0;
-}
-
-.heart-2 {
-  background-color: #c05869;
-  height: 20px;
-  transform: rotate(-45deg);
-  width: 20px;
-  margin-bottom: 0.5em;
-}
-
-.heart-2:before,
-.heart-2:after {
-content: "";
-background-color: #c05869;
-border-radius: 50%;
-height: 20px;
-position: absolute;
-width: 20px;
-}
-
-.heart-2:before {
-  top: -10px;
-  left: 0;
-}
-
-.heart-2:after {
-  left: 10px;
-  top: 0;
 }
 .counter-text{
   font-size: 1.2em;
-  font-family: "Noto sans", sans-serif;
-}*/
+  font-family: 'Manjari', sans-serif;
+}

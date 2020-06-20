@@ -166,34 +166,19 @@ export const postsByCategoryFn = (view, category) => {
     likeBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-        const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
+        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         console.log(postId);
         if (auth.currentUser !== null) {
           likeOrUnlike(postId, category, btn);
         } else {
           alert("Inicia sesión para dar like a esta publicación");
         }
-
       });
     });
   });
 };
-
-/*//like
-likeBtns.forEach(btn => {
-  btn.addEventListener('click', (event) => {
-    event.preventDefault();
-    let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
-    console.log(`Le diste me gusta al post ${postID} (solo se agrega el userName si no se había dado "like" antes - SI HAY ERROR ES PORQUE NO HAY USUARIO CONECTADO!)`);
-    // obteniendo el id del usuario conectado
-    db.collection('user').doc(`${auth.currentUser.uid}`).get().then(user => {
-      // agregando likes
-      db.collection('posts').doc(`${postID}`).update({
-        likes: firebase.firestore.FieldValue.arrayUnion(`${user.data().userName}`),
-      })
-    });
-  });
-});
+// search del header algun dia
+/*
 // POSTS DEL HOME
 export const homePostsFn = (view) => {
   const publicationContainer = document.querySelector('#publication');

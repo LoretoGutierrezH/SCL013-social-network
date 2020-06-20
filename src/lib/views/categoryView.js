@@ -10,11 +10,11 @@ export const categoryView = (doc, formattedDate) => {
   }
 
   let likeString;
-    if (liked === true) {
-      likeString = "Ya no me gusta";
-    } else {
-      likeString = "Me gusta";
-    }
+  if (liked === true) {
+    likeString = "Ya no me gusta";
+  } else {
+    likeString = "Me gusta";
+  }
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
@@ -41,7 +41,9 @@ export const categoryView = (doc, formattedDate) => {
   </div> 
   </div>  
     <div class="post-actions">
-      <button class="like-btn">${likeString}</button>
+    <div class="grupLike">
+    <button class="like-btn">${likeString}</button>
+    <p class="counter-text">${docData.likes.length}</p></div>
       <button class="trigger-comment-form-btn">Comentar</button>
       <button class="share-comment-btn">Compartir</button>
     </div>
