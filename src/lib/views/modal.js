@@ -41,8 +41,6 @@ export const modalListeners = () => {
   });
 
   // Opcion de login con google
-
-
   /* btnGoogle.addEventListener('click', () => {
     console.log(btnGoogle);
     loginGoogle();

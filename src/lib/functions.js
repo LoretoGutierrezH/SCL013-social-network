@@ -129,7 +129,7 @@ export const postsByCategoryFn = (view, category) => {
         event.preventDefault();
         const editModalContainer = document.querySelector('#edit-modal-container');
         const editForm = document.querySelector('#edit-form');
-        editModalContainer.classList.remove('hidden-component');
+        editModalContainer.classList.remove('edit-component');
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         console.log(postId);
         editForm.addEventListener('submit', (e) => {
@@ -153,3 +153,30 @@ export const postsByCategoryFn = (view, category) => {
     });
   });
 };
+/*//like
+likeBtns.forEach(btn => {
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
+    console.log(`Le diste me gusta al post ${postID} (solo se agrega el userName si no se había dado "like" antes - SI HAY ERROR ES PORQUE NO HAY USUARIO CONECTADO!)`);
+    // obteniendo el id del usuario conectado
+    db.collection('user').doc(`${auth.currentUser.uid}`).get().then(user => {
+      // agregando likes
+      db.collection('posts').doc(`${postID}`).update({
+        likes: firebase.firestore.FieldValue.arrayUnion(`${user.data().userName}`),
+      })
+    });
+  });
+});
+
+// POSTS DEL HOME
+export const homePostsFn = (view) => {
+  const publicationContainer = document.querySelector('#publication');
+  db.collection('posts').orderBy("timestamp", "desc").get().then((docs => {
+    publicationContainer.innerHTML = "";
+    docs.forEach(doc => {
+      publicationContainer.innerHTML += view(doc);
+    });
+    setPostsFunctions(); // fns de botones Me gusta, Comentar y Compartir
+  }));
+}*/
