@@ -33,7 +33,8 @@ const init = () => {
     let category;
     const categoryHeading = document.querySelector('#category-heading');
     switch (hash) {
-      case '#/mas-sobre-PL':
+        
+      case '#/home':
         document.querySelector('#root').innerHTML = home();
         signUpFunction();
         signInFunction();
@@ -47,6 +48,13 @@ const init = () => {
         // slider();
         // modalEdit();
         break;
+
+      case '#/mas-sobre-PL':
+        document.querySelector('#publication').innerHTML = aboutUs();
+        categoryHeading.innerHTML = '';
+        mainForm.innerHTML = '';
+        break;
+
       case '#/tips':
         category = 'Tips';
         categoryHeading.innerHTML = `${category}`;
@@ -98,7 +106,6 @@ const init = () => {
         postsByCategoryFn(categoryView, category);
         console.log('se ejecutó todo');
          // slider();
-
          // modalEdit();
     }
   });

@@ -30,13 +30,12 @@ const formattingDate = (doc) => {
   // console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
   return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
 };
-
 /* const showOrHideSpinner = () => {
   const loadingContainer = document.querySelector('#loading-container');
   loadingContainer.classList.toggle('hidden-component');
 }; */
-
 // FUNCIONES DEL CRUD
+
 // Función crear nuevo post
 const newPost = (postTitle, postContent, category) => {
   if (auth.currentUser) {
@@ -59,7 +58,6 @@ const newPost = (postTitle, postContent, category) => {
      alert("Solo los usuarios registrados pueden publicar :)");
    } */
 };
-
 // Función borrar post
 const deletePost = (postId, category) => {
   db.collection(`${category}`).doc(`${postId}`).delete().then(() => {
@@ -74,6 +72,7 @@ const updatePost = (postId, category, postTitle, postContent) => {
     content: `${postContent}`,
   });
 };
+
 // Funciones dar/quitar like
 const likeOrUnlike = (postId, category) => {
   db.collection(`${category}`).doc(`${postId}`).get().then((doc) => {
@@ -111,11 +110,12 @@ export const postsByCategoryFn = (view, category) => {
   const loadingContainer = document.getElementById('loading-container');
   loadingContainer.classList.remove('hidden-component');
   // 2. Leer publicaciones por categoría
-  db.collection(`${category}`).onSnapshot((docs) => {
+  db.collection(`${category}`).orderBy('timestamp', 'desc').onSnapshot((docs) => {
       publicationContainer.innerHTML = '';
       docs.forEach((doc) => {
         const formattedDate = formattingDate(doc);
         /* patita solo se muestra para post del usuario conectado */
+        
         publicationContainer.innerHTML += view(doc, formattedDate);
         loadingContainer.classList.add('hidden-component');
         if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
@@ -131,20 +131,7 @@ export const postsByCategoryFn = (view, category) => {
           });
         }
       });
-   // spinner (hay que moverlo a otro lado)
-    const loadingContainer = document.getElementById('loading-container');
-    const showSpinner = () => {
-      loadingContainer.classList.remove('hidden-component');
-    };
-    const hideSpinner = () => {
-      loadingContainer.classList.add('hidden-component');
-    };
-    if (publicationContainer.innerHTML !== '') {
-      hideSpinner();
-      console.log("aloha");
-    } else {
-      showSpinner();
-    }
+    
 
     // 3. Editar publicación por su id
     const editOptions = document.querySelectorAll('.editOption');
@@ -153,7 +140,7 @@ export const postsByCategoryFn = (view, category) => {
         event.preventDefault();
         const editModalContainer = document.querySelector('#edit-modal-container');
         const editForm = document.querySelector('#edit-form');
-        editModalContainer.classList.remove('.edit-component');
+        editModalContainer.classList.remove('hidden-component');
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         console.log(postId);
         editForm.addEventListener('submit', (e) => {
@@ -164,12 +151,19 @@ export const postsByCategoryFn = (view, category) => {
         });
       });
     });
-
-    /*const likeBtns = document.querySelectorAll('.like-btn');
-    likeBtns.forEach((btn) => {*/
     // 4. Borrar publicación por su id
-    const eraseBtn = document.querySelectorAll('.eraseOption');
-    eraseBtn.forEach((btn) => {
+    const eraseBtns = document.querySelectorAll('.eraseOption');
+    eraseBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
+        console.log(postId);
+        deletePost(postId, category);
+      });
+    });
+
+    const likeBtns = document.querySelectorAll('.like-btn');
+    likeBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
@@ -179,11 +173,11 @@ export const postsByCategoryFn = (view, category) => {
         } else {
           alert("Inicia sesión para dar like a esta publicación");
         }
+
       });
     });
   });
 };
-
 
 /*//like
 likeBtns.forEach(btn => {
