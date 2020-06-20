@@ -2,7 +2,13 @@ import { auth } from '../functions.js';
 
 export const categoryView = (doc, formattedDate) => {
   const docData = doc.data();
-  const liked = doc.data().likes.includes(`${auth.currentUser.displayName}`);
+  let liked;
+  if (auth.currentUser !== null) {
+    liked = doc.data().likes.includes(`${auth.currentUser.displayName}`);
+  } else {
+    liked = false;
+  }
+
   let likeString;
     if (liked === true) {
       likeString = "Ya no me gusta";
