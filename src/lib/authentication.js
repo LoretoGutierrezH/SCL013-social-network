@@ -1,4 +1,4 @@
-import { auth, db } from './functions.js';
+import { auth, db } from './firebaseImports.js';
 
 // Registro
 export const signUpFunction = () => {
@@ -102,25 +102,5 @@ export const exitFunction = () => {
   exit.addEventListener('click', () => {
     auth.signOut();
     console.log('Sali, me fui');
-});
-};
-
-//Acceder con google
-/*export const iniciarSesion = () => {
-  const btngoogle = document.querySelector('#btngoogle')
-  btngoogle.addEventListener('click', async () => {
- 
-      try {
-          const provider = new firebase.auth.GoogleAuthProvider()
-          await firebase.auth().signInWithPopup(provider)
-      } catch (error) {
-          console.log(error)
-      }
-  })
-}  /*
-/*Enviar correo
-export const enviarCorreo = () => {
-  firebase.auth().currentUser.sendEmailVerification().then(function () {
-    alert('¡Verificación de correo enviada!');
   });
-}*/
+};

@@ -1,6 +1,6 @@
-import { auth } from '../functions.js';
-
-export const categoryView = (doc, formattedDate) => {
+let category;
+export const categoryView = (doc, formattedDate, auth) => {
+  category = doc.data().category;
   const docData = doc.data();
   let liked;
   if (auth.currentUser !== null) {
@@ -10,11 +10,11 @@ export const categoryView = (doc, formattedDate) => {
   }
 
   let likeString;
-    if (liked === true) {
-      likeString = "Ya no me gusta";
-    } else {
-      likeString = "Me gusta";
-    }
+  if (liked === true) {
+    likeString = 'Ya no me gusta';
+  } else {
+    likeString = 'Me gusta';
+  }
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
   <div class="home-post">
@@ -56,7 +56,7 @@ export const categoryView = (doc, formattedDate) => {
   return postsView;
 };
 
-export const newPostForm = (category) => {
+export const newPostForm = () => {
   const formView = `
     <section id="new-post-container" data-category="${category}">
     <div class="new-post">

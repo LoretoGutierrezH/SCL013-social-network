@@ -1,7 +1,5 @@
 import { newPostForm, editModal } from './views/categoryView.js';
-
-export const db = firebase.firestore();
-export const auth = firebase.auth();
+import { db, auth } from './firebaseImports.js';
 
 // HELPER - Muestra/oculta opciones del menú según usuario conectado/desconectado
 export const showOrHideOptions = () => {
@@ -25,8 +23,8 @@ const formattingDate = (doc) => {
   const splitDate = formattedDate.split(' ');
   // console.log(splitDate[1], splitDate[2], splitDate[3], splitDate[4]);
   let month;
-  if (splitDate[1] === "Jun") { // porque solo es para mostrar :D xd
-    month = "Junio";
+  if (splitDate[1] === 'Jun') { // porque solo es para mostrar :D xd
+    month = 'Junio';
   }
   // console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
   return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
@@ -52,7 +50,7 @@ const newPost = (postTitle, postContent, category) => {
     }).then(() => {
       const successMssge = document.querySelector('#new-post-success');
       setTimeout(() => {
-        successMssge.innerHTML = "Publicación creada correctamente :)";
+        successMssge.innerHTML = 'Publicación creada correctamente :)';
       }, 2000);
       console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
     }).catch((error) => {
@@ -87,12 +85,12 @@ const likeOrUnlike = (postId, category) => {
       db.collection(`${category}`).doc(`${postId}`).update({
         likes: firebase.firestore.FieldValue.arrayRemove(`${auth.currentUser.displayName}`),
       });
-      console.log("LIKE SACADO");
+      // console.log("LIKE SACADO");
     } else if (includesUser === false) {
       db.collection(`${category}`).doc(`${postId}`).update({
         likes: firebase.firestore.FieldValue.arrayUnion(`${auth.currentUser.displayName}`),
       });
-      console.log("LIKE AGREGADO");
+      // console.log("LIKE AGREGADO");
     }
   });
 };
@@ -102,8 +100,8 @@ export const postsByCategoryFn = (view, category) => {
   const mainForm = document.querySelector('#main-form');
   const editContainer = document.querySelector('#edit-post');
   publicationContainer.innerHTML = '';
-  mainForm.innerHTML = newPostForm(category);
-  editContainer.innerHTML = editModal(category);
+  mainForm.innerHTML = newPostForm();
+  editContainer.innerHTML = editModal();
   const postForm = document.querySelector('#new-post-form');
   // 1. Crear nueva publicación por categoría
   postForm.addEventListener('submit', () => {
@@ -116,28 +114,27 @@ export const postsByCategoryFn = (view, category) => {
   loadingContainer.classList.remove('hidden-component');
   // 2. Leer publicaciones por categoría
   db.collection(`${category}`).orderBy('timestamp', 'desc').onSnapshot((docs) => {
-      publicationContainer.innerHTML = '';
-      docs.forEach((doc) => {
-        const formattedDate = formattingDate(doc);
-        /* patita solo se muestra para post del usuario conectado */
-        console.log(doc);
-        publicationContainer.innerHTML += view(doc, formattedDate);
-        loadingContainer.classList.add('hidden-component');
-        console.log(doc.data().likes.length);
-        if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
-          const paws = document.querySelectorAll('.pawEdit');
-          paws.forEach((paw) => {
-            /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
+    publicationContainer.innerHTML = '';
+    docs.forEach((doc) => {
+      const formattedDate = formattingDate(doc);
+      /* patita solo se muestra para post del usuario conectado */
+      console.log(doc);
+      publicationContainer.innerHTML += view(doc, formattedDate, auth);
+      loadingContainer.classList.add('hidden-component');
+      console.log(doc.data().likes.length);
+      if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
+        const paws = document.querySelectorAll('.pawEdit');
+        paws.forEach((paw) => {
+          /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
                   paw.classList.remove('hidden-component');
                 } else {
                   console.log(paw.getAttribute('data-postid'));
                 } */
-            // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
-            paw.classList.remove('hidden-component');
-          });
-        }
-      });
-    
+          // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
+          paw.classList.remove('hidden-component');
+        });
+      }
+    });
 
     // 3. Editar publicación por su id
     const editOptions = document.querySelectorAll('.editOption');
@@ -177,37 +174,9 @@ export const postsByCategoryFn = (view, category) => {
         if (auth.currentUser !== null) {
           likeOrUnlike(postId, category, btn);
         } else {
-          alert("Inicia sesión para dar like a esta publicación");
+          alert('Inicia sesión para dar like a esta publicación');
         }
-
       });
     });
   });
 };
-
-/*//like
-likeBtns.forEach(btn => {
-  btn.addEventListener('click', (event) => {
-    event.preventDefault();
-    let postID = event.target.parentElement.parentElement.getAttribute('data-postid');
-    console.log(`Le diste me gusta al post ${postID} (solo se agrega el userName si no se había dado "like" antes - SI HAY ERROR ES PORQUE NO HAY USUARIO CONECTADO!)`);
-    // obteniendo el id del usuario conectado
-    db.collection('user').doc(`${auth.currentUser.uid}`).get().then(user => {
-      // agregando likes
-      db.collection('posts').doc(`${postID}`).update({
-        likes: firebase.firestore.FieldValue.arrayUnion(`${user.data().userName}`),
-      })
-    });
-  });
-});
-// POSTS DEL HOME
-export const homePostsFn = (view) => {
-  const publicationContainer = document.querySelector('#publication');
-  db.collection('posts').orderBy("timestamp", "desc").get().then((docs => {
-    publicationContainer.innerHTML = "";
-    docs.forEach(doc => {
-      publicationContainer.innerHTML += view(doc);
-    });
-    setPostsFunctions(); // fns de botones Me gusta, Comentar y Compartir
-  }));
-}*/

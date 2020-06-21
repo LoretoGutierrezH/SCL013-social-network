@@ -46,34 +46,3 @@ export const modalListeners = () => {
     loginGoogle();
   }); */
 };
-
-/*//ModalEdit
-
-export const modalEditListeners = () => {
-  // const exit = document.querySelector('.exit');
-  const modale = document.querySelector('.modal');
-  const closeEdit = document.querySelector('#closeEdit');
-  const EditBtn = document.querySelector('.editOption');
-  const acceptBtn = document.querySelector('#accept');
-  // const btnGoogle = document.getElementById('#sign-in-google');
-  const toggleModalEditForm = () => {
-    acceptBtn.addEventListener('click', () => {
-      acceptBtn.classList.remove('edit-component');
-      acceptBtn.classList.add('edit-component');
-    });
-  };
-  // Abrir y cerrar modal
-  const closeSignModal = () => {
-    // modal, closeModal, signBtn
-    modale.classList.remove('edit-component');
-    closeEdit.addEventListener('click', () => {
-      modale.classList.add('edit-component');
-    });
-    toggleModalEditForm();
-  };
-  // Agregar a opción "Ingresar" event listener de apertura de modal
-  acceptBtn.addEventListener('click', () => {
-    closeSignModal();
-  });
-  //closeSignModal();
-};*/

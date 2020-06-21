@@ -173,7 +173,6 @@ header{
   margin-top: 1rem;
   font-size: 1rem;
   text-decoration: none;
-  outline: none;
   border: none;
 }
 
@@ -255,14 +254,12 @@ textarea.comment-content {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 10px;
-}
-
-.paw-content {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   text-align: left;
 }
+
 
 .paw-content li:hover {
   background-color: #CBCCCC;
@@ -331,9 +328,8 @@ textarea.comment-content {
   border-radius: 1rem;
   outline: none;
   margin-top: 1rem;
-  outline: none;
   border: none;
-  font-family: 'Manjari', sans-serif;;
+  font-family: 'Manjari', sans-serif;
 }
 
 
@@ -426,7 +422,6 @@ textarea.comment-content {
   border-radius: 1rem;
   outline: none;
   margin-top: 1rem;
-  outline: none;
   border: none;
   font-family: 'Manjari', sans-serif;
 }

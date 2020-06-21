@@ -1,11 +1,11 @@
 .sign-btn {
   display: flex;
-  font-family: FontAwesome;
+  /*font-family: FontAwesome;*/
   text-align: center;
 }
 
 .categorysBtn {
-  font-family: FontAwesome;
+  /*font-family: FontAwesome;*/
   display: flex;
   text-align: center;
   color: #000000;
@@ -18,8 +18,36 @@ li a,
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  margin-top: 10px;
   margin: 10px;
+  margin-top: 10px;
+  
+}
+
+li a,
+.burguerBtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 12px 12px;
+  text-decoration: none;
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.category-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.burguer-content a {
+  color: black;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 li a:hover,
@@ -42,12 +70,16 @@ li.category {
   border-radius: 10px;
 }
 
-.category-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+.burguerBtn {
+  /*font-family: FontAwesome;*/
+  display: flex;
+  color: #000000;
+}
+
+li a:hover,
+.burguer:hover .burguerBtn {
+  background-color: #77B1AC;
+  border-radius: 4px;
 }
 
 .category-content a:hover {
@@ -73,28 +105,11 @@ li.category {
   border-radius: 10px;
 }
 
-.burguerBtn {
-  font-family: FontAwesome;
-  display: flex;
-  color: #000000;
-}
 
-li a,
-.burguerBtn {
-  display: inline-block;
-  color: black;
-  text-align: center;
-  padding: 12px 12px;
-  text-decoration: none;
-  margin-top: 10px;
-  margin: 10px;
-}
 
-li a:hover,
-.burguer:hover .burguerBtn {
-  background-color: #77B1AC;
-  border-radius: 4px;
-}
+
+
+
 
 li.burguer {
   display: inline-block;
@@ -110,13 +125,7 @@ li.burguer {
   border-radius: 10px;
 }
 
-.burguer-content a {
-  color: black;
-  padding: 12px 12px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+
 
 .burguer-content a:hover {
   background-color: #CBCCCC;
@@ -262,18 +271,16 @@ li.burguer {
   display: inline-block;
   background-color: #F6F9FA;
   padding: 1rem 2rem;
-  border-radius: 1rem;
   outline: none;
+  margin: 1.5rem auto;
   margin-top: 1rem;
   font-size: 1.5rem;
   text-decoration: none;
-  outline: none;
   border: none;
   border-radius: 15px;
-  font-family: 'Manjar', 'sans-serif';
-  margin: 1.5rem auto;
+  font-family: 'Manjar','sans-serif', Arial,
+  Helvetica, sans-serif;
   z-index: 1;
-
 }
 
 #sign-in-form button:hover,
@@ -322,9 +329,31 @@ li.burguer {
   position: relative;
 }
 
+#close-icon:before {
+  -webkit-transform: rotate(45deg) scaleX(0) translateY(10px);
+  transform: rotate(45deg) scaleX(0) translateY(10px);
+}
+
+#close-icon:before,
+#close-icon:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
 #search-wrapper.search-expanded #close-icon:before {
   -webkit-animation: cross-1-in 0.25s linear 0s forwards;
   animation: cross-1-in 0.25s linear 0s forwards;
+}
+
+#close-icon:after {
+  -webkit-transform: rotate(-45deg) scaleX(0) translateY(-10px);
+  transform: rotate(-45deg) scaleX(0) translateY(-10px);
 }
 
 #search-wrapper.search-expanded #close-icon:after {
@@ -400,28 +429,6 @@ li.burguer {
 #close-icon[style*="display: block"]:after {
   -webkit-transform: rotate(-45deg) scaleX(1) translateY(-10px);
   transform: rotate(-45deg) scaleX(1) translateY(-10px);
-}
-
-#close-icon:before,
-#close-icon:after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  background-color: rgb(0, 0, 0);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-}
-
-#close-icon:before {
-  -webkit-transform: rotate(45deg) scaleX(0) translateY(10px);
-  transform: rotate(45deg) scaleX(0) translateY(10px);
-}
-
-#close-icon:after {
-  -webkit-transform: rotate(-45deg) scaleX(0) translateY(-10px);
-  transform: rotate(-45deg) scaleX(0) translateY(-10px);
 }
 
 #close-icon.closing:before {
