@@ -137,11 +137,11 @@ export const postsByCategoryFn = (view, category) => {
     });
 
     // 3. Editar publicación por su id
+    const editModalContainer = document.querySelector('#edit-modal-container');
     const editOptions = document.querySelectorAll('.editOption');
     editOptions.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-        const editModalContainer = document.querySelector('#edit-modal-container');
         const editForm = document.querySelector('#edit-form');
         editModalContainer.classList.remove('hidden-component');
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
@@ -152,6 +152,10 @@ export const postsByCategoryFn = (view, category) => {
           const postContent = editForm['content-post-edit'].value;
           updatePost(postId, category, postTitle, postContent);
         });
+      });
+      const closeEdit = document.querySelector('.closeEdit');
+      closeEdit.addEventListener('click', () => {
+        editModalContainer.classList.add('hidden-component');
       });
     });
     // 4. Borrar publicación por su id
@@ -169,7 +173,7 @@ export const postsByCategoryFn = (view, category) => {
     likeBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-        const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
+        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
         console.log(postId);
         if (auth.currentUser !== null) {
           likeOrUnlike(postId, category, btn);

@@ -8,11 +8,12 @@
     min-height: 100vh;
     display: grid;
     grid-template-areas:
-      "header header header"
-      "aside-left  main aside-right"
-      "footer footer footer";
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 10vh 1fr 10vh;  /*usar vh con fr para mantener dimensiones de header y footer (solo 1fr es variable)*/
+      "header header"
+      "aside-left aside-left"
+      "main aside-right"
+      "footer footer";
+    grid-template-columns: 75% 25%;
+    /*grid-template-rows: 15% 20% 55% 10%;  usar vh con fr para mantener dimensiones de header y footer (solo 1fr es variable)*/
     overflow-x: visible;
     z-index: 0;
   }
@@ -61,8 +62,6 @@
     margin: 3rem auto;
 
   }
-
-  .like-btn,
   .trigger-comment-form-btn,
   .share-comment-btn,
   .publish-comment-btn {

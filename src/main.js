@@ -5,7 +5,7 @@ import { showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
 import {
   signUpFunction, signInFunction, exitFunction, singInGoogle,
 } from './lib/authentication.js';
-/* import { slider } from './lib/views/slider.js'; */
+import { slider } from './lib/views/slider.js';
 import { modalListeners } from './lib/views/modal.js';
 
 const root = document.querySelector('#root');
@@ -17,13 +17,12 @@ const init = () => {
   exitFunction();
   singInGoogle();
   modalListeners();
+  slider();
   showOrHideOptions();
   const mainForm = document.querySelector('#main-form');
   mainForm.innerHTML = '';
   document.querySelector('#publication').innerHTML = aboutUs();
-
-  // slider();
-  // modalEdit();
+ 
   window.location.hash = '#/mas-sobre-PL';
   console.log('Página completamente cargada');
   window.addEventListener('hashchange', () => {
@@ -39,12 +38,11 @@ const init = () => {
         exitFunction();
         singInGoogle();
         modalListeners();
+        slider();
         showOrHideOptions();
         mainForm.innerHTML = '';
         categoryHeading.innerHTML = '';
         document.querySelector('#publication').innerHTML = aboutUs();
-        // slider();
-        // modalEdit();
         break;
 
       case '#/mas-sobre-PL':
@@ -100,11 +98,10 @@ const init = () => {
         exitFunction();
         singInGoogle();
         modalListeners();
+        slider();
         showOrHideOptions();
         postsByCategoryFn(categoryView, category);
         console.log('se ejecutó todo');
-         // slider();
-         // modalEdit();
     }
   });
 };
