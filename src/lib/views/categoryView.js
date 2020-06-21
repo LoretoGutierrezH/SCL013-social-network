@@ -18,6 +18,7 @@ export const categoryView = (doc) => {
       <h5 class="home-post-author">Autor: ${docData.author}</h5>
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
       <h5 class="home-post-timestamp">Publicado: ${docData.date}</h5>
+      <img id="imagenPublicacion" src='${docData.foto}'>
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
   </div>    
@@ -39,16 +40,22 @@ export const categoryView = (doc) => {
 
 export const newPostForm = (category) => {
   const formView = `
-    <section id="new-post-container" data-category="${category}">
-    <div class="new-post">
-      <form id="new-post-form">
-        <input id="form-post-title" type="text" placeholder="Título"><br>
-        <textarea id="form-post-content" type="text" placeholder="Escribe tu publicación aquí"></textarea><br>
-        <button class="new-post-btn" id="new-post-btn">Publicar</button>
-      </form>
-      </div>
-    </section>
+  <section id="new-post-container" data-category="${category}">
+  <div class="new-post">
+    <form id="new-post-form">
+      <input id="form-post-title" type="text" placeholder="Título"><br>
+      <textarea id="form-post-content" type="text" placeholder="Escribe tu publicación aquí"></textarea><br>
+      <label>
+      <img id="fotoPublicacion" class ="point-photo" src="./img/add-photo.svg">
+      <input type="file" id="inputImg" class="inputImg" accept="image/jpeg, image/png, image/gif">
+      </label>
+      <button class="new-post-btn" id="new-post-btn">Publicar</button>
+    </form>
+    </div>
+  </section>
   `;
+
+
   return formView;
 };
 

@@ -1,8 +1,9 @@
 import { newPostForm, editModal } from './views/categoryView.js';
+import { uploadImagePost } from './authentication.js';
 
 export const db = firebase.firestore();
 export const auth = firebase.auth();
-
+export const storage = firebase.storage();
 
 // HELPER - Muestra/oculta opciones del menú según usuario conectado/desconectado
 export const showOrHideOptions = () => {
@@ -25,7 +26,7 @@ export const showOrHideOptions = () => {
 }; */
 // FUNCIONES DEL CRUD
 // Función crear nuevo post
-const newPost = (postTitle, postContent, category) => {
+const newPost = (postTitle, postContent, category, url) => {
   if (auth.currentUser) {
     db.collection(`${category}`).add({
       uid: `${auth.currentUser.uid}`,
@@ -36,8 +37,9 @@ const newPost = (postTitle, postContent, category) => {
       likes: [],
       comments: {},
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    }).then(() => {
-      console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`);
+      foto: url,
+    }).then((docRef) => {
+      console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`,docRef.id);
     }).catch((error) => {
       console.log(error);
     });
@@ -72,11 +74,31 @@ export const postsByCategoryFn = (view, category) => {
   mainForm.innerHTML = newPostForm(category);
   editContainer.innerHTML = editModal(category);
   const postForm = document.querySelector('#new-post-form');
+  /*document.getElementById("form-post-content").value = ""; limpiar div de publicacion*/
+
+
   // 1. Crear nueva publicación por categoría
   postForm.addEventListener('submit', () => {
     const postTitle = postForm['form-post-title'].value;
     const postContent = postForm['form-post-content'].value;
     newPost(postTitle, postContent, category);
+
+
+
+
+  });
+
+const botonPublicar = document.getElementById('#new-post-btn');
+  botonPublicar.addEventListener('click', () => {
+    const info = document.getElementById('inputImg').files;
+    if (info.lenght > 0) {
+      const urlImg = uploadImagePost(info[0], 'imgPublicacion');
+      urlImg.then((url) => {
+        newPost(url);
+      });
+    } else {
+      newPost(null);
+    }
   });
 
   // 2. Leer publicaciones por categoría
@@ -145,3 +167,18 @@ export const postsByCategoryFn = (view, category) => {
     });
   });
 };
+/* Como subir fotos
+
+const evento = document.querySelector('#inputImg');
+evento.addEventListener('change', () => {
+  const contenedorImagen = document.getElementById('fotoPublicacion');
+  const inputImg = document.getElementById('inputImg');
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    contenedorImagen.setAttribute('src', e.target.result);
+  };
+  reader.readAsDataURL(inputImg.files[0]);
+});*/
+
+

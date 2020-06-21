@@ -90,9 +90,119 @@ export const home = () => {
     </header>
 
     <aside class="middle-left" id="photo-carousel">
-    <div class="carousel">
-     
-    </div>
+   <div class="carousel">
+    <h2 class="slider-message"> Ganador de la Semana</h2>
+    <div class="slick-list" id="slick-list">
+      <button class="slick-arrow slick-prev" id="button-prev">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg>
+      </button>
+        <div class="slick-track" id="track">
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/1.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/2.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/3.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/4.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/5.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/6.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/7.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/8.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/9.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <picture>
+                <img src="./images/Mascotas/10.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+      </div>
+      <button class="slick-arrow slick-next" id="button-next">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" class="svg-inline--fa fa-arrow-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path></svg>  
+      </button>  
+      </div>  
+  </div>
     </aside>
     <main class="middle-center" id="publication-area">
       <div class="category-title"> 

@@ -2,9 +2,8 @@ import { home } from './lib/views/home.js';
 import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
-import { signUpFunction, signInFunction, exitFunction, singInGoogle,
-} from './lib/authentication.js';
-/* import { slider } from './lib/views/slider.js'; */
+import { signUpFunction, signInFunction, exitFunction, singInGoogle, uploadImagePost } from './lib/authentication.js';
+import { slider } from './lib/views/slider.js';
 import { modalListeners } from './lib/views/modal.js';
 
 
@@ -16,13 +15,14 @@ const init = () => {
   signInFunction();
   exitFunction();
   singInGoogle();
+  uploadImagePost();
   modalListeners();
   showOrHideOptions();
   const mainForm = document.querySelector('#main-form');
   mainForm.innerHTML = '';
   document.querySelector('#publication').innerHTML = aboutUs();
 
-  // slider();
+  slider();
   // modalEdit();
   window.location.hash = '#/mas-sobre-PL';
   console.log('Página completamente cargada');
@@ -39,12 +39,13 @@ const init = () => {
         signInFunction();
         exitFunction();
         singInGoogle();
+        uploadImagePost();
         modalListeners();
         showOrHideOptions();
         mainForm.innerHTML = '';
         categoryHeading.innerHTML = '';
         document.querySelector('#publication').innerHTML = aboutUs();
-        // slider();
+        slider();
         // modalEdit();
         break;
 
@@ -100,11 +101,12 @@ const init = () => {
         signInFunction();
         exitFunction();
         singInGoogle();
+        uploadImagePost();
         modalListeners();
         showOrHideOptions();
         postsByCategoryFn(categoryView, category);
         console.log('se ejecutó todo');
-         // slider();
+        slider();
          // modalEdit();
     }
   });

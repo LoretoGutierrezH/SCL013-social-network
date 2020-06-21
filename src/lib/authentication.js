@@ -1,4 +1,4 @@
-import { auth, db } from './functions.js';
+import { auth, db, storage } from './functions.js';
 
 // Registro
 export const signUpFunction = () => {
@@ -112,3 +112,10 @@ export const enviarCorreo = () => {
     alert('¡Verificación de correo enviada!');
   });
 }*/
+
+// Guardar imagenes firebase
+export const uploadImagePost = (file, uid) => {
+  const refStorage = storage.ref(`image/${uid}/${file}`);
+  return refStorage.put(file).then(
+    snapshot => snapshot.ref.getDownloadURL());
+};
