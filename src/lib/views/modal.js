@@ -51,29 +51,20 @@ export const modalListeners = () => {
 
 export const modalEditListeners = () => {
   // const exit = document.querySelector('.exit');
-  const modale = document.querySelector('.modal');
+  const modale = document.querySelector('.modale');
   const closeEdit = document.querySelector('#closeEdit');
-  const EditBtn = document.querySelector('.editOption');
-  const acceptBtn = document.querySelector('#accept');
-  // const btnGoogle = document.getElementById('#sign-in-google');
-  const toggleModalEditForm = () => {
-    acceptBtn.addEventListener('click', () => {
-      acceptBtn.classList.remove('edit-component');
-      acceptBtn.classList.add('edit-component');
-    });
-  };
-  // Abrir y cerrar modal
-  const closeSignModal = () => {
-    // modal, closeModal, signBtn
-    modale.classList.remove('edit-component');
+ const editBtn = document.querySelector('.editOption');
+  //const acceptBtn = document.querySelector('.accept');
+
+ // cerrar modal
+  const closeEditModal = () => {
+    modale.classList.remove('hidden-component');
     closeEdit.addEventListener('click', () => {
-      modale.classList.add('edit-component');
+      modale.classList.add('hidden-component');
     });
-    toggleModalEditForm();
+    closeEditModal();
   };
-  // Agregar a opción "Ingresar" event listener de apertura de modal
-  acceptBtn.addEventListener('click', () => {
-    closeSignModal();
+  editBtn.addEventListener('click', () => {
+    closeEditModal();
   });
-  //closeSignModal();
 };*/

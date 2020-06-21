@@ -111,34 +111,34 @@ export const postsByCategoryFn = (view, category) => {
   loadingContainer.classList.remove('hidden-component');
   // 2. Leer publicaciones por categoría
   db.collection(`${category}`).orderBy('timestamp', 'desc').onSnapshot((docs) => {
-      publicationContainer.innerHTML = '';
-      docs.forEach((doc) => {
-        const formattedDate = formattingDate(doc);
-        /* patita solo se muestra para post del usuario conectado */
-        
-        publicationContainer.innerHTML += view(doc, formattedDate);
-        loadingContainer.classList.add('hidden-component');
-        if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
-          const paws = document.querySelectorAll('.pawEdit');
-          paws.forEach((paw) => {
-            /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
-                  paw.classList.remove('hidden-component');
-                } else {
-                  console.log(paw.getAttribute('data-postid'));
-                } */
-            // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
-            paw.classList.remove('hidden-component');
-          });
-        }
-      });
-    
+    publicationContainer.innerHTML = '';
+    docs.forEach((doc) => {
+      const formattedDate = formattingDate(doc);
+      /* patita solo se muestra para post del usuario conectado */
+
+      publicationContainer.innerHTML += view(doc, formattedDate);
+      loadingContainer.classList.add('hidden-component');
+      if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
+        const paws = document.querySelectorAll('.pawEdit');
+        paws.forEach((paw) => {
+          /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
+                paw.classList.remove('hidden-component');
+              } else {
+                console.log(paw.getAttribute('data-postid'));
+              } */
+          // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
+          paw.classList.remove('hidden-component');
+        });
+      }
+    });
+
 
     // 3. Editar publicación por su id
+    const editModalContainer = document.querySelector('#edit-modal-container');
     const editOptions = document.querySelectorAll('.editOption');
     editOptions.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-        const editModalContainer = document.querySelector('#edit-modal-container');
         const editForm = document.querySelector('#edit-form');
         editModalContainer.classList.remove('hidden-component');
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
@@ -149,6 +149,10 @@ export const postsByCategoryFn = (view, category) => {
           const postContent = editForm['content-post-edit'].value;
           updatePost(postId, category, postTitle, postContent);
         });
+      });
+      const closeEdit = document.querySelector('.closeEdit');
+      closeEdit.addEventListener('click', () => {
+        editModalContainer.classList.add('hidden-component');
       });
     });
     // 4. Borrar publicación por su id

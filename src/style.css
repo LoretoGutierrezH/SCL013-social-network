@@ -42,10 +42,7 @@ body {
     "footer";
   grid-template-columns: 100%;
   grid-template-rows: 15vh 25vh 1fr 5vh;
-  
-
 }
-
 /*iconos del header*/
 .space1 {
   display: flex;
@@ -335,7 +332,6 @@ textarea.comment-content {
 
 
 /* SPINNER */
-
 #loading_container {
   background-color: rgba(250, 240, 245, 0.9);
   height: 100%;
@@ -431,7 +427,7 @@ textarea.comment-content {
   background-color: #CBCCCC;
   cursor: pointer;
 }
-#closeEdit {
+.closeEdit {
   background-color: rgba(128, 128, 128, 0.26);
   width: 3rem;
   height: 3rem;
@@ -449,12 +445,8 @@ textarea.comment-content {
   display: flex;
   justify-content: center;
 }
-.pawBtn:hover .edit-component {
-  display: block;
-}
 
 /*Like*/
-
 .like-btn {
   background: url('./images/iconos/heartPL.png');
   background-repeat:no-repeat;
@@ -462,6 +454,7 @@ textarea.comment-content {
   width:100px;
   background-position:center;
   border: none;
+  text-align: center;
   font-family: 'Manjari', sans-serif;
   margin: 0;
 }
@@ -485,4 +478,8 @@ textarea.comment-content {
 .counter-text{
   font-size: 1.2em;
   font-family: 'Manjari', sans-serif;
+}
+
+li{
+  list-style: none;
 }

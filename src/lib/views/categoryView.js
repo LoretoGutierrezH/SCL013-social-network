@@ -24,6 +24,7 @@ export const categoryView = (doc, formattedDate) => {
       <h3 class="home-post-title">Título: ${docData.title}</h3>
       <h4 class="home-post-category">Categoría: ${docData.category} </h4>
       <h5 class="home-post-author">Autor: ${docData.author}</h5>
+      <!--<img id="imagenPublicacion" src='${docData.foto}'>-->
       <h5 class="home-post-likes">Me gusta: ${docData.likes}</h5>
       <h5 class="home-post-timestamp">Publicado: ${formattedDate}</h5>
       <p class="home-post-content">Contenido: ${docData.content}</p>
@@ -76,13 +77,13 @@ export const newPostForm = (category) => {
 export const editModal = () => {
   const editView = `
   <div id="edit-modal-container" class="modal hidden-component">
-          <span id="close-modal">&times</span>
-    <div class="modal-container">
-      <div class="modal-content">
+          <span class="closeEdit">&times</span>
+    <div class="modalEdit-container">
+      <div class="modalEdit-content">
         <form action="" id="edit-form">
-        <input id="title-post-edit" placeholder="hola soy un titulo">
-        <input id="content-post-edit" placeholder=" hola soy un comentario">
-        <button id="">Aceptar</button>
+        <input id="title-post-edit" placeholder="Coloca un titulo">
+        <input id="content-post-edit" placeholder="Deja un comentario">
+        <button id="accept">Aceptar</button>
       </form>
   </div>`;
   return editView;
