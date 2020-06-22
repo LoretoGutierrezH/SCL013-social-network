@@ -5,11 +5,7 @@
 * [1. PawLovers](#1-PawLovers)
 * [2. Planificación del proyecto y diseño](#2-Planificación-del-proyecto-y-diseño)
 * [3. Historia de usuario](#3-Historia-de-usuario)
-* [4. Test Unitario](#4-Test-Unitario)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+
 
 ***
 
@@ -79,9 +75,9 @@ Y se eligió una tipografía que fuera divertida, un poco desordenada, Puedes ap
 
 Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el formulario de inicio de sesión/registro para poder realizar comentarios, publicaciones, dar likes y editar mis publicaciones y la información de mi cuenta.
 
-* [ ] 
-* [ ] 
-* [ ] 
+* [+ ] Investigar, las especificaciones de cada componente elemental para poder ejecutar las necesidades del usuario.
+* [* ] Tener un prototipo para recibir feeback de los potenciales usuarios.
+* [/ ] definir paletas y diseño del mismo.
 
 ### Historia 2 Inicio de sesión y registro a través de modal (mobile)
 
@@ -92,7 +88,7 @@ Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el f
 - Definición de Terminado:
 
 
-* [ ] Crear modal básico con pestaña de formulario de inicio de sesión y registro (html, css y js)
+* [! ] Crear modal básico con pestaña de formulario de inicio de sesión y registro (html, css y js)
 * [ ] Crear enlace para abrir modal desde el header de la página de inicio 
 * [ ] Crear funcionalidad de autenticación de usuario y asociar inicio de sesión y registro con las pestañas correspondientes del modal. 
 * [ ] Crear opción de cierre de sesión provisoria (solo para probar la funcionalidad, después la cambiamos para ver cómo se ve mejor) 
@@ -160,7 +156,5 @@ Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el f
 * [ ] 
 * [ ] 
 
-
-## 4. Test Unitario
 
 

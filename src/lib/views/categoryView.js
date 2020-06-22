@@ -1,6 +1,6 @@
-import { auth } from '../functions.js';
-
-export const categoryView = (doc, formattedDate) => {
+let category;
+export const categoryView = (doc, formattedDate, auth) => {
+  category = doc.data().category;
   const docData = doc.data();
   let liked;
   if (auth.currentUser !== null) {
@@ -11,9 +11,9 @@ export const categoryView = (doc, formattedDate) => {
 
   let likeString;
   if (liked === true) {
-    likeString = "Ya no me gusta";
+    likeString = 'Ya no me gusta';
   } else {
-    likeString = "Me gusta";
+    likeString = 'Me gusta';
   }
   const postsView = `
 <section data-postid="${doc.id}" id="home-post-container">
@@ -30,7 +30,7 @@ export const categoryView = (doc, formattedDate) => {
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
   </div> 
-  <div class="partTwo">
+  <div class="partTwo" data-author="${docData.uid}">
     <ul class="pawEdit hidden-component" data-postid="${doc.id}">
       <div class="pawBtn user-post-actions"><img src="/images/iconos/Paw.png"></div>
         <div class="paw-content">
@@ -43,14 +43,14 @@ export const categoryView = (doc, formattedDate) => {
   </div>  
     <div class="post-actions">
     <div class="grupLike">
-    <button class="like-btn">${likeString}</button>
+    <button class="like-btn"></button>
     <p class="counter-text">${docData.likes.length}</p></div>
       <button class="trigger-comment-form-btn">Comentar</button>
       <button class="share-comment-btn">Compartir</button>
     </div>
-    <div data-postid="${doc.id}" class="post-comment-form hidden-component">
+    <div data-formid="${doc.id}" class="post-comment-form hidden-component">
       <form action="submit" class="comment-form">
-        <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+        <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí (PRÓXIMAMENTE :D)"></textarea><br>
         <button class="publish-comment-btn">Publicar</button>
       </form>
     </div>
@@ -76,11 +76,12 @@ export const newPostForm = (category) => {
 
 export const editModal = () => {
   const editView = `
-  <div id="edit-modal-container" class="modal hidden-component">
+  <div id="edit-modal-container" class="modale hidden-component">
           <span class="closeEdit">&times</span>
     <div class="modalEdit-container">
       <div class="modalEdit-content">
         <form action="" id="edit-form">
+        <p class="editp">Editar publicacion<p>
         <input id="title-post-edit" placeholder="Coloca un titulo">
         <input id="content-post-edit" placeholder="Deja un comentario">
         <button id="accept">Aceptar</button>
