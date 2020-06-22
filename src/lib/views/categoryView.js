@@ -32,7 +32,7 @@ export const categoryView = (doc, formattedDate, auth) => {
   </div> 
   <div class="partTwo" data-author="${docData.uid}">
     <ul class="pawEdit hidden-component" data-postid="${doc.id}">
-      <div class="pawBtn user-post-actions"><img src="/images/iconos/Paw.png"></div>
+      <div class="pawBtn user-post-actions"><img url=("https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/logoPawLovers.png")></div>
         <div class="paw-content">
           <li class="editOption"><a id="edit">Editar</a></li>
           <li class="eraseOption"><a id="erase">Borrar</a></li>
