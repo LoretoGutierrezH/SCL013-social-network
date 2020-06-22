@@ -24,7 +24,7 @@ Además podrás encontrar empresas y servicios profesionales del sector de los a
 
 ### Trello
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/TrelloPL.JPG" width= 747px height= 745px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/TrelloPL.JPG" width= 820px height= 690px>
 
 [Link Trello](https://trello.com/b/LvAEjZ51/social-network)
 
@@ -32,7 +32,7 @@ Además podrás encontrar empresas y servicios profesionales del sector de los a
 
 Se realizo una busqueda de diseño que fuera amigable para el usuario y facil de recorrer. antes de avanzar a una etapa mas avanzada.
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/diagramaDeFlujo.jpg" width= 747px height= 745px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/diagramaDeFlujo.jpg" width= 602px height= 665px>
 
 ### Prototipo de Alta fidelidad
 
