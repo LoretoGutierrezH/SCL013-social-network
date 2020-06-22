@@ -48,7 +48,7 @@ export const home = () => {
     <div class="space1"></div>
     <div class="one">
       <div class="logo" id="logo-container">
-      <a href="#/home" class=""><!--<img url=("https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/Paw.png")--> alt="" class="logo"></a>
+      <a href="#/home" class=""><img src="./images/iconos/logoPawLovers.png" alt="" class="logo"></a>
       </div>
       <nav class="main-nav">
         <ul>

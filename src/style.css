@@ -62,7 +62,6 @@ body {
 }
 
 .logo {
-  background: url("https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/logoPawLovers.png");
   width: 130px;
   height: 80px;
 }
@@ -231,7 +230,6 @@ textarea.comment-content {
 /* PaW de publicación*/
 
 .pawBtn {
-  background: url("https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/Paw.png");
   display: inline-block;
   color: black;
   margin: 5px;
