@@ -30,9 +30,9 @@ export const categoryView = (doc, formattedDate, auth) => {
       <p class="home-post-content">Contenido: ${docData.content}</p>
     </div>  
   </div> 
-  <div class="partTwo">
-    <ul class="pawEdit hidden-component" data-postid="${doc.id}" data-author="${docData.uid}">
-      <div class="pawBtn user-post-actions"><img src="/images/iconos/Paw.png"></div>
+  <div class="partTwo" data-author="${docData.uid}">
+    <ul class="pawEdit hidden-component" data-postid="${doc.id}">
+      <div class="pawBtn user-post-actions"><img src="./images/iconos/Paw.png"></div>
         <div class="paw-content">
           <li class="editOption"><a id="edit">Editar</a></li>
           <li class="eraseOption"><a id="erase">Borrar</a></li>
@@ -43,14 +43,14 @@ export const categoryView = (doc, formattedDate, auth) => {
   </div>  
     <div class="post-actions">
     <div class="grupLike">
-    <button class="like-btn">${likeString}</button>
+    <button class="like-btn"></button>
     <p class="counter-text">${docData.likes.length}</p></div>
       <button class="trigger-comment-form-btn">Comentar</button>
       <button class="share-comment-btn">Compartir</button>
     </div>
     <div data-formid="${doc.id}" class="post-comment-form hidden-component">
       <form action="submit" class="comment-form">
-        <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí (PRÓXIMAMENTE)"></textarea><br>
+        <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí (PRÓXIMAMENTE :D)"></textarea><br>
         <button class="publish-comment-btn">Publicar</button>
       </form>
     </div>
@@ -77,11 +77,12 @@ export const newPostForm = () => {
 
 export const editModal = () => {
   const editView = `
-  <div id="edit-modal-container" class="modal hidden-component">
+  <div id="edit-modal-container" class="modale hidden-component">
           <span class="closeEdit">&times</span>
     <div class="modalEdit-container">
       <div class="modalEdit-content">
         <form action="" id="edit-form">
+        <p class="editp">Editar publicacion<p>
         <input id="title-post-edit" placeholder="Coloca un titulo">
         <input id="content-post-edit" placeholder="Deja un comentario">
         <button id="accept">Aceptar</button>

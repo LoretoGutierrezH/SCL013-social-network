@@ -7,6 +7,7 @@ import {
 } from './lib/authentication.js';
 import { slider } from './lib/views/slider.js';
 import { modalListeners } from './lib/views/modal.js';
+import { photoContest } from './lib/views/photo.js';
 
 
 const root = document.querySelector('#root');
@@ -17,13 +18,14 @@ const init = () => {
   signInFunction();
   exitFunction();
   singInGoogle();
+  photoContest();
   modalListeners();
   slider();
   showOrHideOptions();
   const mainForm = document.querySelector('#main-form');
   mainForm.innerHTML = '';
   document.querySelector('#publication').innerHTML = aboutUs();
- 
+
   window.location.hash = '#/mas-sobre-PL';
   console.log('Página completamente cargada');
   window.addEventListener('hashchange', () => {
@@ -38,12 +40,14 @@ const init = () => {
         signInFunction();
         exitFunction();
         singInGoogle();
+        photoContest();
         modalListeners();
         slider();
         showOrHideOptions();
         mainForm.innerHTML = '';
         categoryHeading.innerHTML = '';
         document.querySelector('#publication').innerHTML = aboutUs();
+        mainForm.innerHTML = '';
         break;
 
       case '#/mas-sobre-PL':
@@ -90,7 +94,9 @@ const init = () => {
         break;
 
       case '#/fotos-concurso':
-        // document.querySelector('#publication').innerHTML = photo();
+        document.querySelector('#publication').innerHTML = photoContest();
+        categoryHeading.innerHTML = '';
+        mainForm.innerHTML = '';
         break;
       default:
         document.querySelector('#root').innerHTML = home();
@@ -99,6 +105,7 @@ const init = () => {
         exitFunction();
         singInGoogle();
         modalListeners();
+        photoContest();
         slider();
         showOrHideOptions();
         postsByCategoryFn(categoryView, category);

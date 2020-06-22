@@ -63,6 +63,7 @@ li.category {
 .category-content {
   display: none;
   position: absolute;
+  right: 5rem;
   background-color: #F6F9FA;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -93,16 +94,22 @@ li a:hover,
 .blue {
   background: #81D2CB;
   border-radius: 10px;
+  width: 75px;
+  height: 10px;
 }
 
 .green {
   background: #B3CD12;
   border-radius: 10px;
+  width: 75px;
+  height: 10px;
 }
 
 .brown {
   background: #C9B09C;
   border-radius: 10px;
+  width: 75px;
+  height: 10px;
 }
 
 
@@ -118,6 +125,7 @@ li.burguer {
 .burguer-content {
   display: none;
   position: absolute;
+  right: 2rem;
   background-color: #F6F9FA;
   min-width: 70px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
