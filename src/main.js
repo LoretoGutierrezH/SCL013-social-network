@@ -8,6 +8,7 @@ import {
 import { slider } from './lib/views/slider.js';
 import { modalListeners } from './lib/views/modal.js';
 
+
 const root = document.querySelector('#root');
 
 const init = () => {

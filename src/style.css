@@ -40,8 +40,8 @@ body {
     "aside-left"
     "main"
     "footer";
-  grid-template-columns: 100%;
-  grid-template-rows: 15vh 25vh 1fr 5vh;
+  grid-template-columns: 150vw;
+  grid-template-rows: 15vh 30vh 1fr 10vh;
 }
 /*iconos del header*/
 .space1 {
@@ -71,6 +71,10 @@ body {
   width: 2%;
 }
 
+li {
+  list-style: none;
+}
+
 .main-nav ul li,
 .secondary-navbar ul li {
   list-style: none;
@@ -81,14 +85,16 @@ body {
   grid-area: header;
   background: #81D2CB;
   display: flex;
-  align-items: center;  
+  align-items: center;
+  z-index: 1000;
 }
+
 header{
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 80px;
+  
 }
 
 
@@ -473,8 +479,4 @@ textarea.comment-content {
 .counter-text{
   font-size: 1.2em;
   font-family: 'Manjari', sans-serif;
-}
-
-li{
-  list-style: none;
 }

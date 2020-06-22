@@ -1,4 +1,6 @@
-import { auth, db } from './firebaseImports.js';
+const db = firebase.firestore();
+const auth = firebase.auth();
+
 
 // Registro
 export const signUpFunction = () => {

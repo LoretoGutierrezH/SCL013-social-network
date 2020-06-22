@@ -31,7 +31,7 @@ export const categoryView = (doc, formattedDate, auth) => {
     </div>  
   </div> 
   <div class="partTwo">
-    <ul class="pawEdit hidden-component" data-postid="${doc.id}">
+    <ul class="pawEdit hidden-component" data-postid="${doc.id}" data-author="${docData.uid}">
       <div class="pawBtn user-post-actions"><img src="/images/iconos/Paw.png"></div>
         <div class="paw-content">
           <li class="editOption"><a id="edit">Editar</a></li>
@@ -48,9 +48,9 @@ export const categoryView = (doc, formattedDate, auth) => {
       <button class="trigger-comment-form-btn">Comentar</button>
       <button class="share-comment-btn">Compartir</button>
     </div>
-    <div data-postid="${doc.id}" class="post-comment-form hidden-component">
+    <div data-formid="${doc.id}" class="post-comment-form hidden-component">
       <form action="submit" class="comment-form">
-        <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí"></textarea><br>
+        <textarea class="comment-content" type="text" placeholder="Escribe tu comentario aquí (PRÓXIMAMENTE)"></textarea><br>
         <button class="publish-comment-btn">Publicar</button>
       </form>
     </div>

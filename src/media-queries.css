@@ -13,7 +13,7 @@
       "main aside-right"
       "footer footer";
     grid-template-columns: 75% 25%;
-    /*grid-template-rows: 15% 20% 55% 10%;  usar vh con fr para mantener dimensiones de header y footer (solo 1fr es variable)*/
+    /*grid-template-rows: 15% 30% 55% 10%;  usar vh con fr para mantener dimensiones de header y footer (solo 1fr es variable)*/
     overflow-x: visible;
     z-index: 0;
   }

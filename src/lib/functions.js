@@ -1,5 +1,7 @@
 import { newPostForm, editModal } from './views/categoryView.js';
-import { db, auth } from './firebaseImports.js';
+
+const db = firebase.firestore();
+const auth = firebase.auth();
 
 // HELPER - Muestra/oculta opciones del menú según usuario conectado/desconectado
 export const showOrHideOptions = () => {
@@ -18,7 +20,6 @@ export const showOrHideOptions = () => {
 };
 
 const formattingDate = (doc) => {
-  console.log(doc.data().timestamp);
   const formattedDate = doc.data().timestamp.toDate().toString();
   const splitDate = formattedDate.split(' ');
   // console.log(splitDate[1], splitDate[2], splitDate[3], splitDate[4]);
@@ -29,10 +30,7 @@ const formattingDate = (doc) => {
   // console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
   return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
 };
-/* const showOrHideSpinner = () => {
-  const loadingContainer = document.querySelector('#loading-container');
-  loadingContainer.classList.toggle('hidden-component');
-}; */
+
 // FUNCIONES DEL CRUD
 
 // Función crear nuevo post
@@ -117,21 +115,16 @@ export const postsByCategoryFn = (view, category) => {
     publicationContainer.innerHTML = '';
     docs.forEach((doc) => {
       const formattedDate = formattingDate(doc);
-      /* patita solo se muestra para post del usuario conectado */
-      console.log(doc);
       publicationContainer.innerHTML += view(doc, formattedDate, auth);
       loadingContainer.classList.add('hidden-component');
-      console.log(doc.data().likes.length);
-      if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
+      /* patita solo se muestra para post del usuario conectado */
+      if (auth.currentUser !== null && auth.currentUser.uid === doc.data().uid) {
         const paws = document.querySelectorAll('.pawEdit');
         paws.forEach((paw) => {
-          /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
-                  paw.classList.remove('hidden-component');
-                } else {
-                  console.log(paw.getAttribute('data-postid'));
-                } */
-          // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
-          paw.classList.remove('hidden-component');
+          if (paw.getAttribute('data-author') === doc.data().uid) {
+            paw.classList.remove('hidden-component');
+            console.log('Los posts con patitas pertenecen al usuario conectado');
+          }
         });
       }
     });
@@ -169,6 +162,7 @@ export const postsByCategoryFn = (view, category) => {
       });
     });
 
+    // 5. Me gusta / Ya no me gusta
     const likeBtns = document.querySelectorAll('.like-btn');
     likeBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
@@ -180,6 +174,19 @@ export const postsByCategoryFn = (view, category) => {
         } else {
           alert('Inicia sesión para dar like a esta publicación');
         }
+      });
+    });
+
+    // 6. Despliegue de formulario de comentario
+    const commentBtns = document.querySelectorAll('.trigger-comment-form-btn');
+    commentBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
+        console.log(postId);
+        const commentForm = document.querySelector(`[data-formid='${postId}']`);
+        console.log(commentForm);
+        commentForm.classList.toggle('hidden-component');
       });
     });
   });
