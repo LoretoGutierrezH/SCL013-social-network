@@ -41,10 +41,30 @@ export const modalListeners = () => {
   });
 
   // Opcion de login con google
-
-
   /* btnGoogle.addEventListener('click', () => {
     console.log(btnGoogle);
     loginGoogle();
   }); */
 };
+
+/*//ModalEdit
+
+export const modalEditListeners = () => {
+  // const exit = document.querySelector('.exit');
+  const modale = document.querySelector('.modale');
+  const closeEdit = document.querySelector('#closeEdit');
+ const editBtn = document.querySelector('.editOption');
+  //const acceptBtn = document.querySelector('.accept');
+
+ // cerrar modal
+  const closeEditModal = () => {
+    modale.classList.remove('hidden-component');
+    closeEdit.addEventListener('click', () => {
+      modale.classList.add('hidden-component');
+    });
+    closeEditModal();
+  };
+  editBtn.addEventListener('click', () => {
+    closeEditModal();
+  });
+};*/

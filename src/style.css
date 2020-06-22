@@ -13,7 +13,6 @@ html {
 body {
   font-size: 1rem;
 }
-
 /* GRID DESKTOP (implementado en media-queries, no descomentar o se chinga todo jajajaja)  */
 /* #root {
   min-height: 100vh;
@@ -41,11 +40,8 @@ body {
     "main"
     "footer";
   grid-template-columns: 100%;
-  grid-template-rows: 15vh 25vh 1fr 5vh;
-  
-
+  grid-template-rows: 10vh 30vh 1fr 10vh; 
 }
-
 /*iconos del header*/
 .space1 {
   display: flex;
@@ -85,9 +81,10 @@ body {
   background: #81D2CB;
   display: flex;
   align-items: center;  
+  z-index: 5;
 }
 header{
-  position: fixed;
+  /* position: fixed; */
   top: 0px;
   left: 0px;
   right: 0px;
@@ -97,12 +94,13 @@ header{
 
 .middle-left {
   grid-area: aside-left;
-  background: white;
+  background:  #B3CD12;
 }
 
 .middle-center {
   grid-area: main;
   background: #C9B09C;
+  padding-top: 3rem;
 }
 
 .middle-right {
@@ -113,17 +111,36 @@ header{
 .bottom {
   grid-area: footer;
   background: #81D2CB;
+  text-align: center;
 }
 
 /* HOME POSTS */
-
+/*orden*/
+.partDad {
+  display: flex;
+  justify-content: stretch;
+}
+.partOne {
+  display: flex;
+  justify-content: flex-start;
+  /*display:inline-block
+  align-items: center;*/
+  height: 100%;
+  width: 80%;
+}
+.partTwo {
+  display: flex;
+  justify-content: flex-end;
+  /*align-items: center;*/
+  height: 100%;
+  width: 20%;
+}
 #home-post-container {
   /* border: 2px solid blue; */
   width: 80vw;
   margin: 3rem auto;
 
 }
-
 .home-post {
   background-color: #F6F9FA;
   color: black;
@@ -144,7 +161,6 @@ header{
   margin-top: 0.5rem;
 }
 
-.like-btn,
 .trigger-comment-form-btn,
 .share-comment-btn,
 .publish-comment-btn {
@@ -160,7 +176,6 @@ header{
   border: none;
 }
 
-.like-btn:hover,
 .trigger-comment-form-btn:hover,
 .share-comment-btn:hover,
 .publish-comment-btn:hover {
@@ -168,7 +183,6 @@ header{
   cursor: pointer;
 }
 
-.like-btn:active,
 .trigger-comment-form-btn:active,
 .share-comment-btn:active,
 .publish-comment-btn:active {
@@ -210,7 +224,7 @@ textarea.comment-content {
 
 #about-container {
   width: 39vw;
-  margin: 120rem 72rem 45rem 75rem;
+  /* margin: 120rem 72rem 45rem 75rem; */
   top: 12rem;
 }
 /* PaW de publicación*/
@@ -218,11 +232,7 @@ textarea.comment-content {
 .pawBtn {
   display: inline-block;
   color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  margin-top: 10px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .pawEdit:hover .pawBtn:hover {
@@ -257,11 +267,13 @@ textarea.comment-content {
 
 .pawEdit:hover .paw-content {
   display: block;
+
 }
 
 /*Form publi*/
   #new-post-container {
-    width: 40vw;
+    /* border: 2px solid blue; */
+    width: 80vw;
     margin: 3rem auto;
   }
 
@@ -272,7 +284,8 @@ textarea.comment-content {
   padding-top: 1.5rem;
   padding-bottom: 4rem;
   border-radius: 10px;
-  //width: 100%;
+  width: 76vw;
+  
 }
 
 #form-post-title {
@@ -296,6 +309,7 @@ textarea.comment-content {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
+  resize: none;
 }
 
 #form-post-title:focus {
@@ -324,7 +338,6 @@ textarea.comment-content {
 
 
 /* SPINNER */
-
 #loading_container {
   background-color: rgba(250, 240, 245, 0.9);
   height: 100%;
@@ -358,3 +371,175 @@ textarea.comment-content {
   to { transform: rotate(360deg);}
 }
 
+/*Modal Edit*/
+.modale {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.301);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modalEdit-container {
+  background-color: #B3CD12;
+  font-family: 'Manjari', sans-serif; 
+  width: 70vw;
+  min-height: 30%;
+  transform: translateX(20%) translateY(75%);
+  border-radius: 10px;
+}
+#title-post-edit {
+  width: 60%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #cbcccc;
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+#content-post-edit {
+  width: 90%;
+  height: 50%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #cbcccc;
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+#accept {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 4rem;
+  margin-top: 0.5rem; 
+}
+#accept {
+  background-color:#F6F9FA;
+  padding: 2rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  font-family: 'Manjari', sans-serif;
+}
+#accept:hover {
+  background-color: #CBCCCC;
+  cursor: pointer;
+}
+.closeEdit {
+  background-color: rgba(128, 128, 128, 0.26);
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  font-size: 3rem;
+  margin-top: -1px;
+  z-index: 1;
+  cursor: pointer;
+}
+.modalEdit-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  resize: none;
+}
+
+/*Like*/
+.like-btn {
+  background: url('./images/iconos/heartPL.png');
+  background-repeat:no-repeat;
+  height:100px;
+  width:100px;
+  background-position:center;
+  border: none;
+  text-align: center;
+  font-family: 'Manjari', sans-serif;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+.like-btn:active {
+  background: url('./images/iconos/disLike.png');
+  background-repeat:no-repeat;
+  height:100px;
+  width:100px;
+  background-position:center;
+  border: none;
+  font-family: 'Manjari', sans-serif;
+  margin: 0;
+}
+
+.grupLike {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+}
+.counter-text{
+  font-size: 1.2em;
+  font-family: 'Manjari', sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+.category-title {
+  display: flex;
+  justify-content: center;
+}
+
+#category-heading {
+  font-family: 'Manjari', sans-serif;
+}
+
+/*confirmar*/
+#accept {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 4rem;
+  margin-top: 0.5rem; 
+}
+#yes {
+  background-color:#F6F9FA;
+  padding: 2rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  font-family: 'Manjari', sans-serif;
+}
+#yes:hover {
+  background-color: #CBCCCC;
+  cursor: pointer;
+}
+.closeconfir {
+  background-color: rgba(128, 128, 128, 0.26);
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  font-size: 3rem;
+  margin-top: -1px;
+  z-index: 1;
+  cursor: pointer;
+}
+.modalEdit-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  resize: none;
+}

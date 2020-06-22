@@ -48,7 +48,7 @@ export const home = () => {
     <div class="space1"></div>
     <div class="one">
       <div class="logo" id="logo-container">
-      <a href="#/home" class=""><img src="/images/iconos/logoPawLovers.png" alt="" class="logo"></a>
+      <a href="#/home" class=""><img src="./images/iconos/logoPawLovers.png" alt="" class="logo"></a>
       </div>
       <nav class="main-nav">
         <ul>
@@ -62,8 +62,6 @@ export const home = () => {
   <input type="text" id="search" placeholder="buscar..." />
   <div id="close-icon"></div>
 </div>
-          <!--<input type="text" id="formulario" class="search-bar" placeholder="Buscar">
-          <i class="fas fa-search" type="button" id="lupa"></i>-->
       <li class="category">
       <a class="categorysBtn"><i class="fas fa-caret-down"></i></a>
       <div class="category-content">
@@ -88,10 +86,9 @@ export const home = () => {
   </div>
   <div class="space2"></div>
     </header>
-
     <aside class="middle-left" id="photo-carousel">
-   <div class="carousel">
-    <h2 class="slider-message"> Ganador de la Semana</h2>
+    <div class="carousel">
+    <h2 class="slider-message"> Concurso de la Semana</h2>
     <div class="slick-list" id="slick-list">
       <button class="slick-arrow slick-prev" id="button-prev">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
@@ -100,7 +97,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/1.jpg" alt="imagen">
               </picture>
@@ -110,7 +107,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/2.jpg" alt="imagen">
               </picture>
@@ -120,7 +117,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/3.jpg" alt="imagen">
               </picture>
@@ -130,7 +127,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/4.jpg" alt="imagen">
               </picture>
@@ -140,7 +137,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/5.jpg" alt="imagen">
               </picture>
@@ -150,7 +147,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/6.jpg" alt="imagen">
               </picture>
@@ -160,7 +157,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/7.jpg" alt="imagen">
               </picture>
@@ -170,7 +167,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/8.jpg" alt="imagen">
               </picture>
@@ -180,7 +177,7 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/9.jpg" alt="imagen">
               </picture>
@@ -190,9 +187,181 @@ export const home = () => {
         <div class="slick">
           <div>
             <a class="slider-message" href="/">
-              <h4 class="slider-message"><small class="slider-message">Share Your Massage</small></h4>
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
               <picture>
                 <img src="./images/Mascotas/10.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div>
+        <div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/11.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/12.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/13.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/14.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/15.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/16.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/17.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/18.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>            
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/20.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/21.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/22.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/23.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/24.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/25.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/26.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/27.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/28.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/29.jpg" alt="imagen">
+              </picture>
+            </a>
+          </div>       
+        </div><div class="slick">
+          <div>
+            <a class="slider-message" href="/">
+              <h4 class="slider-message"><small class="slider-message"></small></h4>
+              <picture>
+                <img src="./images/Mascotas/30.jpg" alt="imagen">
               </picture>
             </a>
           </div>       
@@ -215,8 +384,10 @@ export const home = () => {
       <div id="edit-post">
         
       </div>
-      <div id="spinner">
-        <div id="loading-container">
+      <div id="confirmation-modal">
+      </div>
+      <div id="spinner" data-state="false">
+        <div id="loading-container" class="hidden-component">
          <div id="loading"></div>
         </div>
       </div>
@@ -227,13 +398,36 @@ export const home = () => {
     </main>
 
     <aside class="middle-right mobile-hidden-component" id="categories">
-      <p>Categorías(desktop)</p>
-      
+    <div class="category">
+    <li>
+    <a href="#/mas-sobre-PL" class="blue" id="masPl">Mas sobre PL</a>
+    </li>
+    <li>
+    <a href="#/tips" data-category="tips" class="green" id="tips">Tips</a>
+    </li>
+    <li>
+    <a href="#/cuarentena" class="brown" id="cuarentena">Mas sobre 40tena</a>
+    </li>
+    <li>
+    <a href="#/cuidados" class="blue" id="cuidados">Cuidados</a>
+    </li>
+    <li>
+    <a href="#/memes" class="green" id="memes">Memes</a>
+    </li>
+    <li>
+    <a href="#/adopcion" class="brown" id="adopcion">Adopcion</a>
+    </li>
+    <li>
+    <a href="#/servicios" class="blue" id="servicios">Servicios</a>
+    </li>
+    <li>
+    <a href="#/fotos-concurso" class="green" id="fotosConcursos">Fotos Concursos</a>
+    </li>
+</div>
     </aside>
-    h2
 
     <footer class="bottom">
-      <p>FOOTER</p><span><img src="" alt=""></span>
+      <p>Hecho con amor para todas las personas con mascotas <i class="far fa-grin-hearts"></i> <i class="fas fa-dog"></i> <i class="fas fa-cat"></i> <i class="fab fa-earlybirds"></i> <i class="fas fa-fish"></i></p><span><img src="" alt=""></span>
     </footer> </div>
     `;
   return viewHome;

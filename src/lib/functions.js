@@ -1,45 +1,53 @@
 import { newPostForm, editModal } from './views/categoryView.js';
-import { uploadImagePost } from './authentication.js';
 
 export const db = firebase.firestore();
-export const auth = firebase.auth();
-export const storage = firebase.storage();
+export const auth = firebase.firestore();
 
 // HELPER - Muestra/oculta opciones del menú según usuario conectado/desconectado
 export const showOrHideOptions = () => {
   const signBtn = document.querySelector('.sign-btn');
   const burgerMenu = document.querySelector('.burguer');
-  auth.onAuthStateChanged((user) => {
+  firebase.auth().onAuthStateChanged((user) => {
     if (user !== null) {
       signBtn.classList.add('hidden-component');
       burgerMenu.classList.remove('hidden-component');
-      //console.log(`ID de suario actual: ${auth.currentUser.uid}`);
+      console.log(`ID de suario actual: ${firebase.auth().currentUser.uid}`);
     } else {
       signBtn.classList.remove('hidden-component');
       burgerMenu.classList.add('hidden-component');
     }
   });
 };
-/* const showOrHideSpinner = () => {
-  const loadingContainer = document.querySelector('#loading-container');
-  loadingContainer.classList.toggle('hidden-component');
-}; */
+const formattingDate = (doc) => {
+  const formattedDate = doc.data().timestamp.toDate().toString();
+  const splitDate = formattedDate.split(' ');
+  // console.log(splitDate[1], splitDate[2], splitDate[3], splitDate[4]);
+  let month;
+  if (splitDate[1] === 'Jun') { // porque solo es para mostrar :D xd
+    month = 'Junio';
+  }
+  // console.log(`${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`);
+  return `${splitDate[2]} de ${month} del ${splitDate[3]} a las ${splitDate[4]}`;
+};
 // FUNCIONES DEL CRUD
 // Función crear nuevo post
-const newPost = (postTitle, postContent, category, url) => {
-  if (auth.currentUser) {
+const newPost = (postTitle, postContent, category) => {
+  if (firebase.auth().currentUser) {
     db.collection(`${category}`).add({
-      uid: `${auth.currentUser.uid}`,
-      author: `${auth.currentUser.displayName}`,
+      uid: `${firebase.auth().currentUser.uid}`,
+      author: `${firebase.auth().currentUser.displayName}`,
       category: `${category}`,
       title: `${postTitle}`,
       content: `${postContent}`,
       likes: [],
       comments: {},
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      foto: url,
-    }).then((docRef) => {
-      console.log(`Publicación ${postTitle} creada por ${auth.currentUser.displayName}`,docRef.id);
+    }).then(() => {
+      const successMssge = document.querySelector('#new-post-success');
+      setTimeout(() => {
+        successMssge.innerHTML = 'Publicación creada correctamente :)';
+      }, 2000);
+      console.log(`Publicación ${postTitle} creada por ${firebase.auth().currentUser.displayName}`);
     }).catch((error) => {
       console.log(error);
     });
@@ -48,7 +56,6 @@ const newPost = (postTitle, postContent, category, url) => {
      alert("Solo los usuarios registrados pueden publicar :)");
    } */
 };
-
 // Función borrar post
 const deletePost = (postId, category) => {
   db.collection(`${category}`).doc(`${postId}`).delete().then(() => {
@@ -56,7 +63,6 @@ const deletePost = (postId, category) => {
   })
     .catch(error => alert(`${error.message} - TRADUCCIÓN: no tení permisos oe!`));
 };
-
 // Función editar post
 const updatePost = (postId, category, postTitle, postContent) => {
   db.collection(`${category}`).doc(`${postId}`).update({
@@ -64,85 +70,68 @@ const updatePost = (postId, category, postTitle, postContent) => {
     content: `${postContent}`,
   });
 };
-
+// Funciones dar/quitar like
+const likeOrUnlike = (postId, category) => {
+  db.collection(`${category}`).doc(`${postId}`).get().then((doc) => {
+    const docLikes = doc.data().likes;
+    const includesUser = docLikes.includes(`${firebase.auth().currentUser.displayName}`);
+    if (includesUser === true) {
+      db.collection(`${category}`).doc(`${postId}`).update({
+        likes: firebase.firestore.FieldValue.arrayRemove(`${firebase.auth().currentUser.displayName}`),
+      });
+      // console.log("LIKE SACADO");
+    } else if (includesUser === false) {
+      db.collection(`${category}`).doc(`${postId}`).update({
+        likes: firebase.firestore.FieldValue.arrayUnion(`${firebase.auth().currentUser.displayName}`),
+      });
+      // console.log("LIKE AGREGADO");
+    }
+  });
+};
 // POSTS SEGÚN CAGETORÍA SELECCIONADA
 export const postsByCategoryFn = (view, category) => {
   const publicationContainer = document.querySelector('#publication');
   const mainForm = document.querySelector('#main-form');
   const editContainer = document.querySelector('#edit-post');
   publicationContainer.innerHTML = '';
-  mainForm.innerHTML = newPostForm(category);
-  editContainer.innerHTML = editModal(category);
+  mainForm.innerHTML = newPostForm();
+  editContainer.innerHTML = editModal();
   const postForm = document.querySelector('#new-post-form');
-  /*document.getElementById("form-post-content").value = ""; limpiar div de publicacion*/
-
-
   // 1. Crear nueva publicación por categoría
   postForm.addEventListener('submit', () => {
     const postTitle = postForm['form-post-title'].value;
     const postContent = postForm['form-post-content'].value;
     newPost(postTitle, postContent, category);
-
-
-
-
   });
-
-const botonPublicar = document.getElementById('#new-post-btn');
-  botonPublicar.addEventListener('click', () => {
-    const info = document.getElementById('inputImg').files;
-    if (info.lenght > 0) {
-      const urlImg = uploadImagePost(info[0], 'imgPublicacion');
-      urlImg.then((url) => {
-        newPost(url);
-      });
-    } else {
-      newPost(null);
-    }
-  });
-
+  // para que el spinner se muestre desde un principio en las vistas correctas
+  const loadingContainer = document.getElementById('loading-container');
+  loadingContainer.classList.remove('hidden-component');
   // 2. Leer publicaciones por categoría
-  db.collection(`${category}`).onSnapshot((docs) => {
+  db.collection(`${category}`).orderBy('timestamp', 'desc').onSnapshot((docs) => {
     publicationContainer.innerHTML = '';
     docs.forEach((doc) => {
+      const formattedDate = formattingDate(doc);
+      publicationContainer.innerHTML += view(doc, formattedDate, firebase.auth());
+      loadingContainer.classList.add('hidden-component');
       /* patita solo se muestra para post del usuario conectado */
-      publicationContainer.innerHTML += view(doc);
-      if (auth.currentUser && auth.currentUser.uid === doc.data().uid) {
+      if (firebase.auth().currentUser !== null && firebase.auth().currentUser.uid === doc.data().uid) {
         const paws = document.querySelectorAll('.pawEdit');
+        console.log(paws);
         paws.forEach((paw) => {
-        /* if ( paw.getAttribute('data-postid') === doc.data().uid ) {
-              paw.classList.remove('hidden-component');
-            } else {
-              console.log(paw.getAttribute('data-postid'));
-            } */
-          // POR EL MOMENTO LE PONE PATITA A TODO, PERO LO VOY A ARREGLAR! //
-          paw.classList.remove('hidden-component');
+          console.log(paw.parentElement.getAttribute('data-author'));
+          if (paw.parentElement.getAttribute('data-author') === doc.data().uid) {
+            paw.classList.remove('hidden-component');
+            console.log('Los posts con patitas pertenecen al usuario conectado');
+          }
         });
       }
     });
-
-    // spinner (hay que moverlo a otro lado)
-    const loadingContainer = document.getElementById('loading-container');
-    const showSpinner = () => {
-      loadingContainer.classList.remove('hidden-component');
-    };
-
-    const hideSpinner = () => {
-      loadingContainer.classList.add('hidden-component');
-    };
-
-    if (publicationContainer.innerHTML !== '') {
-      hideSpinner();
-      console.log("aloha");
-    } else {
-      showSpinner();
-    }
     // 3. Editar publicación por su id
-    const editOption = document.querySelectorAll('.editOption');
-    editOption.forEach((btn) => {
+    const editModalContainer = document.querySelector('#edit-modal-container');
+    const editOptions = document.querySelectorAll('.editOption');
+    editOptions.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-        const editModalContainer = document.querySelector('#edit-modal-container');
         const editForm = document.querySelector('#edit-form');
         editModalContainer.classList.remove('hidden-component');
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
@@ -154,10 +143,16 @@ const botonPublicar = document.getElementById('#new-post-btn');
           updatePost(postId, category, postTitle, postContent);
         });
       });
+      const closeEdit = document.querySelector('.closeEdit');
+      closeEdit.addEventListener('click', () => {
+        editModalContainer.classList.add('hidden-component');
+      });
     });
+    // 4. Eliminar publicación
+
     // 4. Borrar publicación por su id
-    const eraseBtn = document.querySelectorAll('.eraseOption');
-    eraseBtn.forEach((btn) => {
+    const eraseBtns = document.querySelectorAll('.eraseOption');
+    eraseBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
@@ -165,20 +160,31 @@ const botonPublicar = document.getElementById('#new-post-btn');
         deletePost(postId, category);
       });
     });
+    // 5. Me gusta / Ya no me gusta
+    const likeBtns = document.querySelectorAll('.like-btn');
+    likeBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const postId = event.target.parentElement.parentElement.parentElement.getAttribute('data-postid');
+        console.log(postId);
+        if (firebase.auth().currentUser !== null) {
+          likeOrUnlike(postId, category, btn);
+        } else {
+          alert('Inicia sesión para dar like a esta publicación');
+        }
+      });
+    });
+    // 6. Despliegue de formulario de comentario
+    const commentBtns = document.querySelectorAll('.trigger-comment-form-btn');
+    commentBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const postId = event.target.parentElement.parentElement.getAttribute('data-postid');
+        console.log(postId);
+        const commentForm = document.querySelector(`[data-formid='${postId}']`);
+        console.log(commentForm);
+        commentForm.classList.toggle('hidden-component');
+      });
+    });
   });
 };
-/* Como subir fotos
-
-const evento = document.querySelector('#inputImg');
-evento.addEventListener('change', () => {
-  const contenedorImagen = document.getElementById('fotoPublicacion');
-  const inputImg = document.getElementById('inputImg');
-
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    contenedorImagen.setAttribute('src', e.target.result);
-  };
-  reader.readAsDataURL(inputImg.files[0]);
-});*/
-
-

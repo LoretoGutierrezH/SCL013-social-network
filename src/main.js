@@ -2,9 +2,12 @@ import { home } from './lib/views/home.js';
 import { categoryView } from './lib/views/categoryView.js';
 import { aboutUs } from './lib/views/aboutUs.js';
 import { showOrHideOptions, postsByCategoryFn } from './lib/functions.js';
-import { signUpFunction, signInFunction, exitFunction, singInGoogle, uploadImagePost } from './lib/authentication.js';
+import {
+  signUpFunction, signInFunction, exitFunction, singInGoogle,
+} from './lib/authentication.js';
 import { slider } from './lib/views/slider.js';
 import { modalListeners } from './lib/views/modal.js';
+import { photoContest } from './lib/views/photo.js';
 
 
 const root = document.querySelector('#root');
@@ -15,15 +18,14 @@ const init = () => {
   signInFunction();
   exitFunction();
   singInGoogle();
-  uploadImagePost();
+  photoContest();
   modalListeners();
+  slider();
   showOrHideOptions();
   const mainForm = document.querySelector('#main-form');
   mainForm.innerHTML = '';
   document.querySelector('#publication').innerHTML = aboutUs();
 
-  slider();
-  // modalEdit();
   window.location.hash = '#/mas-sobre-PL';
   console.log('Página completamente cargada');
   window.addEventListener('hashchange', () => {
@@ -32,21 +34,20 @@ const init = () => {
     let category;
     const categoryHeading = document.querySelector('#category-heading');
     switch (hash) {
-        
       case '#/home':
         document.querySelector('#root').innerHTML = home();
         signUpFunction();
         signInFunction();
         exitFunction();
         singInGoogle();
-        uploadImagePost();
+        photoContest();
         modalListeners();
+        slider();
         showOrHideOptions();
         mainForm.innerHTML = '';
         categoryHeading.innerHTML = '';
         document.querySelector('#publication').innerHTML = aboutUs();
-        slider();
-        // modalEdit();
+        mainForm.innerHTML = '';
         break;
 
       case '#/mas-sobre-PL':
@@ -93,7 +94,9 @@ const init = () => {
         break;
 
       case '#/fotos-concurso':
-        // document.querySelector('#publication').innerHTML = photo();
+        document.querySelector('#publication').innerHTML = photoContest();
+        categoryHeading.innerHTML = '';
+        mainForm.innerHTML = '';
         break;
       default:
         document.querySelector('#root').innerHTML = home();
@@ -101,22 +104,15 @@ const init = () => {
         signInFunction();
         exitFunction();
         singInGoogle();
-        uploadImagePost();
         modalListeners();
+        photoContest();
+        slider();
         showOrHideOptions();
         postsByCategoryFn(categoryView, category);
         console.log('se ejecutó todo');
-        slider();
-         // modalEdit();
     }
   });
 };
 
 window.onload = init();
-
-let timestamp = {
-  nanoseconds: 0,
-  seconds: 1562524200,
-};
-
-console.log(new Date(timestamp.seconds * 1000));
+console.log(window.location.hash);
