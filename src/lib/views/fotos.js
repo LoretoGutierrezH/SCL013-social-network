@@ -1,4 +1,5 @@
 /*export const photoContest = () => {
+
     const photoView = `
 <div class="photo"  style="border-radius: 25px;">
   <img class="ganador " src="./images/Mascotas/20.jpg" >
@@ -40,3 +41,4 @@
 `;
   return photoView;
 };*/
+

@@ -524,6 +524,7 @@ li{
 .principal {
   display: flex;
   flex-wrap: wrap;
+
   margin-top:50px;
 }
 
@@ -533,6 +534,7 @@ li{
   margin:10px;
   float:left;
 }
+
 
 .photo {
   border:1px ;
@@ -549,5 +551,4 @@ li{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 }

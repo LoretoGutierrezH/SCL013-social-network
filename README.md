@@ -5,11 +5,7 @@
 * [1. PawLovers](#1-PawLovers)
 * [2. Planificación del proyecto y diseño](#2-Planificación-del-proyecto-y-diseño)
 * [3. Historia de usuario](#3-Historia-de-usuario)
-* [4. Test Unitario](#4-Test-Unitario)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+
 
 ***
 
@@ -28,7 +24,7 @@ Además podrás encontrar empresas y servicios profesionales del sector de los a
 
 ### Trello
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/TrelloPL.JPG" width= 747px height= 745px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/TrelloPL.JPG" width= 820px height= 690px>
 
 [Link Trello](https://trello.com/b/LvAEjZ51/social-network)
 
@@ -36,7 +32,7 @@ Además podrás encontrar empresas y servicios profesionales del sector de los a
 
 Se realizo una busqueda de diseño que fuera amigable para el usuario y facil de recorrer. antes de avanzar a una etapa mas avanzada.
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/diagramaDeFlujo.jpg" width= 747px height= 745px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/diagramaDeFlujo.jpg" width= 602px height= 665px>
 
 ### Prototipo de Alta fidelidad
 
@@ -63,7 +59,7 @@ Luego se prosiguió rápidamente a la creación del mismo,
 se probaron varias ideas una al lado de la otra en el prototipo de alta fidelidad. 
 <img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/PruebasLogo.JPG" width= 870px height= 590px>
 Dando como resultado final:
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/logoPawLovers.png" width= 830px height= 600px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/logoPawLovers.png" width= 630px height= 400px>
 
 Y se eligió una tipografía que fuera divertida, un poco desordenada, Puedes apreciar un pequeño fragmento comentado del diseñador principal de la Font Neucha "traducido del idioma ruso significa "no saber cómo crear fuentes correctamente". Jovanny Lemonad Era lo que se estaba buscando en ella, una fuente libre y con un toque orgánico que traslada a lo natural.
 
@@ -79,9 +75,9 @@ Y se eligió una tipografía que fuera divertida, un poco desordenada, Puedes ap
 
 Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el formulario de inicio de sesión/registro para poder realizar comentarios, publicaciones, dar likes y editar mis publicaciones y la información de mi cuenta.
 
-* [ ] 
-* [ ] 
-* [ ] 
+* [+ ] Investigar, las especificaciones de cada componente elemental para poder ejecutar las necesidades del usuario.
+* [* ] Tener un prototipo para recibir feeback de los potenciales usuarios.
+* [/ ] definir paletas y diseño del mismo.
 
 ### Historia 2 Inicio de sesión y registro a través de modal (mobile)
 
@@ -92,7 +88,7 @@ Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el f
 - Definición de Terminado:
 
 
-* [ ] Crear modal básico con pestaña de formulario de inicio de sesión y registro (html, css y js)
+* [! ] Crear modal básico con pestaña de formulario de inicio de sesión y registro (html, css y js)
 * [ ] Crear enlace para abrir modal desde el header de la página de inicio 
 * [ ] Crear funcionalidad de autenticación de usuario y asociar inicio de sesión y registro con las pestañas correspondientes del modal. 
 * [ ] Crear opción de cierre de sesión provisoria (solo para probar la funcionalidad, después la cambiamos para ver cómo se ve mejor) 
@@ -160,7 +156,5 @@ Yo, como invitado, puedo hacer clic en “Ingresar” para ver el modal con el f
 * [ ] 
 * [ ] 
 
-
-## 4. Test Unitario
 
 
