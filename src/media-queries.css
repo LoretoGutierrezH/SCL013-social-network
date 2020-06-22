@@ -509,8 +509,9 @@ li{
 /*Fotos-Concurso*/
 
 .thumb {
-  max-width:150px;
-  max-height:150px;
+  width:200px;
+  height:150px;
+  border: 10px;
 }
 
 .foto {
@@ -523,19 +524,21 @@ li{
 .principal {
   display: flex;
   flex-wrap: wrap;
+  margin-top:50px;
 }
 
 .ganador {
-  max-width:100px;
-  max-height:100px;
+  max-width:200px;
+  max-height:200px;
   margin:10px;
   float:left;
 }
 
-.header {
-  border:1px solid blue;
-  margin:10px;
+.photo {
+  border:1px ;
+  margin:-45px;
   padding:10px;
+  margin-left:20px; ;
 }
 
 .clear {
