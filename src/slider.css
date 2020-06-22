@@ -57,6 +57,7 @@ a{
   box-sizing: border-box;
   display: flex;
   height: 100%;
+  text-align: center;
 }
 .slick h4{
   position: absolute;
@@ -77,6 +78,7 @@ a{
   border-radius: 4px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
   transition: .3s ease-in-out;
+  margin-left: 7rem;
 }
 .slick a img:hover{
   opacity: .85;
@@ -110,3 +112,49 @@ a{
 .slick-next{
   right: 0px;
 } 
+/*Fotos-Concurso*/
+
+.thumb {
+  width:200px;
+  height:150px;
+  border: 10px;
+}
+
+.foto {
+  width:33.33%;
+  border:0px dotted lightgrey;
+  padding:0px;
+  margin:0px;
+}
+
+.principal {
+  flex-wrap: wrap;
+  margin-top:50px;
+}
+
+.ganador {
+  max-width:200px;
+  max-height:200px;
+  margin:10px;
+  float:left;
+}
+
+.photo {
+  border:1px ;
+  margin:-78px 0px;
+  padding:1px;
+  margin-left:12px;
+}
+
+.clear {
+  clear:both;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#publication{
+  margin-top: 5rem;
+}
