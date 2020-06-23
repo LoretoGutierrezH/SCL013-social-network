@@ -24,7 +24,7 @@ Además podrás encontrar empresas y servicios profesionales del sector de los a
 
 ### Trello
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/TrelloPL.JPG" width= 820px height= 690px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/TrelloPL.JPG" width= 420px height= 490px>
 
 [Link Trello](https://trello.com/b/LvAEjZ51/social-network)
 
@@ -32,7 +32,7 @@ Además podrás encontrar empresas y servicios profesionales del sector de los a
 
 Se realizo una busqueda de diseño que fuera amigable para el usuario y facil de recorrer. antes de avanzar a una etapa mas avanzada.
 
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/diagramaDeFlujo.jpg" width= 602px height= 665px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/diagramaDeFlujo.jpg" width= 502px height= 565px>
 
 ### Prototipo de Alta fidelidad
 
@@ -59,7 +59,7 @@ Luego se prosiguió rápidamente a la creación del mismo,
 se probaron varias ideas una al lado de la otra en el prototipo de alta fidelidad. 
 <img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/MaterialReadme/PruebasLogo.JPG" width= 870px height= 590px>
 Dando como resultado final:
-<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/logoPawLovers.png" width= 630px height= 400px>
+<img src="https://github.com/LiRizo/SCL013-social-network/blob/master/src/images/iconos/logoPawLovers.png" width= 530px height= 300px>
 
 Y se eligió una tipografía que fuera divertida, un poco desordenada, Puedes apreciar un pequeño fragmento comentado del diseñador principal de la Font Neucha "traducido del idioma ruso significa "no saber cómo crear fuentes correctamente". Jovanny Lemonad Era lo que se estaba buscando en ella, una fuente libre y con un toque orgánico que traslada a lo natural.
 
