@@ -29,10 +29,13 @@ export const signUpFunction = () => {
         }, 3000);
       });
     }).catch((error) => {
+      const errorMessageP = document.querySelector('#sign-up-error');
       console.log(error.message);
       if (error.message === 'Password should be at least 6 characters') {
-        const errorMessageP = document.querySelector('#sign-up-error');
         const spaError = 'La contraseña debe tener 6 caracteres como mínimo';
+        errorMessageP.innerHTML = spaError;
+      } else if (error.message === 'The email address is already in use by another account.') {
+        const spaError = 'Este correo electrónico ya está asociado a una cuenta de Paw Lovers.';
         errorMessageP.innerHTML = spaError;
       }
     });
