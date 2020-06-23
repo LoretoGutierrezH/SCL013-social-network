@@ -217,7 +217,7 @@ textarea.comment-content {
   padding-left: 1.5rem;
   padding-bottom: 4rem;
   border-radius: 10px;
-  margin: 0 3rem;
+  margin: 2rem 3rem;
   text-align: center;
   
 }
@@ -542,4 +542,7 @@ li{
   display: flex;
   justify-content: center;
   resize: none;
+}
+#publication{
+  margin-top: 5rem;
 }
